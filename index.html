@@ -1,27 +1,89 @@
 <!doctype html>
 <html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kit's Web Studio</title>
-<meta name="description" content="Websites, ads and customer-message automation for small businesses in Sheffield and South Yorkshire.">
+<title>Kit's Web Studio · Sheffield</title>
+<meta name="description" content="3D websites, realistic video ads, property walkthrough films and customer-message automation for small businesses in Sheffield and South Yorkshire.">
 <style>
-:root{--ink:#1d2a36;--muted:#55636f;--paper:#f7f4ee;--copper:#b9622c;--line:#ddd6ca}
+:root{--ink:#1d2a36;--muted:#55636f;--paper:#f7f4ee;--copper:#b9622c;--line:#ddd6ca;--card:#fff}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:760px;margin:0 auto;padding:12vh 22px 60px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{padding:9vh 0 40px}
 .k{display:inline-block;background:var(--copper);color:#fff;font-weight:800;border-radius:10px;padding:6px 12px;font-size:15px}
-h1{font-size:clamp(34px,6vw,52px);line-height:1.05;letter-spacing:-.02em;margin:18px 0 10px}
-p{color:var(--muted);margin:0 0 18px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}
-.grid div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
-.grid b{display:block;margin-bottom:4px}
-.grid span{font-size:15px;color:var(--muted)}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.04;letter-spacing:-.025em;margin:18px 0 12px;max-width:16ch}
+h2{font-size:clamp(26px,3.6vw,36px);letter-spacing:-.02em;line-height:1.1;margin:0 0 8px}
+p{color:var(--muted);margin:0 0 18px;max-width:62ch}
 a.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:800;border-radius:12px;padding:14px 20px;margin:4px 8px 4px 0}
 a.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
-@media(max-width:640px){.grid{grid-template-columns:1fr}}
+section{padding:46px 0;border-top:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}
+.media{border-radius:16px;overflow:hidden;background:#111;border:1px solid var(--line);box-shadow:0 14px 40px -18px rgba(0,0,0,.35)}
+.media img,.media video{display:block;width:100%;height:auto}
+.vert{max-width:300px;margin:0 auto}
+.price{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 16px}
+.price span{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:15px}
+.price b{color:var(--ink)}
+.note{font-size:14px;color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.grid3 div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.grid3 b{display:block;margin-bottom:4px}.grid3 span{font-size:15px;color:var(--muted)}
+footer{padding:46px 0 70px;border-top:1px solid var(--line)}
+@media(max-width:760px){.two{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.two .media{order:-1}}
 </style></head>
-<body><main>
+<body>
+<div class="wrap">
+<header>
 <span class="k">Kit's Web Studio</span>
-<h1>Websites, ads and automations for local businesses.</h1>
-<p>Based in Sheffield. I build interactive websites that turn visitors into bookings, ads that stop people scrolling, and systems that answer missed calls, send reminders and ask for reviews for you.</p>
-<div class="grid"><div><b>Websites</b><span>Custom sites with 3D features from £495. Hosting, security and updates for £49 a month.</span></div><div><b>Ads</b><span>Ready-to-run Facebook and Instagram ads from £99.</span></div><div><b>Autopilot</b><span>Missed-call text-back, bookings, reminders and reviews from £149 a month.</span></div></div>
-<p><a class="btn" href="p/example-northside/">See an example site</a><a class="btn ghost" href="mailto:kitswebstudio@icloud.com">Email Kit</a><a class="btn ghost" href="tel:07817584677">Call 07817 584677</a></p>
-<p style="font-size:14px">The example site is for a made-up business, to show what's possible.</p>
-</main></body></html>
+<h1>Websites, ads and films that make local businesses look their best.</h1>
+<p>I'm Kit, based in Sheffield. I build interactive 3D websites, realistic video ads, walkthrough films for rentals and holiday lets, and simple systems that answer missed calls and send reminders for you.</p>
+<p><a class="btn" href="mailto:kitswebstudio@icloud.com">Email Kit</a><a class="btn ghost" href="tel:07817584677">Call 07817 584677</a></p>
+</header>
+
+<section class="two">
+<div>
+<h2>3D websites</h2>
+<p>Not another template. Visitors can explore your business in 3D, tap a room or a service to fly to it, and book in a couple of taps. Fast on phones, and you own the domain.</p>
+<div class="price"><span><b>Starter</b> £495</span><span><b>Premium 3D</b> £1,200</span><span><b>Flagship</b> £2,500</span><span><b>Care plan</b> £49 a month</span></div>
+<p><a class="btn" href="p/example-northside/">Try the 3D example</a></p>
+<p class="note">The example is a made-up business, built to show what's possible.</p>
+</div>
+<a class="media" href="p/example-northside/"><img src="media/northside-3d.jpg" alt="A 3D cutaway of a house on the example website" loading="lazy"></a>
+</section>
+
+<section class="two">
+<div class="media vert"><video src="media/ad-sample.mp4" poster="media/ad-cover.jpg" controls playsinline preload="none"></video></div>
+<div>
+<h2>Video ads</h2>
+<p>Short, realistic ads for Facebook, Instagram and TikTok, in your colours, with your van and your phone number. Vertical and square versions, ready to post.</p>
+<div class="price"><span><b>One ad</b> £99</span><span><b>Ad pack</b> £199</span></div>
+<p class="note">Sample ad for a made-up business.</p>
+</div>
+</section>
+
+<section class="two">
+<div>
+<h2>Walkthrough films for lets</h2>
+<p>For holiday lets, serviced apartments and letting agents. I turn your existing photos into a calm walkthrough that starts outside and moves room by room, with a "book direct" end card. Landscape for your website, vertical for social media.</p>
+<div class="price"><span><b>One film</b> £149</span><span><b>5 films</b> £599</span><span><b>New listings</b> £249 a month (up to 4)</span></div>
+<p class="note">Sample film of a made-up show home.</p>
+</div>
+<div class="media"><video src="media/walkthrough-sample.mp4" poster="media/walkthrough-cover.jpg" controls playsinline preload="none"></video></div>
+</section>
+
+<section>
+<h2>Autopilot</h2>
+<p>The jobs that slip when you're busy, done for you.</p>
+<div class="grid3">
+<div><b>Missed-call text-back</b><span>Missed a call on a job? They get a friendly text straight away.</span></div>
+<div><b>Bookings and reminders</b><span>Customers book online and get reminders, so fewer no-shows.</span></div>
+<div><b>Review requests</b><span>A polite thank-you after each job asking for a Google review.</span></div>
+</div>
+<div class="price" style="margin-top:18px"><span><b>Autopilot</b> £149 a month</span><span><b>Website care + Autopilot</b> £189 a month</span></div>
+</section>
+
+<footer>
+<h2>Let's talk</h2>
+<p>Tell me about your business and I'll tell you honestly what would help.</p>
+<p><a class="btn" href="mailto:kitswebstudio@icloud.com">kitswebstudio@icloud.com</a><a class="btn ghost" href="tel:07817584677">07817 584677</a></p>
+<p class="note">Kit's Web Studio · Sheffield, South Yorkshire</p>
+</footer>
+</div>
+</body></html>
