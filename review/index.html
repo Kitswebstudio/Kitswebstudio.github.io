@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leave a review · Kit's Web Studio</title><meta name="robots" content="noindex">
+<style>
+:root{--ink:#1d2a36;--muted:#55636f;--paper:#f7f4ee;--copper:#b9622c;--line:#ddd6ca}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:620px;margin:0 auto;padding:8vh 20px 60px}
+.k{display:inline-block;background:var(--copper);color:#fff;font-weight:800;border-radius:10px;padding:6px 12px;font-size:15px}
+h1{font-size:clamp(30px,6vw,42px);line-height:1.08;letter-spacing:-.02em;margin:16px 0 8px}p{color:var(--muted)}
+form{display:grid;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+label{display:grid;gap:6px;font-weight:600}input,textarea{font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px;color:var(--ink)}textarea{min-height:140px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-weight:500}.chk input{width:20px;height:20px;margin-top:3px;accent-color:var(--copper)}
+button{font:inherit;font-weight:800;background:var(--ink);color:#fff;border:0;border-radius:12px;padding:14px 20px;cursor:pointer}
+.err{color:#b3261e;font-size:15px;min-height:1em}
+</style></head><body><main>
+<span class="k">Kit's Web Studio</span>
+<h1>Thanks for working with me</h1>
+<p>A line or two about how it went really helps other local businesses decide. Write it in your own words. Tapping the button opens an email to Kit with your words in it, so you can check it before it's sent.</p>
+<form id="f" novalidate>
+<label>Your name<input id="n" autocomplete="name" required></label>
+<label>Your business<input id="b" autocomplete="organization" required></label>
+<label>What would you tell someone thinking of using Kit?<textarea id="t" required></textarea></label>
+<label class="chk"><input type="checkbox" id="ok"> Kit can show this, with my name and business, on his website and social media.</label>
+<p class="err" id="e" role="alert"></p>
+<button type="submit">Open the email to Kit</button>
+</form>
+</main>
+<script>
+document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();var g=function(i){return document.getElementById(i).value.trim()};
+if(!g('n')||!g('b')||g('t').length<5){document.getElementById('e').textContent='Please fill in your name, your business and a line or two.';return;}
+var body='Name: '+g('n')+'\nBusiness: '+g('b')+'\n\n'+g('t')+'\n\nOK to show on Kit\'s website and social media: '+(document.getElementById('ok').checked?'Yes':'No');
+location.href='mailto:kitswebstudio@icloud.com?subject='+encodeURIComponent('Testimonial from '+g('b'))+'&body='+encodeURIComponent(body);});
+</script></body></html>

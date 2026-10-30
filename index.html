@@ -25,6 +25,12 @@ section{padding:46px 0;border-top:1px solid var(--line)}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
 .grid3 div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
 .grid3 b{display:block;margin-bottom:4px}.grid3 span{font-size:15px;color:var(--muted)}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:12px;max-width:640px;min-width:0;grid-template-columns:minmax(0,1fr)}
+.calc label{min-width:0;display:grid;gap:6px;font-weight:600;font-size:16px}.calc label.chk{display:flex;gap:10px;align-items:flex-start;font-weight:500}
+.calc select{width:100%;min-width:0;max-width:100%;font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.calc input[type=checkbox]{width:20px;height:20px;margin-top:3px;accent-color:var(--copper);flex:none}
+.total{display:flex;gap:24px;border-top:1px solid var(--line);padding-top:12px}.total small{display:block;color:var(--muted);font-size:14px}.total b{font-size:30px;letter-spacing:-.02em}
+.testis{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
 footer{padding:46px 0 70px;border-top:1px solid var(--line)}
 @media(max-width:760px){.two{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.two .media{order:-1}}
 </style></head>
@@ -34,7 +40,7 @@ footer{padding:46px 0 70px;border-top:1px solid var(--line)}
 <span class="k">Kit's Web Studio</span>
 <h1>Websites, ads and films that make local businesses look their best.</h1>
 <p>I'm Kit, based in Sheffield. I build interactive 3D websites, realistic video ads, walkthrough films for rentals and holiday lets, and simple systems that answer missed calls and send reminders for you.</p>
-<p><a class="btn" href="mailto:kitswebstudio@icloud.com">Email Kit</a><a class="btn ghost" href="tel:07817584677">Call 07817 584677</a></p>
+<p><a class="btn" href="#price">See prices</a><a class="btn ghost" href="mailto:kitswebstudio@icloud.com">Email Kit</a><a class="btn ghost" href="tel:07817584677">Call 07817 584677</a></p>
 </header>
 
 <section class="two">
@@ -68,6 +74,23 @@ footer{padding:46px 0 70px;border-top:1px solid var(--line)}
 <div class="media"><video src="media/walkthrough-sample.mp4" poster="media/walkthrough-cover.jpg" controls playsinline preload="none"></video></div>
 </section>
 
+<section id="price">
+<h2>What would it cost?</h2>
+<p>Pick what you need and see the price straight away.</p>
+<div class="calc">
+<label>Website<select id="c-site"><option value="295">Starter site (up to 5 pages): £295</option><option value="595" selected>3D website: £595</option><option value="1500">Flagship (several features, online booking or payments): from £1,500</option><option value="0">I already have a website</option></select></label>
+<label class="chk"><input type="checkbox" id="c-care" checked> Care plan: hosting, security, backups and small changes (£39 a month)</label>
+<label class="chk"><input type="checkbox" id="c-gbp"> Google profile tune-up (£79 one-off)</label>
+<label class="chk"><input type="checkbox" id="c-ads"> Video ad pack for Facebook and Instagram (£99 one-off)</label>
+<label class="chk"><input type="checkbox" id="c-auto"> Autopilot: missed-call text-back, bookings and reminders (£149 a month)</label>
+<div class="total"><div><small>One-off</small><b id="c-one">£595</b></div><div><small>Monthly</small><b id="c-mo">£39</b></div></div>
+<p class="note" id="c-dep">50% deposit to start (£297.50), the rest when it goes live.</p>
+<a class="btn" id="c-send" href="#">Send me this quote</a>
+</div>
+</section>
+
+<!--TESTIMONIALS-->
+
 <section>
 <h2>Autopilot</h2>
 <p>The jobs that slip when you're busy, done for you.</p>
@@ -86,4 +109,12 @@ footer{padding:46px 0 70px;border-top:1px solid var(--line)}
 <p class="note">Kit's Web Studio · Sheffield, South Yorkshire</p>
 </footer>
 </div>
+<script>
+(function(){var $=function(i){return document.getElementById(i)};function f(n){return '£'+(n%1?n.toFixed(2):n.toLocaleString('en-GB'))}
+function upd(){var site=+$('c-site').value,one=site+($('c-gbp').checked?79:0)+($('c-ads').checked?99:0),mo=($('c-care').checked&&site?39:0)+($('c-auto').checked?149:0);
+$('c-one').textContent=(site===1500?'from ':'')+f(one);$('c-mo').textContent=f(mo);$('c-dep').hidden=!site;$('c-dep').textContent='50% deposit to start ('+f(site/2)+'), the rest when it goes live.';
+var lines=[$('c-site').selectedOptions[0].text];['c-care','c-gbp','c-ads','c-auto'].forEach(function(id){if($(id).checked)lines.push($(id).parentNode.textContent.trim())});
+$('c-send').href='mailto:kitswebstudio@icloud.com?subject='+encodeURIComponent('Website quote')+'&body='+encodeURIComponent('Hi Kit,\n\nI\'m interested in:\n- '+lines.join('\n- ')+'\n\nOne-off: '+$('c-one').textContent+'\nMonthly: '+$('c-mo').textContent+'\n\nMy business: \nBest way to reach me: \n')}
+['c-site','c-care','c-gbp','c-ads','c-auto'].forEach(function(id){$(id).addEventListener('change',upd)});upd();})();
+</script>
 </body></html>
