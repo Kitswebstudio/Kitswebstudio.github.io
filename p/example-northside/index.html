@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Northside Heating & Plumbing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d2a36;--muted:#55636f;--line:#d9dfe4;--paper:#f7f4ee;--sky:#e4edf3;--ground:#d6e5cd;--wall:#fbf8f2;--frame:#24323f;--roof:#3a4957;--copper:#b9622c;--copper-d:#8f4a1f;--teal:#1f6f78;--teal-l:#d7ecee;--warm:#ffd79a;--card:#ffffff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}button,input,select{font:inherit}
+.strip{background:var(--frame);color:#fff;font-size:14px;text-align:center;padding:8px 16px}
+.strip b{font-weight:700}
+header{position:sticky;top:0;z-index:30;background:rgba(247,244,238,.96);border-bottom:1px solid var(--line)}
+.bar{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.01em}
+.logo i{width:34px;height:34px;border-radius:9px;background:var(--copper);display:grid;place-items:center;color:#fff;font-style:normal;font-family:Fraunces,serif;font-size:20px}
+nav{display:flex;gap:6px;margin-left:auto}
+nav a{text-decoration:none;padding:10px 14px;border-radius:10px;color:var(--muted);font-weight:600}
+nav a:hover{background:#ece6db;color:var(--ink)}
+.call{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;padding:11px 18px;border-radius:12px;font-weight:700;white-space:nowrap}
+.call:hover{background:#000}
+h1,h2,h3{letter-spacing:-.02em;margin:0}
+.serif{font-family:Fraunces,Georgia,serif;font-weight:600}
+
+/* ---------- the scene ---------- */
+.hero{max-width:1240px;margin:0 auto;padding:28px 20px 12px}
+.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:16px}
+.intro h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(34px,4.4vw,56px);line-height:1.04;max-width:760px}
+.intro p{margin:8px 0 0;color:var(--muted);max-width:620px}
+.stage{position:relative;border-radius:26px;overflow:hidden;background:var(--sky);border:1px solid var(--line);aspect-ratio:16/9;max-height:calc(100vh - 150px);min-height:460px;width:100%;touch-action:manipulation}
+.stage svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+#cam{transform-origin:0 0;transition:transform 1.25s cubic-bezier(.65,0,.25,1)}
+.room{cursor:pointer;transition:opacity .5s ease}
+.room .lit{opacity:0;transition:opacity .45s ease}
+.room:hover .lit,.room.on .lit{opacity:1}
+.stage.focus .room{opacity:.28}
+.stage.focus .room.on{opacity:1}
+.stage.inside .room:not(.on){opacity:.12}
+.room:focus{outline:none}
+.room:focus-visible .edge{stroke:var(--copper);stroke-width:6}
+.pin{pointer-events:none;transition:opacity .4s}
+.stage.inside .pin{opacity:0}
+.pulse{animation:pulse 2.4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%{transform:scale(.6);opacity:.7}70%{transform:scale(1.9);opacity:0}100%{opacity:0}}
+.drip{animation:drip 1.8s ease-in infinite}
+@keyframes drip{0%{transform:translateY(0);opacity:0}15%{opacity:1}80%{transform:translateY(26px);opacity:1}100%{transform:translateY(30px);opacity:0}}
+.heat path{animation:heat 2.6s ease-in-out infinite;opacity:.0}
+.heat path:nth-child(2){animation-delay:.5s}.heat path:nth-child(3){animation-delay:1s}
+@keyframes heat{0%{opacity:0;transform:translateY(6px)}40%{opacity:.75}100%{opacity:0;transform:translateY(-16px)}}
+.flame{animation:flame .5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes flame{from{transform:scaleY(.85)}to{transform:scaleY(1.1)}}
+.smoke{animation:smoke 5s linear infinite;opacity:0}
+@keyframes smoke{0%{opacity:0;transform:translate(0,0)}20%{opacity:.5}100%{opacity:0;transform:translate(18px,-60px)}}
+
+/* panel (the "choose your floor" card) */
+.panel{position:absolute;right:22px;top:22px;bottom:22px;width:min(380px,40%);background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:20px;padding:24px 24px 20px;display:flex;flex-direction:column;gap:12px;backdrop-filter:blur(6px);transition:transform .6s cubic-bezier(.65,0,.25,1),opacity .4s}
+.panel h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:30px;line-height:1.08}
+.panel .hint{font-size:14px;color:var(--muted);margin:0}
+.picked{display:flex;align-items:baseline;gap:14px;margin-top:6px}
+.picked .n{font-family:Fraunces,Georgia,serif;font-size:64px;line-height:1;color:var(--copper)}
+.picked .nm{font-weight:800;font-size:22px;line-height:1.15}
+.picked .ln{font-size:15px;color:var(--muted)}
+.range{width:100%;accent-color:var(--copper);height:34px}
+.ticks{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:-8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:14px 20px;font-weight:800;cursor:pointer;min-height:48px;text-decoration:none}
+.btn.primary{background:var(--copper);color:#fff}.btn.primary:hover{background:var(--copper-d)}
+.btn.ghost{background:#fff;border:1.5px solid var(--ink);color:var(--ink)}.btn.ghost:hover{background:#f1ede6}
+.btn:focus-visible,.chip:focus-visible,.range:focus-visible,nav a:focus-visible,.call:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.list{display:flex;flex-direction:column;gap:6px;margin-top:auto}
+.list button{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:10px;padding:9px 12px;border-radius:10px;font-weight:600;font-size:15px}
+.list button:hover{background:#f3eee6}.list button[aria-current=true]{background:var(--teal-l);color:var(--teal)}
+.list button:focus-visible{outline:3px solid var(--teal)}
+.list span{color:var(--muted);font-weight:500}
+/* inside view */
+.inside-card{position:absolute;right:22px;top:22px;bottom:22px;overflow:auto;width:min(380px,40%);background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 50px rgba(29,42,54,.18);opacity:0;transform:translateY(24px);pointer-events:none;transition:opacity .45s .55s,transform .55s .55s cubic-bezier(.2,.8,.2,1)}
+.stage.inside .inside-card{opacity:1;transform:none;pointer-events:auto}
+.inside-card .chips{flex-direction:column;align-items:stretch}.inside-card .chip{text-align:left}
+.stage.inside .panel{transform:translateX(130%);opacity:0;pointer-events:none}
+.back{position:absolute;left:22px;top:22px;opacity:0;pointer-events:none;transition:opacity .4s .6s}
+.stage.inside .back{opacity:1;pointer-events:auto}
+.inside-card h3{font-family:Fraunces,Georgia,serif;font-size:28px;font-weight:600}
+.inside-card .sub{color:var(--muted);margin:4px 0 12px;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;min-height:44px}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.fix{margin-top:14px;padding:14px 16px;border-radius:14px;background:var(--teal-l);display:none}
+.fix.show{display:block}
+.fix p{margin:0 0 10px}
+.fix .price{font-size:14px;color:var(--teal);font-weight:700}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ph{display:inline-block;border:1.5px dashed #b9a98f;border-radius:8px;padding:1px 8px;color:#7a6a52;font-size:.92em;background:#fffaf0}
+
+/* ---------- sections ---------- */
+section.s{max-width:1240px;margin:0 auto;padding:64px 20px}
+.s h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,3.2vw,40px)}
+.s .lead{color:var(--muted);max-width:640px;margin:8px 0 28px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1240px;margin:18px auto 0;padding:0 20px}
+.trust div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-weight:700;font-size:15px}
+.trust small{display:block;color:var(--muted);font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+.svc h3{font-size:20px;margin-bottom:6px}.svc p{margin:0;color:var(--muted)}
+.svc button{margin-top:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:st}
+.steps div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;counter-increment:st}
+.steps div:before{content:counter(st);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--copper);color:#fff;font-weight:800;margin-bottom:12px}
+.book{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;display:grid;gap:16px}
+label{font-weight:700;font-size:15px;display:grid;gap:6px}
+input,select{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;min-height:48px;background:#fff;color:var(--ink);font-size:16px}
+input:focus,select:focus{outline:3px solid var(--teal);outline-offset:1px;border-color:var(--teal)}
+.days,.slots{display:flex;gap:8px;flex-wrap:wrap}
+.err{color:#b42318;font-size:14px;font-weight:600;min-height:20px}
+.done{display:none;background:var(--teal-l);border-radius:16px;padding:18px;font-weight:600}
+.side{background:var(--frame);color:#fff;border-radius:22px;padding:26px}
+.side h3{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:26px}
+.side p{color:#c9d3db}
+.area{display:flex;gap:8px;margin-top:10px}.area input{flex:1}
+#areaMsg{margin-top:10px;font-weight:600;min-height:24px}
+footer{background:#e9e3d8;margin-top:40px}
+footer .bar{flex-wrap:wrap;justify-content:space-between;color:var(--muted);font-size:15px;padding:28px 20px}
+.mbar{display:none}
+@media (max-width:900px){
+ nav{display:none}.bar .call{margin-left:auto}.long{display:none}
+ .back{padding:8px 12px;min-height:38px;font-size:14px;border-radius:10px}
+ .stage{aspect-ratio:auto;height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;background:var(--paper);border:0;border-radius:0;overflow:visible}
+ .scene{position:relative;flex-shrink:0;width:100%;aspect-ratio:3/2;border-radius:20px;overflow:hidden;background:var(--sky);border:1px solid var(--line)}
+ .panel{position:relative;inset:auto;width:auto;margin-top:12px}
+ .stage.inside .panel{display:none}
+ .inside-card{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:auto;margin-top:12px;display:none;overflow:visible}
+ .inside-card .chips{flex-direction:row}
+ .stage.inside .inside-card{display:block}
+ .back{top:10px;left:10px}
+ .trust{grid-template-columns:1fr 1fr}.grid,.steps,.book{grid-template-columns:1fr}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(247,244,238,.97);border-top:1px solid var(--line)}
+ .mbar a{flex:1}
+ body{padding-bottom:84px}
+}
+@media (min-width:901px){.scene{position:absolute;inset:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="strip"><b>Example design by Kit's Web Studio.</b> Northside Heating & Plumbing is a made-up business, used to show what's possible.</div>
+<header><div class="bar"><a class="logo" href="#top"><i>N</i><span>Northside<span class="long"> Heating & Plumbing</span></span></a>
+<nav aria-label="Main"><a href="#services">Services</a><a href="#how">How it works</a><a href="#book">Book a visit</a></nav>
+<a class="call" href="tel:01144960456">Call<span class="long"> 0114 496 0456</span></a></div></header>
+
+<main id="top">
+<div class="hero">
+ <div class="intro"><div><h1>Show us where the problem is.</h1><p>Tap a room to look inside, pick what's wrong, and book the right engineer in under a minute. Sheffield and Rotherham.</p></div></div>
+ <div class="stage" id="stage">
+  <div class="scene" id="scene">
+  <svg viewBox="0 0 1200 800" role="group" aria-label="Cutaway drawing of a house. Choose a room to look inside.">
+   <defs>
+    <pattern id="tiles" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="22" height="22" fill="#e6f0f1"/><path d="M22 0V22M0 22H22" stroke="#c9dcdf" stroke-width="2"/></pattern>
+    <pattern id="boards" width="60" height="14" patternUnits="userSpaceOnUse"><rect width="60" height="14" fill="#e8d7bd"/><path d="M0 14H60M30 0V14" stroke="#d6c09f" stroke-width="2"/></pattern>
+    <pattern id="insul" width="24" height="16" patternUnits="userSpaceOnUse"><rect width="24" height="16" fill="#f5e3b5"/><path d="M0 12 L6 4 L12 12 L18 4 L24 12" fill="none" stroke="#e4c47c" stroke-width="2"/></pattern>
+   </defs>
+   <g id="cam">
+    <!-- sky details -->
+    <circle cx="140" cy="120" r="46" fill="#fff6dc"/>
+    <g fill="#fff" opacity=".9"><ellipse cx="1030" cy="110" rx="70" ry="22"/><ellipse cx="985" cy="98" rx="38" ry="22"/><ellipse cx="300" cy="170" rx="54" ry="16"/></g>
+    <!-- ground -->
+    <rect x="-800" y="700" width="2800" height="400" fill="var(--ground)"/>
+    <rect x="-800" y="700" width="2800" height="6" fill="#b9cfae"/>
+    <!-- chimney + smoke -->
+    <rect x="770" y="96" width="46" height="96" fill="var(--roof)"/>
+    <circle class="smoke" cx="793" cy="90" r="12" fill="#dfe6ea"/><circle class="smoke" style="animation-delay:2.5s" cx="793" cy="90" r="10" fill="#dfe6ea"/>
+
+    <!-- LOFT -->
+    <g class="room" data-room="loft" tabindex="0" role="button" aria-label="Loft and water tank">
+     <path d="M262 240 L600 78 L938 240 Z" fill="url(#insul)"/>
+     <path class="lit" d="M262 240 L600 78 L938 240 Z" fill="var(--warm)" opacity="0" style="mix-blend-mode:multiply"/>
+     <g transform="translate(520 160)"><rect width="150" height="66" rx="6" fill="#7aa7b4"/><rect x="10" y="10" width="130" height="14" rx="3" fill="#9fc3cc"/><rect x="66" y="66" width="10" height="20" fill="#9aa6ad"/></g>
+     <rect x="380" y="214" width="12" height="26" fill="#9aa6ad"/>
+     <path class="edge" d="M262 240 L600 78 L938 240 Z" fill="none" stroke="var(--frame)" stroke-width="4"/>
+    </g>
+    <!-- roof outline -->
+    <path d="M222 252 L600 62 L978 252" fill="none" stroke="var(--roof)" stroke-width="26" stroke-linejoin="round" stroke-linecap="round"/>
+
+    <!-- BATHROOM (upstairs left) -->
+    <g class="room" data-room="bath" tabindex="0" role="button" aria-label="Bathroom">
+     <rect x="262" y="240" width="338" height="230" fill="url(#tiles)"/>
+     <rect class="lit" x="262" y="240" width="338" height="230" fill="var(--warm)" style="mix-blend-mode:multiply"/>
+     <!-- bath -->
+     <rect x="290" y="380" width="170" height="64" rx="18" fill="#fff" stroke="#c9d3d8" stroke-width="3"/>
+     <rect x="300" y="372" width="150" height="14" rx="7" fill="#fff" stroke="#c9d3d8" stroke-width="3"/>
+     <path d="M440 330 v42" stroke="#9aa6ad" stroke-width="6"/><circle cx="440" cy="326" r="12" fill="#9aa6ad"/>
+     <!-- basin + dripping tap -->
+     <rect x="505" y="372" width="70" height="20" rx="8" fill="#fff" stroke="#c9d3d8" stroke-width="3"/><rect x="532" y="392" width="16" height="52" fill="#fff" stroke="#c9d3d8" stroke-width="3"/>
+     <path d="M540 352 v14 h-8" fill="none" stroke="#9aa6ad" stroke-width="6" stroke-linecap="round"/>
+     <circle class="drip" cx="532" cy="370" r="4" fill="#5aa9c9"/>
+     <rect x="500" y="290" width="80" height="56" rx="6" fill="#dbe7ea" stroke="#c9d3d8" stroke-width="3"/>
+     <rect x="262" y="444" width="338" height="26" fill="url(#boards)"/>
+     <rect class="edge" x="262" y="240" width="338" height="230" fill="none" stroke="var(--frame)" stroke-width="4"/>
+    </g>
+
+    <!-- BEDROOM / RADIATORS (upstairs right) -->
+    <g class="room" data-room="rads" tabindex="0" role="button" aria-label="Bedroom radiators">
+     <rect x="600" y="240" width="338" height="230" fill="#f3e9f0"/>
+     <rect class="lit" x="600" y="240" width="338" height="230" fill="var(--warm)" style="mix-blend-mode:multiply"/>
+     <rect x="760" y="270" width="96" height="72" fill="#cfe2ee" stroke="#fff" stroke-width="6"/><path d="M808 270v72M760 306h96" stroke="#fff" stroke-width="5"/>
+     <!-- bed -->
+     <rect x="628" y="372" width="150" height="58" rx="10" fill="#8aa3c2"/><rect x="628" y="352" width="44" height="34" rx="8" fill="#fff"/><rect x="620" y="340" width="14" height="96" rx="4" fill="#6b5a4c"/>
+     <!-- radiator + heat -->
+     <g transform="translate(812 378)"><rect width="104" height="54" rx="6" fill="#fff" stroke="#c4ccd2" stroke-width="3"/><path d="M14 6v42M30 6v42M46 6v42M62 6v42M78 6v42M94 6v42" stroke="#d7dde2" stroke-width="4"/></g>
+     <g class="heat" fill="none" stroke="#e58b4a" stroke-width="4" stroke-linecap="round"><path d="M830 368c-6-8 6-14 0-22"/><path d="M864 368c-6-8 6-14 0-22"/><path d="M898 368c-6-8 6-14 0-22"/></g>
+     <rect x="600" y="444" width="338" height="26" fill="url(#boards)"/>
+     <rect class="edge" x="600" y="240" width="338" height="230" fill="none" stroke="var(--frame)" stroke-width="4"/>
+    </g>
+
+    <!-- KITCHEN + BOILER (downstairs left) -->
+    <g class="room" data-room="boiler" tabindex="0" role="button" aria-label="Kitchen and boiler">
+     <rect x="262" y="470" width="338" height="230" fill="#eef1e6"/>
+     <rect class="lit" x="262" y="470" width="338" height="230" fill="var(--warm)" style="mix-blend-mode:multiply"/>
+     <!-- boiler -->
+     <g transform="translate(296 500)"><rect width="78" height="104" rx="8" fill="#fff" stroke="#c4ccd2" stroke-width="3"/><rect x="18" y="62" width="42" height="26" rx="4" fill="#24323f"/><path class="flame" d="M39 84 c-10-8-4-18 0-24 c4 6 10 16 0 24z" fill="#ffb347"/><rect x="18" y="14" width="42" height="12" rx="3" fill="#d7e3e8"/><path d="M20 104v26M39 104v26M58 104v26" stroke="#b8812f" stroke-width="5"/></g>
+     <!-- units -->
+     <rect x="400" y="600" width="186" height="74" fill="#2f6f73"/><rect x="400" y="590" width="186" height="12" fill="#e3d6bf"/><path d="M462 600v74M524 600v74" stroke="#255b5e" stroke-width="3"/>
+     <rect x="420" y="508" width="150" height="50" fill="#2f6f73"/><path d="M495 508v50" stroke="#255b5e" stroke-width="3"/>
+     <path d="M520 590v-18h-14" fill="none" stroke="#9aa6ad" stroke-width="5" stroke-linecap="round"/>
+     <rect x="262" y="674" width="338" height="26" fill="url(#boards)"/>
+     <rect class="edge" x="262" y="470" width="338" height="230" fill="none" stroke="var(--frame)" stroke-width="4"/>
+    </g>
+
+    <!-- LIVING ROOM / THERMOSTAT (downstairs right) -->
+    <g class="room" data-room="heat" tabindex="0" role="button" aria-label="Living room heating and thermostat">
+     <rect x="600" y="470" width="338" height="230" fill="#f4ecdf"/>
+     <rect class="lit" x="600" y="470" width="338" height="230" fill="var(--warm)" style="mix-blend-mode:multiply"/>
+     <rect x="640" y="500" width="110" height="80" fill="#cfe2ee" stroke="#fff" stroke-width="6"/>
+     <!-- sofa -->
+     <rect x="640" y="620" width="170" height="54" rx="12" fill="#c9774a"/><rect x="652" y="600" width="146" height="34" rx="10" fill="#d98a5c"/>
+     <!-- thermostat -->
+     <g transform="translate(860 540)"><rect width="46" height="46" rx="23" fill="#fff" stroke="#c4ccd2" stroke-width="3"/><circle cx="23" cy="23" r="12" fill="#1f6f78"/><text x="23" y="28" font-size="12" font-weight="800" text-anchor="middle" fill="#fff" font-family="Manrope,sans-serif">20°</text></g>
+     <g transform="translate(828 618)"><rect width="90" height="50" rx="6" fill="#fff" stroke="#c4ccd2" stroke-width="3"/><path d="M14 6v38M30 6v38M46 6v38M62 6v38M78 6v38" stroke="#d7dde2" stroke-width="4"/></g>
+     <rect x="600" y="674" width="338" height="26" fill="url(#boards)"/>
+     <rect class="edge" x="600" y="470" width="338" height="230" fill="none" stroke="var(--frame)" stroke-width="4"/>
+    </g>
+
+    <!-- OUTSIDE -->
+    <g class="room" data-room="outside" tabindex="0" role="button" aria-label="Outside taps, pipes and drains">
+     <rect x="938" y="520" width="210" height="180" fill="#dcebd3"/>
+     <rect class="lit" x="938" y="520" width="210" height="180" fill="var(--warm)" style="mix-blend-mode:multiply"/>
+     <path d="M960 300 v360" stroke="#7d8a93" stroke-width="10"/><rect x="948" y="650" width="34" height="14" fill="#7d8a93"/>
+     <g transform="translate(990 600)"><rect width="16" height="24" fill="#9aa6ad"/><path d="M16 10h20v12" fill="none" stroke="#9aa6ad" stroke-width="6" stroke-linecap="round"/><circle cx="8" cy="4" r="9" fill="#c0392b"/></g>
+     <rect x="1050" y="684" width="70" height="12" rx="3" fill="#7d8a93"/><path d="M1058 690h54" stroke="#5e6a72" stroke-width="3" stroke-dasharray="6 5"/>
+     <g fill="#7fae6e"><circle cx="1110" cy="640" r="22"/><circle cx="1086" cy="652" r="16"/><rect x="1104" y="652" width="8" height="34" fill="#7a5a3c"/></g>
+     <rect class="edge" x="938" y="520" width="210" height="180" fill="none" stroke="var(--frame)" stroke-width="3" stroke-dasharray="8 8" opacity=".5"/>
+    </g>
+
+    <!-- house frame -->
+    <rect x="262" y="240" width="676" height="460" fill="none" stroke="var(--frame)" stroke-width="10"/>
+    <path d="M262 470 H938" stroke="var(--frame)" stroke-width="10"/>
+
+    <!-- pins -->
+    <g class="pin" id="pins"></g>
+   </g>
+  </svg>
+  <button class="btn ghost back" id="back" type="button">Back to the house</button>
+  </div>
+
+  <aside class="panel" id="panel" aria-live="polite">
+   <h2>Where's the problem?</h2>
+   <p class="hint">Point at a room and it lights up. Tap it, or slide to a room and press Look inside.</p>
+   <div class="picked"><span class="n" id="pn">1</span><div><div class="nm" id="pname">Bathroom</div><div class="ln" id="pline">Leaks, weak showers, new bathrooms</div></div></div>
+   <input class="range" id="range" type="range" min="1" max="6" value="1" aria-label="Choose a room">
+   <div class="ticks"><span>Loft</span><span>Outside</span></div>
+   <button class="btn primary" id="go" type="button">Look inside</button>
+   <div class="list" id="list" aria-label="Rooms"></div>
+  </aside>
+
+  <div class="inside-card" id="inside" aria-live="polite">
+   <h3 id="iname">Bathroom</h3>
+   <p class="sub">What's going on? Pick the closest match.</p>
+   <div class="chips" id="probs"></div>
+   <div class="fix" id="fix"><p id="fixText"></p><div class="row"><span class="price">Typical visit: <span class="ph">price to confirm</span></span></div><div class="row" style="margin-top:12px"><a class="btn primary" id="bookThis" href="#book">Book this job</a><a class="btn ghost" href="tel:01144960456">Call instead</a></div></div>
+  </div>
+ </div>
+</div>
+
+<div class="trust" aria-label="Why choose us">
+ <div><span class="ph">Gas Safe number</span><small>Registered engineers</small></div>
+ <div><span class="ph">Google rating</span><small>Your reviews appear here</small></div>
+ <div>Fixed price before we start<small>No surprises on the bill</small></div>
+ <div><span class="ph">Same-week visits</span><small>Response time to confirm</small></div>
+</div>
+
+<section class="s" id="services"><h2>What we fix</h2><p class="lead">From a dripping tap to a new boiler. Every job gets a clear price before any work starts.</p><div class="grid" id="svcGrid"></div></section>
+
+<section class="s" id="how"><h2>How it works</h2><p class="lead">Three steps, no chasing.</p>
+ <div class="steps"><div><h3>Show us the problem</h3><p>Use the house above, or tell us in a sentence. Add a photo if you like.</p></div><div><h3>Pick a day</h3><p>Choose a morning, afternoon or evening slot that suits you. We text to confirm.</p></div><div><h3>Fixed, tidy, tested</h3><p>We agree the price first, do the job, test it and leave the place clean.</p></div></div>
+</section>
+
+<section class="s" id="book"><h2>Book a visit</h2><p class="lead">Takes about a minute. We'll text you to confirm.</p>
+ <div class="book">
+  <form id="form" novalidate>
+   <label>What needs doing?<select id="job" required><option value="">Choose a job</option></select></label>
+   <label>Your postcode<input id="pc" autocomplete="postal-code" placeholder="e.g. S11 8YZ" required></label>
+   <div><b style="font-size:15px">Which day?</b><div class="days" id="days" style="margin-top:8px"></div></div>
+   <div><b style="font-size:15px">What time?</b><div class="slots" id="slots" style="margin-top:8px"></div></div>
+   <label>Your name<input id="nm" autocomplete="name" required></label>
+   <label>Mobile number<input id="ph" type="tel" autocomplete="tel" required></label>
+   <div class="err" id="err" role="alert"></div>
+   <button class="btn primary" type="submit">Request this visit</button>
+   <div class="done" id="done" role="status"></div>
+  </form>
+  <div class="side"><h3>Do we cover you?</h3><p>Type your postcode to check. We work across Sheffield and Rotherham.</p>
+   <div class="area"><input id="pc2" placeholder="Postcode" aria-label="Postcode to check"><button class="btn primary" id="check" type="button">Check</button></div><div id="areaMsg" aria-live="polite"></div>
+   <p style="margin-top:22px">Smell gas? Leave the house, don't use switches, and call the National Gas Emergency line on 0800 111 999.</p></div>
+ </div>
+</section>
+</main>
+<footer><div class="bar"><span>Northside Heating & Plumbing · <span class="ph">company details</span></span><span>0114 496 0456 · <span class="ph">email</span></span></div></footer>
+<div class="mbar"><a class="btn ghost" href="tel:01144960456">Call</a><a class="btn primary" href="#book">Book a visit</a></div>
+
+<script>
+const ROOMS=[
+ {k:'bath',n:'Bathroom',line:'Leaks, weak showers, new bathrooms',box:[262,240,338,230],probs:[['Dripping tap','A new washer or cartridge. Usually fixed in one visit.','Tap repair'],['Toilet keeps running','We replace the fill valve or flush seal so it stops wasting water.','Toilet repair'],['Weak shower','We check the pressure and the valve, then clean or replace what\'s causing it.','Shower repair'],['New bathroom','Design, supply and fit, start to finish, with one team.','Bathroom quote']]},
+ {k:'rads',n:'Radiators',line:'Cold spots, noisy pipes, new radiators',box:[600,240,338,230],probs:[['Cold at the top','Usually trapped air. We bleed the system and rebalance it.','Radiator bleed and balance'],['Cold at the bottom','Often sludge in the system. A clean-out or powerflush gets the heat back.','System clean'],['Want a new radiator','Swap, move or upsize radiators, including towel rails.','New radiator']]},
+ {k:'boiler',n:'Boiler & kitchen',line:'No heating, no hot water, pressure drops',box:[262,470,338,230],probs:[['No heating or hot water','A Gas Safe engineer finds the fault and fixes it, with the price agreed first.','Boiler repair'],['Pressure keeps dropping','We trace the leak or faulty part rather than just topping it up.','Boiler repair'],['Annual service','A full safety check and service to keep it running and your warranty valid.','Boiler service'],['Leak under the sink','We find and fix the joint, trap or valve that\'s leaking.','Leak repair']]},
+ {k:'heat',n:'Heating controls',line:'Thermostats, timers, smart heating',box:[600,470,338,230],probs:[['House never gets warm','We check the boiler settings, controls and radiators together.','Heating check'],['Fit a smart thermostat','Control your heating from your phone, fitted and set up for you.','Smart thermostat'],['Timer not working','We repair or replace the programmer so the heating comes on when it should.','Controls repair']]},
+ {k:'loft',n:'Loft & water tank',line:'Noisy tanks, frozen pipes, insulation',box:[430,120,340,130],probs:[['Noisy water tank','Usually a worn float valve. Quick to replace.','Tank repair'],['Pipes freeze in winter','We lag exposed pipes and tanks before the cold snap.','Pipe lagging'],['Remove an old tank','Taken out safely when you move to a combi boiler.','Tank removal']]},
+ {k:'outside',n:'Outside',line:'Outside taps, drains, frozen pipes',box:[938,520,210,180],probs:[['Outside tap frozen or split','We replace it with a frost-proof tap and lag the pipe.','Outside tap'],['Fit an outside tap','A new tap with a proper isolating valve inside.','Outside tap'],['Slow or blocked drain','We clear it and tell you what caused it.','Drain clearance']]}
+];
+const $=id=>document.getElementById(id);
+const stage=$('stage'),cam=$('cam'),svg=document.querySelector('svg'),range=$('range'),list=$('list');
+let cur=0,inside=false;const BASE=()=>innerWidth>900?'translate(-150px,70px) scale(.76)':'translate(0px,0px) scale(1)';cam.style.transform=BASE();addEventListener('resize',()=>{if(!inside)cam.style.transform=BASE();});const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// pins
+const pins=$('pins');ROOMS.forEach((r,i)=>{const [x,y,w,h]=r.box,cx=x+w/2,cy=y+(r.k==='loft'?h*.72:h*.42);
+ pins.insertAdjacentHTML('beforeend',`<g transform="translate(${cx} ${cy})"><circle class="pulse" r="16" fill="#b9622c"/><circle r="15" fill="#fff" stroke="#b9622c" stroke-width="4"/><text y="5" text-anchor="middle" font-size="15" font-weight="800" fill="#b9622c" font-family="Manrope,sans-serif">${i+1}</text></g>`);});
+list.innerHTML=ROOMS.map((r,i)=>`<button type="button" data-i="${i}"><b>${i+1}. ${r.n}</b><span>${r.probs.length} common jobs</span></button>`).join('');
+function pick(i,focus,quiet){cur=(i+ROOMS.length)%ROOMS.length;const r=ROOMS[cur];
+ document.querySelectorAll('.room').forEach(g=>g.classList.toggle('on',g.dataset.room===r.k));
+ if(!quiet)stage.classList.add('focus');$('pn').textContent=cur+1;$('pname').textContent=r.n;$('pline').textContent=r.line;range.value=cur+1;
+ list.querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-current',j===cur));
+ if(focus)document.querySelector(`.room[data-room="${r.k}"]`).focus({preventScroll:true});}
+function zoomTo(i){pick(i);const [x,y,w,h]=ROOMS[cur].box;const wide=innerWidth>900;
+ const s=wide?Math.min(720/w,700/h)*.95:Math.min(1200/w,800/h)*.92;const cx=x+w/2,cy=y+h/2,fx=wide?400:600;
+ cam.style.transform=`translate(${fx-cx*s}px,${400-cy*s}px) scale(${s})`;stage.classList.add('inside');inside=true;
+ const r=ROOMS[cur];$('iname').textContent=r.n;$('fix').classList.remove('show');
+ $('probs').innerHTML=r.probs.map((p,j)=>`<button class="chip" type="button" data-p="${j}" aria-pressed="false">${p[0]}</button>`).join('');
+ if(!wide)setTimeout(()=>$('inside').scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'}),reduce?0:900);
+ setTimeout(()=>{const c=$('probs').querySelector('.chip');if(c)c.focus({preventScroll:true});},reduce?0:1300);}
+function out(){cam.style.transform=BASE();stage.classList.remove('inside');inside=false;pick(cur,true);}
+document.querySelectorAll('.room').forEach(g=>{const i=ROOMS.findIndex(r=>r.k===g.dataset.room);
+ g.addEventListener('mouseenter',()=>{if(!inside)pick(i);});
+ g.addEventListener('click',()=>{if(!inside)zoomTo(i);});
+ g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();if(!inside)zoomTo(i);}
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();pick(cur+1,true);}if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();pick(cur-1,true);}});});
+range.addEventListener('input',()=>pick(+range.value-1));
+document.getElementById('scene').addEventListener('mouseleave',()=>{if(!inside){stage.classList.remove('focus');document.querySelectorAll('.room').forEach(g=>g.classList.remove('on'));}});
+range.addEventListener('keydown',e=>{if(e.key==='Enter')zoomTo(cur);});
+list.addEventListener('click',e=>{const b=e.target.closest('button');if(b)pick(+b.dataset.i);});
+list.addEventListener('dblclick',e=>{const b=e.target.closest('button');if(b)zoomTo(+b.dataset.i);});
+$('go').addEventListener('click',()=>zoomTo(cur));
+$('back').addEventListener('click',out);
+addEventListener('keydown',e=>{if(e.key==='Escape'&&inside)out();});
+$('probs').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const p=ROOMS[cur].probs[+b.dataset.p];
+ $('probs').querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));$('fixText').textContent=p[1];$('fix').classList.add('show');$('bookThis').dataset.job=p[2];});
+$('bookThis').addEventListener('click',()=>{const j=$('bookThis').dataset.job;if(j){$('job').value=j;}setTimeout(()=>$('pc').focus(),600);});
+pick(0,false,true);document.querySelectorAll('.room').forEach(g=>g.classList.remove('on'));
+// services
+const JOBS=[...new Set(ROOMS.flatMap(r=>r.probs.map(p=>p[2])))];
+$('job').insertAdjacentHTML('beforeend',JOBS.map(j=>`<option>${j}</option>`).join(''));
+$('svcGrid').innerHTML=[['Boiler repairs and servicing','Fault finding, repairs and yearly services by Gas Safe engineers.','Boiler repair'],['New boilers','Advice on the right boiler for your home, fitted and registered.','Boiler repair'],['Radiators and heating','Cold spots, system cleans, new radiators and smart controls.','Heating check'],['Leaks and taps','Dripping taps, leaking pipes and running toilets, fixed fast.','Leak repair'],['Bathrooms','Full bathroom refits with one team, start to finish.','Bathroom quote'],['Outside and drains','Frost-proof outside taps, lagging and drain clearance.','Drain clearance']].map(([t,d,j])=>`<div class="svc"><h3>${t}</h3><p>${d}</p><button class="btn ghost" type="button" data-job="${j}">Book this</button></div>`).join('');
+$('svcGrid').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$('job').value=b.dataset.job;$('book').scrollIntoView({behavior:reduce?'auto':'smooth'});setTimeout(()=>$('pc').focus(),600);});
+// booking
+let day=null,slot=null;const d0=new Date();
+$('days').innerHTML=[...Array(6)].map((_,i)=>{const d=new Date(d0);d.setDate(d.getDate()+i+1);return`<button class="chip" type="button" data-d="${d.toDateString()}" aria-pressed="false">${d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})}</button>`;}).join('');
+$('slots').innerHTML=['Morning (8 to 12)','Afternoon (12 to 5)','Evening (5 to 8)'].map(s=>`<button class="chip" type="button" data-s="${s}" aria-pressed="false">${s}</button>`).join('');
+$('days').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;day=b.dataset.d;$('days').querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));});
+$('slots').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;slot=b.dataset.s;$('slots').querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));});
+const pcOK=v=>/^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i.test(v.trim());
+$('form').addEventListener('submit',e=>{e.preventDefault();const miss=[];
+ if(!$('job').value)miss.push('choose a job');if(!pcOK($('pc').value))miss.push('enter a full postcode');if(!day)miss.push('pick a day');if(!slot)miss.push('pick a time');
+ if(!$('nm').value.trim())miss.push('add your name');if($('ph').value.replace(/\D/g,'').length<10)miss.push('add a mobile number');
+ if(miss.length){$('err').textContent='Nearly there. Please '+miss.join(', ')+'.';$('done').style.display='none';return;}
+ $('err').textContent='';$('done').style.display='block';$('done').textContent=`Thanks ${$('nm').value.trim().split(' ')[0]}. This is a demo, so nothing was sent. On the real site, we'd text you to confirm your ${$('job').value.toLowerCase()} on ${new Date(day).toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})}, ${slot.toLowerCase()}.`;});
+$('check').addEventListener('click',()=>{const v=$('pc2').value.trim().toUpperCase();const ok=/^(S\d|S\d\d|S\d\d\d)\s?\d[A-Z]{2}$/.test(v)||/^S(60|61|62|63|65|66)/.test(v.replace(/\s/g,''));
+ $('areaMsg').textContent=!v?'Type a postcode first.':!pcOK(v)?'That doesn\'t look like a full postcode. Try something like S11 8YZ.':ok?'Yes, we cover '+v+'. Book a visit below.':'We may not cover '+v+'. Call us and we\'ll check.';});
+</script>
+</body>
+</html>
