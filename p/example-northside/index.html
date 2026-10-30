@@ -3,143 +3,131 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
 <title>Northside Heating & Plumbing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1d2a36;--muted:#55636f;--line:#d9dfe4;--paper:#f7f4ee;--sky:#e4edf3;--ground:#d6e5cd;--wall:#fbf8f2;--frame:#24323f;--roof:#3a4957;--copper:#b9622c;--copper-d:#8f4a1f;--teal:#1f6f78;--teal-l:#d7ecee;--warm:#ffd79a;--card:#ffffff}
+:root{--ink:#14202b;--muted:#5b6873;--line:#dde2e6;--paper:#f6f5f2;--card:#fff;--navy:#162635;--copper:#b4602b;--copper-d:#8e4820;--teal:#1d6a73;--teal-l:#e1eff0;--sky:#dfe8ee}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}button,input,select{font:inherit}
-.strip{background:var(--frame);color:#fff;font-size:14px;text-align:center;padding:8px 16px}
-.strip b{font-weight:700}
-header{position:sticky;top:0;z-index:30;background:rgba(247,244,238,.96);border-bottom:1px solid var(--line)}
-.bar{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:20px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.01em}
-.logo i{width:34px;height:34px;border-radius:9px;background:var(--copper);display:grid;place-items:center;color:#fff;font-style:normal;font-family:Fraunces,serif;font-size:20px}
-nav{display:flex;gap:6px;margin-left:auto}
-nav a{text-decoration:none;padding:10px 14px;border-radius:10px;color:var(--muted);font-weight:600}
-nav a:hover{background:#ece6db;color:var(--ink)}
-.call{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;padding:11px 18px;border-radius:12px;font-weight:700;white-space:nowrap}
-.call:hover{background:#000}
-h1,h2,h3{letter-spacing:-.02em;margin:0}
-.serif{font-family:Fraunces,Georgia,serif;font-weight:600}
+h1,h2,h3{font-family:"Inter Tight",Inter,system-ui,sans-serif;letter-spacing:-.025em;margin:0;font-weight:700}
+.strip{background:var(--navy);color:#dfe6ec;font-size:13.5px;text-align:center;padding:8px 16px}
+.strip b{color:#fff}
+header{position:sticky;top:0;z-index:30;background:rgba(246,245,242,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{max-width:1280px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;font:700 18px/1 "Inter Tight",sans-serif;letter-spacing:-.02em}
+.logo i{width:34px;height:34px;border-radius:8px;background:var(--navy);display:grid;place-items:center;color:#fff;font-style:normal;position:relative}
+.logo i:after{content:"";position:absolute;right:6px;bottom:6px;width:7px;height:7px;border-radius:50%;background:var(--copper)}
+nav{display:flex;gap:4px;margin-left:auto}
+nav a{text-decoration:none;padding:10px 14px;border-radius:9px;color:var(--muted);font-weight:600;font-size:15px}
+nav a:hover{background:#ebe8e2;color:var(--ink)}
+.call{display:inline-flex;align-items:center;gap:8px;background:var(--copper);color:#fff;text-decoration:none;padding:11px 18px;border-radius:10px;font-weight:700;white-space:nowrap;font-size:15px}
+.call:hover{background:var(--copper-d)}
 
-/* ---------- the scene ---------- */
-.hero{max-width:1240px;margin:0 auto;padding:28px 20px 12px}
-.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:16px}
-.intro h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(34px,4.4vw,56px);line-height:1.04;max-width:760px}
-.intro p{margin:8px 0 0;color:var(--muted);max-width:620px}
-.stage{position:relative;border-radius:26px;overflow:hidden;background:var(--sky);border:1px solid var(--line);aspect-ratio:16/9;max-height:calc(100vh - 150px);min-height:460px;width:100%;touch-action:manipulation}
-.stage svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-#cam{transform-origin:0 0;transition:transform 1.25s cubic-bezier(.65,0,.25,1)}
-.room{cursor:pointer;transition:opacity .5s ease}
-.room .lit{opacity:0;transition:opacity .45s ease}
-.room:hover .lit,.room.on .lit{opacity:1}
-.stage.focus .room{opacity:.28}
-.stage.focus .room.on{opacity:1}
-.stage.inside .room:not(.on){opacity:.12}
-.room:focus{outline:none}
-.room:focus-visible .edge{stroke:var(--copper);stroke-width:6}
-.pin{pointer-events:none;transition:opacity .4s}
+.hero{max-width:1280px;margin:0 auto;padding:30px 24px 10px}
+.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:18px}
+.eyebrow{font:700 12.5px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:12px}
+.intro h1{font-size:clamp(34px,4vw,52px);line-height:1.02;max-width:640px}
+.intro p{margin:12px 0 0;color:var(--muted);max-width:600px;font-size:18px}
+@media (min-width:901px){.intro{flex-wrap:nowrap}.intro>div{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;width:100%;flex-wrap:wrap}.intro p{max-width:400px;margin:0 0 4px}}
+.stage{position:relative;border-radius:22px;overflow:hidden;background:var(--sky);aspect-ratio:16/9;max-height:calc(100vh - 140px);min-height:480px;width:100%;box-shadow:0 1px 0 var(--line),0 30px 60px -30px rgba(20,32,43,.35)}
+.scene{position:absolute;inset:0}
+.scene canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}
+.scene.hovering canvas{cursor:pointer}
+.pins{position:absolute;inset:0;pointer-events:none}
+.pin{position:absolute;left:0;top:0;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:#fff;color:var(--copper);font:800 14px/30px Inter,sans-serif;text-align:center;box-shadow:0 0 0 3px var(--copper),0 6px 16px rgba(0,0,0,.25);transition:opacity .4s,transform .3s}
+.pin:before{content:"";position:absolute;inset:-3px;border-radius:50%;border:3px solid var(--copper);animation:ring 2.4s ease-out infinite}
+.pin.on{transform:translate(-50%,-50%) scale(1.18);background:var(--copper);color:#fff}
+@keyframes ring{0%{transform:scale(1);opacity:.7}80%,100%{transform:scale(2);opacity:0}}
 .stage.inside .pin{opacity:0}
-.pulse{animation:pulse 2.4s ease-out infinite;transform-box:fill-box;transform-origin:center}
-@keyframes pulse{0%{transform:scale(.6);opacity:.7}70%{transform:scale(1.9);opacity:0}100%{opacity:0}}
-.drip{animation:drip 1.8s ease-in infinite}
-@keyframes drip{0%{transform:translateY(0);opacity:0}15%{opacity:1}80%{transform:translateY(26px);opacity:1}100%{transform:translateY(30px);opacity:0}}
-.heat path{animation:heat 2.6s ease-in-out infinite;opacity:.0}
-.heat path:nth-child(2){animation-delay:.5s}.heat path:nth-child(3){animation-delay:1s}
-@keyframes heat{0%{opacity:0;transform:translateY(6px)}40%{opacity:.75}100%{opacity:0;transform:translateY(-16px)}}
-.flame{animation:flame .5s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}
-@keyframes flame{from{transform:scaleY(.85)}to{transform:scaleY(1.1)}}
-.smoke{animation:smoke 5s linear infinite;opacity:0}
-@keyframes smoke{0%{opacity:0;transform:translate(0,0)}20%{opacity:.5}100%{opacity:0;transform:translate(18px,-60px)}}
-
-/* panel (the "choose your floor" card) */
-.panel{position:absolute;right:22px;top:22px;bottom:22px;width:min(380px,40%);background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:20px;padding:24px 24px 20px;display:flex;flex-direction:column;gap:12px;backdrop-filter:blur(6px);transition:transform .6s cubic-bezier(.65,0,.25,1),opacity .4s}
-.panel h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:30px;line-height:1.08}
-.panel .hint{font-size:14px;color:var(--muted);margin:0}
-.picked{display:flex;align-items:baseline;gap:14px;margin-top:6px}
-.picked .n{font-family:Fraunces,Georgia,serif;font-size:64px;line-height:1;color:var(--copper)}
-.picked .nm{font-weight:800;font-size:22px;line-height:1.15}
-.picked .ln{font-size:15px;color:var(--muted)}
-.range{width:100%;accent-color:var(--copper);height:34px}
-.ticks{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:-8px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:14px 20px;font-weight:800;cursor:pointer;min-height:48px;text-decoration:none}
+.tip{position:absolute;left:0;top:0;transform:translate(-50%,calc(-100% - 26px));background:var(--navy);color:#fff;font-weight:700;font-size:14px;padding:7px 12px;border-radius:8px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s}
+.tip.show{opacity:1}
+.load{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-weight:600;transition:opacity .6s}
+.panel{position:absolute;right:20px;top:20px;bottom:20px;width:min(370px,38%);background:rgba(255,255,255,.95);border:1px solid rgba(20,32,43,.08);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px;backdrop-filter:blur(10px);box-shadow:0 18px 40px -18px rgba(20,32,43,.3);transition:transform .6s cubic-bezier(.65,0,.25,1),opacity .4s}
+.panel h2{font-size:28px;line-height:1.08}
+.panel .hint{font-size:14.5px;color:var(--muted);margin:0}
+.picked{display:flex;align-items:center;gap:14px;margin-top:4px;padding:14px;border-radius:14px;background:#f4f2ee}
+.picked .n{width:46px;height:46px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;font:800 22px/1 "Inter Tight",sans-serif;flex:none}
+.picked .nm{font-weight:700;font-size:19px;line-height:1.15}
+.picked .ln{font-size:14px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:11px;padding:14px 20px;font-weight:700;cursor:pointer;min-height:48px;text-decoration:none;font-size:16px}
 .btn.primary{background:var(--copper);color:#fff}.btn.primary:hover{background:var(--copper-d)}
-.btn.ghost{background:#fff;border:1.5px solid var(--ink);color:var(--ink)}.btn.ghost:hover{background:#f1ede6}
-.btn:focus-visible,.chip:focus-visible,.range:focus-visible,nav a:focus-visible,.call:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
-.list{display:flex;flex-direction:column;gap:6px;margin-top:auto}
-.list button{all:unset;cursor:pointer;display:flex;justify-content:space-between;gap:10px;padding:9px 12px;border-radius:10px;font-weight:600;font-size:15px}
-.list button:hover{background:#f3eee6}.list button[aria-current=true]{background:var(--teal-l);color:var(--teal)}
-.list button:focus-visible{outline:3px solid var(--teal)}
-.list span{color:var(--muted);font-weight:500}
-/* inside view */
-.inside-card{position:absolute;right:22px;top:22px;bottom:22px;overflow:auto;width:min(380px,40%);background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 50px rgba(29,42,54,.18);opacity:0;transform:translateY(24px);pointer-events:none;transition:opacity .45s .55s,transform .55s .55s cubic-bezier(.2,.8,.2,1)}
+.btn.ghost{background:#fff;border:1.5px solid var(--ink);color:var(--ink)}.btn.ghost:hover{background:#f1efeb}
+.btn:focus-visible,.chip:focus-visible,nav a:focus-visible,.call:focus-visible,.list button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.list{display:flex;flex-direction:column;gap:2px;margin-top:auto}
+.list button{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;font-weight:600;font-size:15px}
+.list button:hover{background:#f3f1ed}.list button[aria-current=true]{background:var(--teal-l);color:var(--teal)}
+.list span{color:var(--muted);font-weight:500;font-size:13.5px}
+.inside-card{position:absolute;right:20px;top:20px;bottom:20px;overflow:auto;width:min(370px,38%);background:#fff;border-radius:18px;padding:24px;box-shadow:0 18px 50px rgba(20,32,43,.22);opacity:0;transform:translateY(24px);pointer-events:none;transition:opacity .45s .7s,transform .55s .7s cubic-bezier(.2,.8,.2,1)}
 .stage.inside .inside-card{opacity:1;transform:none;pointer-events:auto}
-.inside-card .chips{flex-direction:column;align-items:stretch}.inside-card .chip{text-align:left}
 .stage.inside .panel{transform:translateX(130%);opacity:0;pointer-events:none}
-.back{position:absolute;left:22px;top:22px;opacity:0;pointer-events:none;transition:opacity .4s .6s}
+.back{position:absolute;left:20px;top:20px;opacity:0;pointer-events:none;transition:opacity .4s .7s;box-shadow:0 8px 20px rgba(0,0,0,.15);border:0}
 .stage.inside .back{opacity:1;pointer-events:auto}
-.inside-card h3{font-family:Fraunces,Georgia,serif;font-size:28px;font-weight:600}
-.inside-card .sub{color:var(--muted);margin:4px 0 12px;font-size:15px}
+.inside-card h3{font-size:26px}
+.inside-card .sub{color:var(--muted);margin:4px 0 14px;font-size:15px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;min-height:44px}
-.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
-.fix{margin-top:14px;padding:14px 16px;border-radius:14px;background:var(--teal-l);display:none}
+.inside-card .chips{flex-direction:column;align-items:stretch}.inside-card .chip{text-align:left}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:11px;padding:11px 15px;font-weight:600;cursor:pointer;min-height:46px;color:var(--ink)}
+.chip:hover{border-color:#b9c2c9}
+.chip[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.fix{margin-top:14px;padding:16px;border-radius:14px;background:var(--teal-l);display:none}
 .fix.show{display:block}
 .fix p{margin:0 0 10px}
 .fix .price{font-size:14px;color:var(--teal);font-weight:700}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.ph{display:inline-block;border:1.5px dashed #b9a98f;border-radius:8px;padding:1px 8px;color:#7a6a52;font-size:.92em;background:#fffaf0}
+.ph{display:inline-block;border:1.5px dashed #b9a98f;border-radius:7px;padding:0 7px;color:#7a6a52;font-size:.92em;background:#fffaf0}
+.ctrl{position:absolute;left:20px;bottom:18px;font-size:13px;color:#37474f;background:rgba(255,255,255,.85);padding:6px 11px;border-radius:8px;transition:opacity .4s}
+.stage.inside .ctrl{opacity:0}
 
-/* ---------- sections ---------- */
-section.s{max-width:1240px;margin:0 auto;padding:64px 20px}
-.s h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(28px,3.2vw,40px)}
-.s .lead{color:var(--muted);max-width:640px;margin:8px 0 28px}
-.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1240px;margin:18px auto 0;padding:0 20px}
-.trust div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-weight:700;font-size:15px}
-.trust small{display:block;color:var(--muted);font-weight:500}
+section.s{max-width:1280px;margin:0 auto;padding:72px 24px}
+.s h2{font-size:clamp(28px,3.2vw,42px)}
+.s .lead{color:var(--muted);max-width:640px;margin:10px 0 30px;font-size:18px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1280px;margin:20px auto 0;padding:0 24px}
+.trust div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-weight:700;font-size:15px}
+.trust small{display:block;color:var(--muted);font-weight:500;margin-top:2px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.svc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
-.svc h3{font-size:20px;margin-bottom:6px}.svc p{margin:0;color:var(--muted)}
-.svc button{margin-top:14px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column}
+.svc h3{font-size:20px;margin-bottom:6px}.svc p{margin:0;color:var(--muted);flex:1}
+.svc button{margin-top:16px;align-self:flex-start}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:st}
-.steps div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;counter-increment:st}
-.steps div:before{content:counter(st);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--copper);color:#fff;font-weight:800;margin-bottom:12px}
+.steps div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;counter-increment:st}
+.steps div:before{content:"0" counter(st);display:block;font:800 15px/1 "Inter Tight",sans-serif;color:var(--copper);margin-bottom:14px;letter-spacing:.05em}
+.steps h3{font-size:20px;margin-bottom:6px}.steps p{margin:0;color:var(--muted)}
 .book{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
-form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;display:grid;gap:16px}
-label{font-weight:700;font-size:15px;display:grid;gap:6px}
-input,select{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;min-height:48px;background:#fff;color:var(--ink);font-size:16px}
+form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;display:grid;gap:16px}
+label{font-weight:600;font-size:15px;display:grid;gap:6px}
+input,select{border:1.5px solid var(--line);border-radius:11px;padding:12px 14px;min-height:48px;background:#fff;color:var(--ink);font-size:16px}
 input:focus,select:focus{outline:3px solid var(--teal);outline-offset:1px;border-color:var(--teal)}
 .days,.slots{display:flex;gap:8px;flex-wrap:wrap}
 .err{color:#b42318;font-size:14px;font-weight:600;min-height:20px}
-.done{display:none;background:var(--teal-l);border-radius:16px;padding:18px;font-weight:600}
-.side{background:var(--frame);color:#fff;border-radius:22px;padding:26px}
-.side h3{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:26px}
-.side p{color:#c9d3db}
-.area{display:flex;gap:8px;margin-top:10px}.area input{flex:1}
+.done{display:none;background:var(--teal-l);border-radius:14px;padding:18px;font-weight:600}
+.side{background:var(--navy);color:#fff;border-radius:20px;padding:28px}
+.side h3{font-size:26px}
+.side p{color:#c5d0d9}
+.area{display:flex;gap:8px;margin-top:10px}.area input{flex:1;min-width:0}
 #areaMsg{margin-top:10px;font-weight:600;min-height:24px}
-footer{background:#e9e3d8;margin-top:40px}
-footer .bar{flex-wrap:wrap;justify-content:space-between;color:var(--muted);font-size:15px;padding:28px 20px}
+footer{background:#ebe8e2;margin-top:40px}
+footer .bar{flex-wrap:wrap;justify-content:space-between;color:var(--muted);font-size:15px;padding:28px 24px}
 .mbar{display:none}
 @media (max-width:900px){
- nav{display:none}.bar .call{margin-left:auto}.long{display:none}
- .back{padding:8px 12px;min-height:38px;font-size:14px;border-radius:10px}
- .stage{aspect-ratio:auto;height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;background:var(--paper);border:0;border-radius:0;overflow:visible}
- .scene{position:relative;flex-shrink:0;width:100%;aspect-ratio:3/2;border-radius:20px;overflow:hidden;background:var(--sky);border:1px solid var(--line)}
- .panel{position:relative;inset:auto;width:auto;margin-top:12px}
+ nav{display:none}.bar .call{margin-left:auto}.long{display:none}.bar{padding:12px 16px}
+ .hero{padding:22px 16px 8px}section.s{padding:56px 16px}.trust{padding:0 16px}
+ .stage{aspect-ratio:auto;height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;background:transparent;box-shadow:none;border-radius:0;overflow:visible}
+ .scene{position:relative;flex-shrink:0;width:100%;aspect-ratio:1/1;scroll-margin-top:76px;border-radius:18px;overflow:hidden;background:var(--sky)}
+ .panel{position:relative;inset:auto;width:auto;margin-top:12px;box-shadow:none;border-color:var(--line)}
  .stage.inside .panel{display:none}
- .inside-card{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:auto;margin-top:12px;display:none;overflow:visible}
+ .inside-card{position:relative;inset:auto;width:auto;margin-top:12px;display:none;overflow:visible;box-shadow:none;border:1px solid var(--line)}
  .inside-card .chips{flex-direction:row}
  .stage.inside .inside-card{display:block}
- .back{top:10px;left:10px}
+ .back{top:10px;left:10px;padding:8px 12px;min-height:38px;font-size:14px;border-radius:10px}
+ .ctrl{display:none}
  .trust{grid-template-columns:1fr 1fr}.grid,.steps,.book{grid-template-columns:1fr}
- .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(247,244,238,.97);border-top:1px solid var(--line)}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(246,245,242,.97);border-top:1px solid var(--line)}
  .mbar a{flex:1}
  body{padding-bottom:84px}
 }
-@media (min-width:901px){.scene{position:absolute;inset:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -151,128 +139,19 @@ footer .bar{flex-wrap:wrap;justify-content:space-between;color:var(--muted);font
 
 <main id="top">
 <div class="hero">
- <div class="intro"><div><h1>Show us where the problem is.</h1><p>Tap a room to look inside, pick what's wrong, and book the right engineer in under a minute. Sheffield and Rotherham.</p></div></div>
+ <div class="intro"><div><div><div class="eyebrow">Gas Safe heating & plumbing · Sheffield and Rotherham</div><h1>Show us where the problem is.</h1></div><p>Choose a room in the house, look inside, pick what's wrong and book the right engineer in under a minute.</p></div></div>
  <div class="stage" id="stage">
-  <div class="scene" id="scene">
-  <svg viewBox="0 0 1200 800" role="group" aria-label="Cutaway drawing of a house. Choose a room to look inside.">
-   <defs>
-    <pattern id="tiles" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="22" height="22" fill="#e6f0f1"/><path d="M22 0V22M0 22H22" stroke="#c9dcdf" stroke-width="2"/></pattern>
-    <pattern id="boards" width="60" height="14" patternUnits="userSpaceOnUse"><rect width="60" height="14" fill="#e8d7bd"/><path d="M0 14H60M30 0V14" stroke="#d6c09f" stroke-width="2"/></pattern>
-    <pattern id="insul" width="24" height="16" patternUnits="userSpaceOnUse"><rect width="24" height="16" fill="#f5e3b5"/><path d="M0 12 L6 4 L12 12 L18 4 L24 12" fill="none" stroke="#e4c47c" stroke-width="2"/></pattern>
-   </defs>
-   <g id="cam">
-    <!-- sky details -->
-    <circle cx="140" cy="120" r="46" fill="#fff6dc"/>
-    <g fill="#fff" opacity=".9"><ellipse cx="1030" cy="110" rx="70" ry="22"/><ellipse cx="985" cy="98" rx="38" ry="22"/><ellipse cx="300" cy="170" rx="54" ry="16"/></g>
-    <!-- ground -->
-    <rect x="-800" y="700" width="2800" height="400" fill="var(--ground)"/>
-    <rect x="-800" y="700" width="2800" height="6" fill="#b9cfae"/>
-    <!-- chimney + smoke -->
-    <rect x="770" y="96" width="46" height="96" fill="var(--roof)"/>
-    <circle class="smoke" cx="793" cy="90" r="12" fill="#dfe6ea"/><circle class="smoke" style="animation-delay:2.5s" cx="793" cy="90" r="10" fill="#dfe6ea"/>
-
-    <!-- LOFT -->
-    <g class="room" data-room="loft" tabindex="0" role="button" aria-label="Loft and water tank">
-     <path d="M262 240 L600 78 L938 240 Z" fill="url(#insul)"/>
-     <path class="lit" d="M262 240 L600 78 L938 240 Z" fill="var(--warm)" opacity="0" style="mix-blend-mode:multiply"/>
-     <g transform="translate(520 160)"><rect width="150" height="66" rx="6" fill="#7aa7b4"/><rect x="10" y="10" width="130" height="14" rx="3" fill="#9fc3cc"/><rect x="66" y="66" width="10" height="20" fill="#9aa6ad"/></g>
-     <rect x="380" y="214" width="12" height="26" fill="#9aa6ad"/>
-     <path class="edge" d="M262 240 L600 78 L938 240 Z" fill="none" stroke="var(--frame)" stroke-width="4"/>
-    </g>
-    <!-- roof outline -->
-    <path d="M222 252 L600 62 L978 252" fill="none" stroke="var(--roof)" stroke-width="26" stroke-linejoin="round" stroke-linecap="round"/>
-
-    <!-- BATHROOM (upstairs left) -->
-    <g class="room" data-room="bath" tabindex="0" role="button" aria-label="Bathroom">
-     <rect x="262" y="240" width="338" height="230" fill="url(#tiles)"/>
-     <rect class="lit" x="262" y="240" width="338" height="230" fill="var(--warm)" style="mix-blend-mode:multiply"/>
-     <!-- bath -->
-     <rect x="290" y="380" width="170" height="64" rx="18" fill="#fff" stroke="#c9d3d8" stroke-width="3"/>
-     <rect x="300" y="372" width="150" height="14" rx="7" fill="#fff" stroke="#c9d3d8" stroke-width="3"/>
-     <path d="M440 330 v42" stroke="#9aa6ad" stroke-width="6"/><circle cx="440" cy="326" r="12" fill="#9aa6ad"/>
-     <!-- basin + dripping tap -->
-     <rect x="505" y="372" width="70" height="20" rx="8" fill="#fff" stroke="#c9d3d8" stroke-width="3"/><rect x="532" y="392" width="16" height="52" fill="#fff" stroke="#c9d3d8" stroke-width="3"/>
-     <path d="M540 352 v14 h-8" fill="none" stroke="#9aa6ad" stroke-width="6" stroke-linecap="round"/>
-     <circle class="drip" cx="532" cy="370" r="4" fill="#5aa9c9"/>
-     <rect x="500" y="290" width="80" height="56" rx="6" fill="#dbe7ea" stroke="#c9d3d8" stroke-width="3"/>
-     <rect x="262" y="444" width="338" height="26" fill="url(#boards)"/>
-     <rect class="edge" x="262" y="240" width="338" height="230" fill="none" stroke="var(--frame)" stroke-width="4"/>
-    </g>
-
-    <!-- BEDROOM / RADIATORS (upstairs right) -->
-    <g class="room" data-room="rads" tabindex="0" role="button" aria-label="Bedroom radiators">
-     <rect x="600" y="240" width="338" height="230" fill="#f3e9f0"/>
-     <rect class="lit" x="600" y="240" width="338" height="230" fill="var(--warm)" style="mix-blend-mode:multiply"/>
-     <rect x="760" y="270" width="96" height="72" fill="#cfe2ee" stroke="#fff" stroke-width="6"/><path d="M808 270v72M760 306h96" stroke="#fff" stroke-width="5"/>
-     <!-- bed -->
-     <rect x="628" y="372" width="150" height="58" rx="10" fill="#8aa3c2"/><rect x="628" y="352" width="44" height="34" rx="8" fill="#fff"/><rect x="620" y="340" width="14" height="96" rx="4" fill="#6b5a4c"/>
-     <!-- radiator + heat -->
-     <g transform="translate(812 378)"><rect width="104" height="54" rx="6" fill="#fff" stroke="#c4ccd2" stroke-width="3"/><path d="M14 6v42M30 6v42M46 6v42M62 6v42M78 6v42M94 6v42" stroke="#d7dde2" stroke-width="4"/></g>
-     <g class="heat" fill="none" stroke="#e58b4a" stroke-width="4" stroke-linecap="round"><path d="M830 368c-6-8 6-14 0-22"/><path d="M864 368c-6-8 6-14 0-22"/><path d="M898 368c-6-8 6-14 0-22"/></g>
-     <rect x="600" y="444" width="338" height="26" fill="url(#boards)"/>
-     <rect class="edge" x="600" y="240" width="338" height="230" fill="none" stroke="var(--frame)" stroke-width="4"/>
-    </g>
-
-    <!-- KITCHEN + BOILER (downstairs left) -->
-    <g class="room" data-room="boiler" tabindex="0" role="button" aria-label="Kitchen and boiler">
-     <rect x="262" y="470" width="338" height="230" fill="#eef1e6"/>
-     <rect class="lit" x="262" y="470" width="338" height="230" fill="var(--warm)" style="mix-blend-mode:multiply"/>
-     <!-- boiler -->
-     <g transform="translate(296 500)"><rect width="78" height="104" rx="8" fill="#fff" stroke="#c4ccd2" stroke-width="3"/><rect x="18" y="62" width="42" height="26" rx="4" fill="#24323f"/><path class="flame" d="M39 84 c-10-8-4-18 0-24 c4 6 10 16 0 24z" fill="#ffb347"/><rect x="18" y="14" width="42" height="12" rx="3" fill="#d7e3e8"/><path d="M20 104v26M39 104v26M58 104v26" stroke="#b8812f" stroke-width="5"/></g>
-     <!-- units -->
-     <rect x="400" y="600" width="186" height="74" fill="#2f6f73"/><rect x="400" y="590" width="186" height="12" fill="#e3d6bf"/><path d="M462 600v74M524 600v74" stroke="#255b5e" stroke-width="3"/>
-     <rect x="420" y="508" width="150" height="50" fill="#2f6f73"/><path d="M495 508v50" stroke="#255b5e" stroke-width="3"/>
-     <path d="M520 590v-18h-14" fill="none" stroke="#9aa6ad" stroke-width="5" stroke-linecap="round"/>
-     <rect x="262" y="674" width="338" height="26" fill="url(#boards)"/>
-     <rect class="edge" x="262" y="470" width="338" height="230" fill="none" stroke="var(--frame)" stroke-width="4"/>
-    </g>
-
-    <!-- LIVING ROOM / THERMOSTAT (downstairs right) -->
-    <g class="room" data-room="heat" tabindex="0" role="button" aria-label="Living room heating and thermostat">
-     <rect x="600" y="470" width="338" height="230" fill="#f4ecdf"/>
-     <rect class="lit" x="600" y="470" width="338" height="230" fill="var(--warm)" style="mix-blend-mode:multiply"/>
-     <rect x="640" y="500" width="110" height="80" fill="#cfe2ee" stroke="#fff" stroke-width="6"/>
-     <!-- sofa -->
-     <rect x="640" y="620" width="170" height="54" rx="12" fill="#c9774a"/><rect x="652" y="600" width="146" height="34" rx="10" fill="#d98a5c"/>
-     <!-- thermostat -->
-     <g transform="translate(860 540)"><rect width="46" height="46" rx="23" fill="#fff" stroke="#c4ccd2" stroke-width="3"/><circle cx="23" cy="23" r="12" fill="#1f6f78"/><text x="23" y="28" font-size="12" font-weight="800" text-anchor="middle" fill="#fff" font-family="Manrope,sans-serif">20°</text></g>
-     <g transform="translate(828 618)"><rect width="90" height="50" rx="6" fill="#fff" stroke="#c4ccd2" stroke-width="3"/><path d="M14 6v38M30 6v38M46 6v38M62 6v38M78 6v38" stroke="#d7dde2" stroke-width="4"/></g>
-     <rect x="600" y="674" width="338" height="26" fill="url(#boards)"/>
-     <rect class="edge" x="600" y="470" width="338" height="230" fill="none" stroke="var(--frame)" stroke-width="4"/>
-    </g>
-
-    <!-- OUTSIDE -->
-    <g class="room" data-room="outside" tabindex="0" role="button" aria-label="Outside taps, pipes and drains">
-     <rect x="938" y="520" width="210" height="180" fill="#dcebd3"/>
-     <rect class="lit" x="938" y="520" width="210" height="180" fill="var(--warm)" style="mix-blend-mode:multiply"/>
-     <path d="M960 300 v360" stroke="#7d8a93" stroke-width="10"/><rect x="948" y="650" width="34" height="14" fill="#7d8a93"/>
-     <g transform="translate(990 600)"><rect width="16" height="24" fill="#9aa6ad"/><path d="M16 10h20v12" fill="none" stroke="#9aa6ad" stroke-width="6" stroke-linecap="round"/><circle cx="8" cy="4" r="9" fill="#c0392b"/></g>
-     <rect x="1050" y="684" width="70" height="12" rx="3" fill="#7d8a93"/><path d="M1058 690h54" stroke="#5e6a72" stroke-width="3" stroke-dasharray="6 5"/>
-     <g fill="#7fae6e"><circle cx="1110" cy="640" r="22"/><circle cx="1086" cy="652" r="16"/><rect x="1104" y="652" width="8" height="34" fill="#7a5a3c"/></g>
-     <rect class="edge" x="938" y="520" width="210" height="180" fill="none" stroke="var(--frame)" stroke-width="3" stroke-dasharray="8 8" opacity=".5"/>
-    </g>
-
-    <!-- house frame -->
-    <rect x="262" y="240" width="676" height="460" fill="none" stroke="var(--frame)" stroke-width="10"/>
-    <path d="M262 470 H938" stroke="var(--frame)" stroke-width="10"/>
-
-    <!-- pins -->
-    <g class="pin" id="pins"></g>
-   </g>
-  </svg>
-  <button class="btn ghost back" id="back" type="button">Back to the house</button>
+  <div class="scene" id="scene"><div class="load" id="load">Loading the house…</div><div class="pins" id="pins"></div><div class="tip" id="tip"></div>
+   <button class="btn ghost back" id="back" type="button">← Back to the house</button>
+   <div class="ctrl" id="ctrl">Drag to turn the house · tap a room to look inside</div>
   </div>
-
   <aside class="panel" id="panel" aria-live="polite">
    <h2>Where's the problem?</h2>
-   <p class="hint">Point at a room and it lights up. Tap it, or slide to a room and press Look inside.</p>
+   <p class="hint">Point at a room and it lights up. Tap it, or choose from the list.</p>
    <div class="picked"><span class="n" id="pn">1</span><div><div class="nm" id="pname">Bathroom</div><div class="ln" id="pline">Leaks, weak showers, new bathrooms</div></div></div>
-   <input class="range" id="range" type="range" min="1" max="6" value="1" aria-label="Choose a room">
-   <div class="ticks"><span>Loft</span><span>Outside</span></div>
    <button class="btn primary" id="go" type="button">Look inside</button>
    <div class="list" id="list" aria-label="Rooms"></div>
   </aside>
-
   <div class="inside-card" id="inside" aria-live="polite">
    <h3 id="iname">Bathroom</h3>
    <p class="sub">What's going on? Pick the closest match.</p>
@@ -291,17 +170,17 @@ footer .bar{flex-wrap:wrap;justify-content:space-between;color:var(--muted);font
 
 <section class="s" id="services"><h2>What we fix</h2><p class="lead">From a dripping tap to a new boiler. Every job gets a clear price before any work starts.</p><div class="grid" id="svcGrid"></div></section>
 
-<section class="s" id="how"><h2>How it works</h2><p class="lead">Three steps, no chasing.</p>
+<section class="s" id="how" style="padding-top:0"><h2>How it works</h2><p class="lead">Three steps, no chasing.</p>
  <div class="steps"><div><h3>Show us the problem</h3><p>Use the house above, or tell us in a sentence. Add a photo if you like.</p></div><div><h3>Pick a day</h3><p>Choose a morning, afternoon or evening slot that suits you. We text to confirm.</p></div><div><h3>Fixed, tidy, tested</h3><p>We agree the price first, do the job, test it and leave the place clean.</p></div></div>
 </section>
 
-<section class="s" id="book"><h2>Book a visit</h2><p class="lead">Takes about a minute. We'll text you to confirm.</p>
+<section class="s" id="book" style="padding-top:0"><h2>Book a visit</h2><p class="lead">Takes about a minute. We'll text you to confirm.</p>
  <div class="book">
   <form id="form" novalidate>
    <label>What needs doing?<select id="job" required><option value="">Choose a job</option></select></label>
    <label>Your postcode<input id="pc" autocomplete="postal-code" placeholder="e.g. S11 8YZ" required></label>
-   <div><b style="font-size:15px">Which day?</b><div class="days" id="days" style="margin-top:8px"></div></div>
-   <div><b style="font-size:15px">What time?</b><div class="slots" id="slots" style="margin-top:8px"></div></div>
+   <div><b style="font-size:15px;font-weight:600">Which day?</b><div class="days" id="days" style="margin-top:8px"></div></div>
+   <div><b style="font-size:15px;font-weight:600">What time?</b><div class="slots" id="slots" style="margin-top:8px"></div></div>
    <label>Your name<input id="nm" autocomplete="name" required></label>
    <label>Mobile number<input id="ph" type="tel" autocomplete="tel" required></label>
    <div class="err" id="err" role="alert"></div>
@@ -317,52 +196,235 @@ footer .bar{flex-wrap:wrap;justify-content:space-between;color:var(--muted);font
 <footer><div class="bar"><span>Northside Heating & Plumbing · <span class="ph">company details</span></span><span>0114 496 0456 · <span class="ph">email</span></span></div></footer>
 <div class="mbar"><a class="btn ghost" href="tel:01144960456">Call</a><a class="btn primary" href="#book">Book a visit</a></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
+/* ---------- content ---------- */
 const ROOMS=[
- {k:'bath',n:'Bathroom',line:'Leaks, weak showers, new bathrooms',box:[262,240,338,230],probs:[['Dripping tap','A new washer or cartridge. Usually fixed in one visit.','Tap repair'],['Toilet keeps running','We replace the fill valve or flush seal so it stops wasting water.','Toilet repair'],['Weak shower','We check the pressure and the valve, then clean or replace what\'s causing it.','Shower repair'],['New bathroom','Design, supply and fit, start to finish, with one team.','Bathroom quote']]},
- {k:'rads',n:'Radiators',line:'Cold spots, noisy pipes, new radiators',box:[600,240,338,230],probs:[['Cold at the top','Usually trapped air. We bleed the system and rebalance it.','Radiator bleed and balance'],['Cold at the bottom','Often sludge in the system. A clean-out or powerflush gets the heat back.','System clean'],['Want a new radiator','Swap, move or upsize radiators, including towel rails.','New radiator']]},
- {k:'boiler',n:'Boiler & kitchen',line:'No heating, no hot water, pressure drops',box:[262,470,338,230],probs:[['No heating or hot water','A Gas Safe engineer finds the fault and fixes it, with the price agreed first.','Boiler repair'],['Pressure keeps dropping','We trace the leak or faulty part rather than just topping it up.','Boiler repair'],['Annual service','A full safety check and service to keep it running and your warranty valid.','Boiler service'],['Leak under the sink','We find and fix the joint, trap or valve that\'s leaking.','Leak repair']]},
- {k:'heat',n:'Heating controls',line:'Thermostats, timers, smart heating',box:[600,470,338,230],probs:[['House never gets warm','We check the boiler settings, controls and radiators together.','Heating check'],['Fit a smart thermostat','Control your heating from your phone, fitted and set up for you.','Smart thermostat'],['Timer not working','We repair or replace the programmer so the heating comes on when it should.','Controls repair']]},
- {k:'loft',n:'Loft & water tank',line:'Noisy tanks, frozen pipes, insulation',box:[430,120,340,130],probs:[['Noisy water tank','Usually a worn float valve. Quick to replace.','Tank repair'],['Pipes freeze in winter','We lag exposed pipes and tanks before the cold snap.','Pipe lagging'],['Remove an old tank','Taken out safely when you move to a combi boiler.','Tank removal']]},
- {k:'outside',n:'Outside',line:'Outside taps, drains, frozen pipes',box:[938,520,210,180],probs:[['Outside tap frozen or split','We replace it with a frost-proof tap and lag the pipe.','Outside tap'],['Fit an outside tap','A new tap with a proper isolating valve inside.','Outside tap'],['Slow or blocked drain','We clear it and tell you what caused it.','Drain clearance']]}
+ {k:'bath',n:'Bathroom',line:'Leaks, weak showers, new bathrooms',c:[-2.5,4.2,0],probs:[['Dripping tap','A new washer or cartridge. Usually fixed in one visit.','Tap repair'],['Toilet keeps running','We replace the fill valve or flush seal so it stops wasting water.','Toilet repair'],['Weak shower','We check the pressure and the valve, then clean or replace what\'s causing it.','Shower repair'],['New bathroom','Design, supply and fit, start to finish, with one team.','Bathroom quote']]},
+ {k:'rads',n:'Radiators',line:'Cold spots, noisy pipes, new radiators',c:[2.5,4.2,0],probs:[['Cold at the top','Usually trapped air. We bleed the system and rebalance it.','Radiator bleed and balance'],['Cold at the bottom','Often sludge in the system. A clean-out or powerflush gets the heat back.','System clean'],['Want a new radiator','Swap, move or upsize radiators, including towel rails.','New radiator']]},
+ {k:'boiler',n:'Boiler & kitchen',line:'No heating, no hot water, pressure drops',c:[-2.5,1.4,0],probs:[['No heating or hot water','A Gas Safe engineer finds the fault and fixes it, with the price agreed first.','Boiler repair'],['Pressure keeps dropping','We trace the leak or faulty part rather than just topping it up.','Boiler repair'],['Annual service','A full safety check and service to keep it running and your warranty valid.','Boiler service'],['Leak under the sink','We find and fix the joint, trap or valve that\'s leaking.','Leak repair']]},
+ {k:'heat',n:'Heating controls',line:'Thermostats, timers, smart heating',c:[2.5,1.4,0],probs:[['House never gets warm','We check the boiler settings, controls and radiators together.','Heating check'],['Fit a smart thermostat','Control your heating from your phone, fitted and set up for you.','Smart thermostat'],['Timer not working','We repair or replace the programmer so the heating comes on when it should.','Controls repair']]},
+ {k:'loft',n:'Loft & water tank',line:'Noisy tanks, frozen pipes, insulation',c:[0,6.4,0],probs:[['Noisy water tank','Usually a worn float valve. Quick to replace.','Tank repair'],['Pipes freeze in winter','We lag exposed pipes and tanks before the cold snap.','Pipe lagging'],['Remove an old tank','Taken out safely when you move to a combi boiler.','Tank removal']]},
+ {k:'outside',n:'Outside',line:'Outside taps, drains, frozen pipes',c:[6.4,0.9,1.2],probs:[['Outside tap frozen or split','We replace it with a frost-proof tap and lag the pipe.','Outside tap'],['Fit an outside tap','A new tap with a proper isolating valve inside.','Outside tap'],['Slow or blocked drain','We clear it and tell you what caused it.','Drain clearance']]}
 ];
 const $=id=>document.getElementById(id);
-const stage=$('stage'),cam=$('cam'),svg=document.querySelector('svg'),range=$('range'),list=$('list');
-let cur=0,inside=false;const BASE=()=>innerWidth>900?'translate(-150px,70px) scale(.76)':'translate(0px,0px) scale(1)';cam.style.transform=BASE();addEventListener('resize',()=>{if(!inside)cam.style.transform=BASE();});const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-// pins
-const pins=$('pins');ROOMS.forEach((r,i)=>{const [x,y,w,h]=r.box,cx=x+w/2,cy=y+(r.k==='loft'?h*.72:h*.42);
- pins.insertAdjacentHTML('beforeend',`<g transform="translate(${cx} ${cy})"><circle class="pulse" r="16" fill="#b9622c"/><circle r="15" fill="#fff" stroke="#b9622c" stroke-width="4"/><text y="5" text-anchor="middle" font-size="15" font-weight="800" fill="#b9622c" font-family="Manrope,sans-serif">${i+1}</text></g>`);});
+const stage=$('stage'),sceneEl=$('scene'),list=$('list'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let cur=0,inside=false;
+
+/* ---------- 3D house ---------- */
+let api=null;
+function build3D(){
+ if(!window.THREE)throw new Error('no three');
+ const W=()=>sceneEl.clientWidth,H=()=>sceneEl.clientHeight;
+ const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
+ renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(W(),H());
+ renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+ renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
+ sceneEl.prepend(renderer.domElement);
+ const scene=new THREE.Scene();scene.background=new THREE.Color('#dfe8ee');scene.fog=new THREE.Fog('#dfe8ee',34,70);
+ const camera=new THREE.PerspectiveCamera(34,W()/H(),0.1,200);
+
+ // ---- procedural textures ----
+ function tex(w,h,draw,rx,ry){const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');draw(g,w,h);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rx||1,ry||1);t.encoding=THREE.sRGBEncoding;t.anisotropy=renderer.capabilities.getMaxAnisotropy();return t;}
+ const rnd=(a,b)=>a+Math.random()*(b-a);
+ const brick=tex(512,512,(g,w,h)=>{g.fillStyle='#cfc6b8';g.fillRect(0,0,w,h);const bh=32,bw=96;for(let y=0;y<h;y+=bh){const off=(y/bh)%2?bw/2:0;for(let x=-bw;x<w+bw;x+=bw){const l=rnd(-14,10);g.fillStyle=`hsl(${rnd(10,22)},${rnd(38,52)}%,${36+l}%)`;g.fillRect(x+off+3,y+3,bw-6,bh-6);g.fillStyle='rgba(0,0,0,.06)';for(let i=0;i<6;i++)g.fillRect(x+off+rnd(4,bw-8),y+rnd(4,bh-8),rnd(3,10),2);}}},2.2,2.2);
+ const slate=tex(256,256,(g,w,h)=>{g.fillStyle='#2f3740';g.fillRect(0,0,w,h);for(let y=0;y<h;y+=32){const off=(y/32)%2?24:0;for(let x=-48;x<w+48;x+=48){g.fillStyle=`hsl(208,${rnd(8,14)}%,${rnd(22,30)}%)`;g.fillRect(x+off+1,y+1,46,30);g.fillStyle='rgba(255,255,255,.05)';g.fillRect(x+off+1,y+1,46,3);}}},4,4);
+ const tiles=tex(256,256,(g,w,h)=>{g.fillStyle='#c9d2d4';g.fillRect(0,0,w,h);for(let y=0;y<h;y+=64)for(let x=0;x<w;x+=64){g.fillStyle=`hsl(190,${rnd(6,12)}%,${rnd(90,95)}%)`;g.fillRect(x+2,y+2,60,60);}},3,3);
+ const wood=tex(512,512,(g,w,h)=>{const ph=64;for(let y=0;y<h;y+=ph){const off=rnd(0,300);for(let x=-off;x<w;x+=360){g.fillStyle=`hsl(${rnd(28,34)},${rnd(35,45)}%,${rnd(52,62)}%)`;g.fillRect(x,y,358,ph-2);g.strokeStyle='rgba(90,55,25,.12)';for(let i=0;i<5;i++){g.beginPath();const yy=y+rnd(6,ph-8);g.moveTo(x,yy);g.bezierCurveTo(x+120,yy+rnd(-4,4),x+240,yy+rnd(-4,4),x+358,yy);g.stroke();}}g.fillStyle='rgba(60,35,15,.35)';g.fillRect(0,y+ph-2,w,2);}},2,2);
+ const plaster=c=>tex(128,128,(g,w,h)=>{g.fillStyle=c;g.fillRect(0,0,w,h);for(let i=0;i<500;i++){g.fillStyle=`rgba(0,0,0,${rnd(0,.025)})`;g.fillRect(rnd(0,w),rnd(0,h),2,2);}},3,3);
+ const grass=tex(256,256,(g,w,h)=>{g.fillStyle='#7f9c62';g.fillRect(0,0,w,h);for(let i=0;i<5000;i++){g.fillStyle=`hsl(${rnd(80,100)},${rnd(25,40)}%,${rnd(32,50)}%)`;g.fillRect(rnd(0,w),rnd(0,h),1.5,rnd(2,5));}},30,30);
+ const paving=tex(256,256,(g,w,h)=>{g.fillStyle='#9e9a93';g.fillRect(0,0,w,h);for(let y=0;y<h;y+=64)for(let x=0;x<w;x+=64){g.fillStyle=`hsl(36,${rnd(4,8)}%,${rnd(66,74)}%)`;g.fillRect(x+2,y+2,60,60);}},6,1);
+ const insul=tex(128,128,(g,w,h)=>{g.fillStyle='#e8cf8f';g.fillRect(0,0,w,h);for(let i=0;i<900;i++){g.fillStyle=`hsla(42,70%,${rnd(55,80)}%,.6)`;g.beginPath();g.arc(rnd(0,w),rnd(0,h),rnd(1,3),0,7);g.fill();}},4,3);
+ const M=(o)=>new THREE.MeshStandardMaterial(Object.assign({roughness:.8,metalness:0},o));
+ const mat={brick:M({map:brick,roughness:.92}),slate:M({map:slate,roughness:.7}),tiles:M({map:tiles,roughness:.35}),wood:M({map:wood,roughness:.6}),
+  wallA:M({map:plaster('#efe9df')}),wallB:M({map:plaster('#e6e9e4')}),wallC:M({map:plaster('#f1e6dc')}),wallD:M({map:plaster('#e9edf0')}),
+  cut:M({color:'#1e2a34',roughness:.6}),white:M({color:'#f7f8f8',roughness:.25}),chrome:M({color:'#c9ced2',metalness:.9,roughness:.22}),
+  grass:M({map:grass,roughness:1}),paving:M({map:paving,roughness:.95}),insul:M({map:insul,roughness:1}),timber:M({color:'#b58a5a',roughness:.85}),
+  unit:M({color:'#2c4a54',roughness:.45}),top:M({color:'#e3dccf',roughness:.3}),fabric:M({color:'#8d9ea8',roughness:.95}),sofa:M({color:'#9a5b3c',roughness:.9}),
+  duvet:M({color:'#f2f0ea',roughness:.95}),throw:M({color:'#2f4858',roughness:.95}),rug:M({color:'#c7b9a4',roughness:1}),dark:M({color:'#2a2f33',roughness:.5}),
+  glass:M({color:'#bcd7e6',roughness:.05,metalness:.1,emissive:'#cfe4f0',emissiveIntensity:.55}),tank:M({color:'#5f7f8c',roughness:.55}),copper:M({color:'#b87333',metalness:.8,roughness:.3}),
+  leaf:M({color:'#56743f',roughness:.9}),bark:M({color:'#5d4631'}),fence:M({color:'#8a6e50',roughness:.95}),water:M({color:'#7fc2e0',roughness:.05,transparent:true,opacity:.85}),
+  rad:M({color:'#f4f5f5',roughness:.3}),radBack:M({color:'#9aa3a8',roughness:.6}),
+  flame:new THREE.MeshBasicMaterial({color:'#4aa3ff'}),screen:new THREE.MeshBasicMaterial({color:'#7ee0b5'})};
+ const house=new THREE.Group();scene.add(house);
+ function box(w,h,d,m,x,y,z,o={}){const me=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);me.position.set(x,y,z);me.castShadow=o.cast!==false;me.receiveShadow=true;(o.parent||house).add(me);return me;}
+ function cyl(r,h,m,x,y,z,o={}){const me=new THREE.Mesh(new THREE.CylinderGeometry(o.r2??r,r,h,o.seg||24),m);me.position.set(x,y,z);if(o.rx)me.rotation.x=o.rx;if(o.rz)me.rotation.z=o.rz;me.castShadow=true;me.receiveShadow=true;(o.parent||house).add(me);return me;}
+ const X=5,D=3.5,F1=2.8,F2=5.6,R=8.4,T=.24; // half width, half depth, floor heights, ridge, wall thickness
+
+ // ground, pavement, garden
+ const g0=new THREE.Mesh(new THREE.PlaneGeometry(140,140),mat.grass);g0.rotation.x=-Math.PI/2;g0.receiveShadow=true;scene.add(g0);
+ box(22,.04,2.4,mat.paving,1,.02,D+3.4,{cast:false});box(1.6,.05,1.8,mat.paving,-2.5,.03,D+1.2,{cast:false});
+ // walls: outer brick shell with plaster inside, open at the front (cutaway)
+ const shell=(w,h,d,x,y,z,inner)=>{box(w,h,d,mat.brick,x,y,z);};
+ shell(2*X+T*2,F2,T,0,F2/2,-D-T/2);              // back
+ shell(T,F2,2*D,-X-T/2,F2/2,0);                  // left
+ shell(T,F2,2*D,X+T/2,F2/2,0);                   // right
+ // inner plaster skins
+ box(X-.06,F1-.02,.04,mat.wallB,-X/2,F1/2,-D+.02,{cast:false});box(X-.06,F1-.02,.04,mat.wallC,X/2,F1/2,-D+.02,{cast:false});
+ box(X-.06,F1-.02,.04,mat.tiles,-X/2,F1+F1/2,-D+.02,{cast:false});box(X-.06,F1-.02,.04,mat.wallD,X/2,F1+F1/2,-D+.02,{cast:false});
+ box(.04,F1,2*D,mat.wallB,-X+.02,F1/2,0,{cast:false});box(.04,F1,2*D,mat.tiles,-X+.02,F1*1.5,0,{cast:false});
+ box(.04,F1,2*D,mat.wallC,X-.02,F1/2,0,{cast:false});box(.04,F1,2*D,mat.wallD,X-.02,F1*1.5,0,{cast:false});
+ // dividing wall and floors, with dark section cuts on the open face
+ box(.18,F2,2*D,mat.wallA,0,F2/2,0);
+ box(2*X,.22,2*D,mat.wood,0,F1,0);box(2*X,.12,2*D,mat.wood,0,.06,0);box(2*X,.2,2*D,mat.insul,0,F2+.1,0);box(2*X-.1,.02,2*D,mat.wallA,0,F1-.12,0,{cast:false});box(2*X-.1,.02,2*D,mat.wallA,0,F2-.01,0,{cast:false});
+ const cuts=[[2*X+2*T,.26,0,F1],[2*X+2*T,.2,0,F2+.1],[.2,F2,0,F2/2],[T+.02,F2,-X-T/2,F2/2],[T+.02,F2,X+T/2,F2/2],[2*X+2*T,.14,0,.07]];
+ cuts.forEach(([w,h,x,y])=>box(w,h,.06,mat.cut,x,y,D+.03,{cast:false}));
+ // bathroom floor tiles
+ box(X-.1,.02,2*D-.1,mat.tiles,-X/2,F1+.12,0,{cast:false});
+ // gable roof (ridge front to back), open gable at the front
+ const pitch=Math.atan2(R-F2,X+.5),slope=Math.hypot(R-F2,X+.5);
+ [-1,1].forEach(s=>{const r=box(slope+.3,.16,2*D+.9,mat.slate,s*(X+.5)/2,F2+(R-F2)/2+.12,-.1);r.rotation.z=-s*pitch;});
+ // back gable triangle in brick
+ const tri=new THREE.Shape();tri.moveTo(-X-T,0);tri.lineTo(X+T,0);tri.lineTo(0,R-F2);tri.closePath();
+ const gb=new THREE.Mesh(new THREE.ExtrudeGeometry(tri,{depth:T,bevelEnabled:false}),mat.brick);gb.position.set(0,F2,-D-T);gb.castShadow=true;house.add(gb);
+ const gc=new THREE.Mesh(new THREE.ExtrudeGeometry(tri,{depth:.06,bevelEnabled:false}),mat.cut);gc.scale.set(1.0,1.0,1);gc.position.set(0,F2,D);house.add(gc);
+ const gin=new THREE.Shape();gin.moveTo(-X+.15,.12);gin.lineTo(X-.15,.12);gin.lineTo(0,R-F2-.35);gin.closePath();gc.geometry=new THREE.ShapeGeometry(tri);gc.geometry.dispose&&0;
+ // hollow out the front gable: dark frame only
+ const fr=new THREE.Shape();fr.moveTo(-X-T,0);fr.lineTo(X+T,0);fr.lineTo(0,R-F2+.05);fr.closePath();fr.holes.push(new THREE.Path([new THREE.Vector2(-X+.25,.2),new THREE.Vector2(X-.25,.2),new THREE.Vector2(0,R-F2-.45)]));
+ gc.geometry=new THREE.ExtrudeGeometry(fr,{depth:.08,bevelEnabled:false});
+ // chimney
+ box(.7,1.9,.7,mat.brick,2.6,R-.7,-1.6);box(.82,.12,.82,mat.cut,2.6,R+.25,-1.6);cyl(.12,.35,mat.dark,2.45,R+.45,-1.6);cyl(.12,.35,mat.dark,2.75,R+.45,-1.6);
+ // loft joists, tank, pipes
+ for(let x=-4;x<=4;x+=1)box(.08,.14,2*D-.3,mat.timber,x,F2+.27,0);
+ box(1.5,.9,1,mat.tank,-.4,F2+.75,-1.6);box(1.55,.06,1.05,mat.dark,-.4,F2+1.22,-1.6);
+ cyl(.04,1.2,mat.copper,.2,F2+.2,-1.6,{});
+ // windows on the back wall (light coming in)
+ const win=(x,y,w,h)=>{box(w+.16,h+.16,.06,mat.white,x,y,-D+.06,{cast:false});box(w,h,.03,mat.glass,x,y,-D+.1,{cast:false});box(.05,h,.05,mat.white,x,y,-D+.12,{cast:false});box(w,.05,.05,mat.white,x,y+h*.15,-D+.12,{cast:false});};
+ win(3.75,F1+1.65,1.4,1.1);win(2.9,1.7,1.7,1.1);win(-3.6,F1+1.85,.9,.7);
+ // ---- bathroom ----
+ const tub=new THREE.Group();house.add(tub);tub.position.set(-3.55,F1+.12,-1.1);
+ box(1.5,.6,.78,mat.white,0,.3,0,{parent:tub});box(1.3,.08,.6,mat.water,0,.52,0,{parent:tub,cast:false});
+ cyl(.05,.5,mat.chrome,-.7,.8,-.25,{parent:tub});box(.2,.04,.05,mat.chrome,-.62,1.05,-.25,{parent:tub});
+ box(.22,1.2,.03,mat.chrome,-.7,1.5,-.36,{parent:tub});cyl(.12,.03,mat.chrome,-.7,2.12,-.25,{parent:tub,rx:Math.PI/2.6});
+ box(.6,.16,.44,mat.white,-1.45,F1+.95,-3.15);cyl(.08,.8,mat.white,-1.45,F1+.5,-3.15);cyl(.025,.2,mat.chrome,-1.45,F1+1.12,-3.3);box(.025,.025,.14,mat.chrome,-1.45,F1+1.22,-3.24);
+ box(.62,.8,.03,mat.glass,-1.45,F1+1.75,-3.36,{cast:false});
+ box(.42,.4,.62,mat.white,-.65,F1+.35,-2.95);box(.42,.38,.2,mat.white,-.65,F1+.7,-3.25); // toilet
+ for(let i=0;i<6;i++)box(.04,.7,.04,mat.chrome,-4.86,F1+.9,-1.9+i*.14);box(.04,.04,.8,mat.chrome,-4.86,F1+1.25,-1.55);box(.04,.04,.8,mat.chrome,-4.86,F1+.55,-1.55);
+ const drop=new THREE.Mesh(new THREE.SphereGeometry(.03,12,12),mat.water);drop.position.set(-1.45,F1+1.15,-3.17);house.add(drop);
+ // ---- bedroom ----
+ box(1.7,.32,2.2,mat.timber,1.7,F1+.36,-2.2);box(1.65,.22,2.1,mat.duvet,1.7,F1+.62,-2.15);box(1.7,.06,1.0,mat.throw,1.7,F1+.75,-1.55);
+ box(1.8,1.0,.08,mat.timber,1.7,F1+.65,-3.33);box(.5,.12,.35,mat.duvet,1.3,F1+.8,-3.05);box(.5,.12,.35,mat.duvet,2.1,F1+.8,-3.05);
+ box(.45,.5,.4,mat.timber,.55,F1+.36,-3.1);box(.45,.5,.4,mat.timber,2.85,F1+.36,-3.1);cyl(.12,.3,mat.white,.55,F1+.8,-3.1,{r2:.06});
+ const radB=new THREE.Group();house.add(radB);radB.position.set(3.75,F1+.62,-3.3);box(1.12,.62,.03,mat.radBack,0,0,-.04,{parent:radB,cast:false});for(let i=0;i<15;i++)box(.055,.6,.09,mat.rad,-.49+i*.07,0,0,{parent:radB});box(1.1,.04,.1,mat.rad,0,.32,0,{parent:radB});cyl(.025,.25,mat.chrome,-.6,-.35,0,{parent:radB});
+ box(.05,1.8,.55,mat.timber,4.84,F1+1.1,0); // wardrobe side
+ box(.6,2.0,1.2,M({color:'#d9d2c6'}),4.6,F1+1.12,.4);
+ // ---- kitchen + boiler ----
+ box(3.0,.85,.62,mat.unit,-2.9,.55,-3.15);box(3.05,.05,.66,mat.top,-2.9,1.0,-3.13);box(.04,.8,.58,mat.dark,-2.4,.55,-2.83,{cast:false});box(.04,.8,.58,mat.dark,-3.4,.55,-2.83,{cast:false});
+ box(.62,.85,2.0,mat.unit,-4.65,.55,-1.9);box(.66,.05,2.05,mat.top,-4.63,1.0,-1.9);
+ box(2.0,.7,.35,mat.unit,-3.4,2.05,-3.27);box(.6,.03,.4,mat.dark,-1.7,1.04,-3.1);for(let i=0;i<4;i++)cyl(.07,.012,mat.dark,-1.82+(i%2)*.24,1.06,-3.2+Math.floor(i/2)*.2);
+ box(.55,.05,.4,mat.chrome,-3.5,1.03,-3.1);cyl(.02,.3,mat.chrome,-3.5,1.2,-3.3);
+ const boiler=new THREE.Group();house.add(boiler);boiler.position.set(-1.0,1.75,-3.22);
+ box(.55,.8,.36,mat.white,0,0,0,{parent:boiler});box(.4,.12,.02,mat.dark,0,-.22,.19,{parent:boiler,cast:false});
+ const scr=box(.12,.05,.01,mat.screen,-.08,-.22,.205,{parent:boiler,cast:false});
+ const flame=box(.05,.05,.01,mat.flame,.12,-.22,.205,{parent:boiler,cast:false});
+ [-.15,-.05,.05,.15].forEach(x=>cyl(.022,.5,mat.copper,x,-.65,0,{parent:boiler}));
+ // dining table
+ box(1.1,.05,.8,mat.timber,-2.6,.78,-.4);[[-.5,-.35],[.5,-.35],[-.5,.35],[.5,.35]].forEach(([a,b])=>box(.05,.72,.05,mat.timber,-2.6+a,.42,-.4+b));
+ // ---- living room ----
+ box(2.6,.02,1.8,mat.rug,2.4,.13,-.7,{cast:false});
+ box(2.2,.42,.9,mat.sofa,2.3,.35,-2.75);box(2.2,.5,.22,mat.sofa,2.3,.8,-3.1);box(.2,.35,.9,mat.sofa,1.25,.6,-2.75);box(.2,.35,.9,mat.sofa,3.35,.6,-2.75);
+ box(.45,.35,.12,mat.throw,1.8,.72,-2.95);box(1.0,.05,.55,mat.timber,2.4,.45,-1.2);[[-.45,-.22],[.45,-.22],[-.45,.22],[.45,.22]].forEach(([a,b])=>box(.04,.33,.04,mat.dark,2.4+a,.27,-1.2+b));
+ const radL=new THREE.Group();house.add(radL);radL.position.set(4.83,.6,-1.6);radL.rotation.y=-Math.PI/2;box(.95,.57,.03,mat.radBack,0,0,-.04,{parent:radL,cast:false});for(let i=0;i<13;i++)box(.055,.55,.09,mat.rad,-.42+i*.07,0,0,{parent:radL});
+ const stat=new THREE.Mesh(new THREE.CylinderGeometry(.1,.1,.03,32),mat.white);stat.rotation.z=Math.PI/2;stat.position.set(4.95,1.5,.3);house.add(stat);
+ const statRing=new THREE.Mesh(new THREE.TorusGeometry(.07,.012,8,32),M({color:'#e07a3c',emissive:'#e07a3c',emissiveIntensity:.8}));statRing.rotation.y=Math.PI/2;statRing.position.set(4.93,1.5,.3);house.add(statRing);
+ cyl(.03,1.4,mat.dark,4.2,.8,-3.1);cyl(.25,.3,M({color:'#efe6d6',emissive:'#ffdcae',emissiveIntensity:.5}),4.2,1.6,-3.1,{r2:.16});
+ box(.9,1.6,.4,mat.timber,.7,.9,-3.1);for(let i=0;i<3;i++)box(.8,.03,.36,mat.dark,.7,.5+i*.5,-3.08);
+ // ---- outside ----
+ const fence=new THREE.Group();scene.add(fence);for(let z=-4.5;z<=4.5;z+=.45)box(.08,1.1,.4,mat.fence,9.2,.55,z,{parent:fence});box(.1,.08,9.4,mat.fence,9.2,.85,0,{parent:fence});
+ for(let x=5.4;x<=9.2;x+=.45)box(.4,1.1,.08,mat.fence,x,.55,-4.6,{parent:fence});
+ cyl(.06,5.4,mat.dark,X+.33,2.7,2.6);box(.3,.08,.3,mat.dark,X+.33,.05,2.6);
+ const otap=new THREE.Group();house.add(otap);otap.position.set(X+.3,.75,1.0);box(.1,.16,.1,mat.chrome,0,0,0,{parent:otap});box(.18,.04,.04,mat.chrome,.1,-.04,0,{parent:otap});cyl(.05,.03,M({color:'#b3261e'}),0,.12,0,{parent:otap});
+ box(.7,.06,.5,mat.dark,7.3,.03,2.0);
+ const tree=(x,z,s)=>{cyl(.08*s,1.4*s,mat.bark,x,.7*s,z);[[0,1.7,0,.75],[.35,1.4,.2,.5],[-.3,1.45,-.15,.55]].forEach(([a,b,c,r])=>{const m=new THREE.Mesh(new THREE.IcosahedronGeometry(r*s,1),mat.leaf);m.position.set(x+a*s,b*s,z+c*s);m.castShadow=true;scene.add(m);});};
+ tree(7.6,-2.8,1.3);tree(-7.4,-2.2,1.6);tree(-8.8,1.8,1.1);
+ [[6.4,-.6],[7.0,3.2],[-6.2,2.8]].forEach(([x,z])=>{const m=new THREE.Mesh(new THREE.IcosahedronGeometry(.45,1),mat.leaf);m.position.set(x,.35,z);m.scale.y=.75;m.castShadow=true;scene.add(m);});
+ // neighbours' wall hint
+ box(.3,1.0,9,mat.brick,-9.4,.5,0);
+
+ // ---- light ----
+ scene.add(new THREE.HemisphereLight('#eaf2f8','#8c8a70',.55));
+ const sun=new THREE.DirectionalLight('#fff3e2',1.6);sun.position.set(9,16,12);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);
+ Object.assign(sun.shadow.camera,{left:-14,right:14,top:14,bottom:-10,near:1,far:50});sun.shadow.bias=-.0004;sun.shadow.normalBias=.02;scene.add(sun);
+ const fill=new THREE.DirectionalLight('#dbe7ff',.35);fill.position.set(-10,8,6);scene.add(fill);
+ const roomLights=ROOMS.map(r=>{const l=new THREE.PointLight('#ffd9a8',.0,6.5,2);l.position.set(r.c[0],r.c[1]+.9,r.c[2]+.6);scene.add(l);return l;});
+ [[-2.5,2.3],[2.5,2.3],[-2.5,5.1],[2.5,5.1]].forEach(([x,y])=>{const l=new THREE.PointLight('#ffe7c6',.35,7,2);l.position.set(x,y,-.5);scene.add(l);});
+
+ // ---- picking boxes ----
+ const hit=[[-2.5,1.4,0,5,2.8,7],[2.5,1.4,0,5,2.8,7],[-2.5,4.2,0,5,2.8,7],[2.5,4.2,0,5,2.8,7],[0,7,0,10,2.8,7],[7.2,1,0,4,2,9]];
+ const order=['boiler','heat','bath','rads','loft','outside'];const hits=[];
+ hit.forEach((h,i)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(h[3],h[4],h[5]),new THREE.MeshBasicMaterial({visible:false}));m.position.set(h[0],h[1],h[2]);m.userData.i=ROOMS.findIndex(r=>r.k===order[i]);scene.add(m);hits.push(m);});
+ // highlight frame drawn on the open face of the chosen room
+ const hl=new THREE.Mesh(new THREE.PlaneGeometry(1,1),new THREE.MeshBasicMaterial({color:'#ffb36b',transparent:true,opacity:0,depthWrite:false}));hl.position.z=D+.07;scene.add(hl);
+ const FR={bath:[-2.5,4.2,4.9,2.6],rads:[2.5,4.2,4.9,2.6],boiler:[-2.5,1.45,4.9,2.6],heat:[2.5,1.45,4.9,2.6],loft:[0,6.6,6,1.6],outside:[7.2,.8,3.6,1.5]};
+
+ // ---- smoke ----
+ const puffs=[];const pm=new THREE.MeshStandardMaterial({color:'#e9edf0',transparent:true,opacity:.0,roughness:1,depthWrite:false});
+ for(let i=0;i<7;i++){const p=new THREE.Mesh(new THREE.SphereGeometry(.22,12,12),pm.clone());p.userData.t=i/7;scene.add(p);puffs.push(p);}
+
+ // ---- camera rig ----
+ const wide=()=>innerWidth>900;
+ const HOME={pos:new THREE.Vector3(14.5,8.6,24.5),tgt:new THREE.Vector3(1.1,2.9,0)};
+ const VIEW={bath:[[-1.6,4.6,9.4],[-2.5,4.05,-1]],rads:[[3.4,4.6,9.4],[2.5,4.05,-1]],boiler:[[-1.6,1.85,9.4],[-2.5,1.3,-1]],heat:[[3.4,1.85,9.4],[2.5,1.3,-1]],loft:[[.6,7.4,11],[0,6.5,-1]],outside:[[12.5,3,9.5],[6.8,.9,.4]]};
+ let yaw=0,yawT=0;const cam={pos:HOME.pos.clone(),tgt:HOME.tgt.clone()};let tw=null;
+ function frame(){const w=W(),h=H();renderer.setSize(w,h,false);camera.aspect=w/h;
+  if(wide()){camera.setViewOffset(w,h,w*(inside?.2:.17),0,w,h);}else camera.clearViewOffset();camera.updateProjectionMatrix();}
+ function fly(pos,tgt,ms){const p0=cam.pos.clone(),t0=cam.tgt.clone(),y0=yaw,st=performance.now();ms=reduce?1:ms;
+  tw={run(n){let k=Math.min(1,(n-st)/ms);k=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;cam.pos.lerpVectors(p0,pos,k);cam.tgt.lerpVectors(t0,tgt,k);yaw=y0*(1-k);if(k>=1)tw=null;}};yawT=0;}
+ function rotY(v,a){const c=Math.cos(a),s=Math.sin(a),x=v.x-HOME.tgt.x,z=v.z-HOME.tgt.z;return new THREE.Vector3(HOME.tgt.x+x*c+z*s,v.y,HOME.tgt.z-x*s+z*c);}
+ // drag to turn (outside only)
+ let drag=null;renderer.domElement.addEventListener('pointerdown',e=>{if(inside)return;drag={x:e.clientX,y0:yawT,moved:0};});
+ addEventListener('pointermove',e=>{if(drag){const dx=e.clientX-drag.x;drag.moved=Math.max(drag.moved,Math.abs(dx));if(e.pointerType==='mouse'||drag.moved>8)yawT=Math.max(-.55,Math.min(.45,drag.y0-dx*.004));}});
+ addEventListener('pointerup',()=>{setTimeout(()=>drag=null,0);});
+ // hover + click
+ const ray=new THREE.Raycaster(),mv=new THREE.Vector2();let hov=-1;
+ function pickAt(e){const r=renderer.domElement.getBoundingClientRect();mv.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mv,camera);const h=ray.intersectObjects(hits)[0];return h?h.object.userData.i:-1;}
+ renderer.domElement.addEventListener('pointermove',e=>{if(inside||e.pointerType==='touch')return;const i=pickAt(e);if(i!==hov){hov=i;sceneEl.classList.toggle('hovering',i>=0);if(i>=0)pick(i);}});
+ renderer.domElement.addEventListener('click',e=>{if(inside||(drag&&drag.moved>8))return;const i=pickAt(e);if(i>=0)zoomTo(i);});
+ // pins
+ const pinEls=ROOMS.map((r,i)=>{const d=document.createElement('div');d.className='pin';d.textContent=i+1;$('pins').appendChild(d);return d;});
+ const pinPos=ROOMS.map(r=>new THREE.Vector3(r.c[0],r.c[1]+(r.k==='loft'?-.2:.35),D+.4));pinPos[5].set(6.9,1.6,2.2);
+ const tip=$('tip');
+ let t0=performance.now(),seen=false;
+ function loop(n){requestAnimationFrame(loop);const t=(n-t0)/1000;
+  if(tw)tw.run(n);else if(!inside&&!drag&&!reduce){yawT+=(Math.sin(t*.15)*.12-yawT)*.002;}
+  if(!tw)yaw+=(yawT-yaw)*.08;
+  const p=inside?cam.pos:rotY(cam.pos,yaw);camera.position.copy(p);camera.lookAt(cam.tgt);
+  // living details
+  drop.position.y=F1+1.15-((t*.9)%1)*.45;drop.visible=((t*.9)%1)<.85;
+  flame.scale.set(1+Math.sin(t*20)*.2,1+Math.sin(t*13)*.3,1);mat.flame.color.setHSL(.58,.9,.55+Math.sin(t*9)*.08);
+  puffs.forEach(pf=>{const k=(pf.userData.t+t*.08)%1;pf.position.set(2.6+k*1.2+Math.sin(k*6)*.1,R+.6+k*2.4,-1.6-k*.6);pf.scale.setScalar(.5+k*1.5);pf.material.opacity=Math.sin(k*Math.PI)*.28;});
+  roomLights.forEach((l,i)=>{const on=i===cur&&(stage.classList.contains('focus')||inside);l.intensity+=((on?1.4:0)-l.intensity)*.08;});
+  const f=FR[ROOMS[cur].k];hl.position.set(f[0],f[1],D+.07);hl.scale.set(f[2],f[3],1);hl.material.opacity+=(((stage.classList.contains('focus')&&!inside)?.16:0)-hl.material.opacity)*.12;
+  renderer.render(scene,camera);
+  const w=W(),h=H();pinEls.forEach((el,i)=>{const v=pinPos[i].clone().project(camera);el.style.left=((v.x+1)/2*w)+'px';el.style.top=((1-v.y)/2*h)+'px';el.classList.toggle('on',i===cur&&stage.classList.contains('focus'));});
+  if(hov>=0&&!inside){const v=pinPos[hov].clone().project(camera);tip.style.left=((v.x+1)/2*w)+'px';tip.style.top=((1-v.y)/2*h)+'px';tip.textContent=ROOMS[hov].n;tip.classList.add('show');}else tip.classList.remove('show');
+  if(!seen){seen=true;$('load').style.opacity=0;setTimeout(()=>$('load').remove(),700);}
+ }
+ frame();addEventListener('resize',frame);new ResizeObserver(frame).observe(sceneEl);requestAnimationFrame(loop);
+ return{goRoom(k){frame();const v=VIEW[k];fly(new THREE.Vector3(...v[0]),new THREE.Vector3(...v[1]),1600);},goHome(){fly(HOME.pos.clone(),HOME.tgt.clone(),1400);setTimeout(frame,0);},frame};
+}
+try{api=build3D();}catch(e){$('load').textContent='This browser can\'t show the 3D house, but you can still choose a room from the list.';}
+
+/* ---------- panel + flow ---------- */
 list.innerHTML=ROOMS.map((r,i)=>`<button type="button" data-i="${i}"><b>${i+1}. ${r.n}</b><span>${r.probs.length} common jobs</span></button>`).join('');
-function pick(i,focus,quiet){cur=(i+ROOMS.length)%ROOMS.length;const r=ROOMS[cur];
- document.querySelectorAll('.room').forEach(g=>g.classList.toggle('on',g.dataset.room===r.k));
- if(!quiet)stage.classList.add('focus');$('pn').textContent=cur+1;$('pname').textContent=r.n;$('pline').textContent=r.line;range.value=cur+1;
- list.querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-current',j===cur));
- if(focus)document.querySelector(`.room[data-room="${r.k}"]`).focus({preventScroll:true});}
-function zoomTo(i){pick(i);const [x,y,w,h]=ROOMS[cur].box;const wide=innerWidth>900;
- const s=wide?Math.min(720/w,700/h)*.95:Math.min(1200/w,800/h)*.92;const cx=x+w/2,cy=y+h/2,fx=wide?400:600;
- cam.style.transform=`translate(${fx-cx*s}px,${400-cy*s}px) scale(${s})`;stage.classList.add('inside');inside=true;
+function pick(i,quiet){cur=(i+ROOMS.length)%ROOMS.length;const r=ROOMS[cur];if(!quiet)stage.classList.add('focus');
+ $('pn').textContent=cur+1;$('pname').textContent=r.n;$('pline').textContent=r.line;list.querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-current',j===cur));}
+function zoomTo(i){pick(i);inside=true;stage.classList.add('inside');if(api){api.frame();api.goRoom(ROOMS[cur].k);}
  const r=ROOMS[cur];$('iname').textContent=r.n;$('fix').classList.remove('show');
  $('probs').innerHTML=r.probs.map((p,j)=>`<button class="chip" type="button" data-p="${j}" aria-pressed="false">${p[0]}</button>`).join('');
- if(!wide)setTimeout(()=>$('inside').scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'}),reduce?0:900);
- setTimeout(()=>{const c=$('probs').querySelector('.chip');if(c)c.focus({preventScroll:true});},reduce?0:1300);}
-function out(){cam.style.transform=BASE();stage.classList.remove('inside');inside=false;pick(cur,true);}
-document.querySelectorAll('.room').forEach(g=>{const i=ROOMS.findIndex(r=>r.k===g.dataset.room);
- g.addEventListener('mouseenter',()=>{if(!inside)pick(i);});
- g.addEventListener('click',()=>{if(!inside)zoomTo(i);});
- g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();if(!inside)zoomTo(i);}
-  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();pick(cur+1,true);}if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();pick(cur-1,true);}});});
-range.addEventListener('input',()=>pick(+range.value-1));
-document.getElementById('scene').addEventListener('mouseleave',()=>{if(!inside){stage.classList.remove('focus');document.querySelectorAll('.room').forEach(g=>g.classList.remove('on'));}});
-range.addEventListener('keydown',e=>{if(e.key==='Enter')zoomTo(cur);});
+ if(innerWidth<=900)sceneEl.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+ if(innerWidth>900)setTimeout(()=>{const c=$('probs').querySelector('.chip');if(c)c.focus({preventScroll:true});},reduce?0:1600);}
+function out(){inside=false;stage.classList.remove('inside');if(api)api.goHome();pick(cur);$('go').focus({preventScroll:true});}
 list.addEventListener('click',e=>{const b=e.target.closest('button');if(b)pick(+b.dataset.i);});
 list.addEventListener('dblclick',e=>{const b=e.target.closest('button');if(b)zoomTo(+b.dataset.i);});
+list.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();pick(cur+(e.key==='ArrowDown'?1:-1));list.querySelectorAll('button')[cur].focus();}});
 $('go').addEventListener('click',()=>zoomTo(cur));
 $('back').addEventListener('click',out);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&inside)out();});
 $('probs').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const p=ROOMS[cur].probs[+b.dataset.p];
  $('probs').querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));$('fixText').textContent=p[1];$('fix').classList.add('show');$('bookThis').dataset.job=p[2];});
 $('bookThis').addEventListener('click',()=>{const j=$('bookThis').dataset.job;if(j){$('job').value=j;}setTimeout(()=>$('pc').focus(),600);});
-pick(0,false,true);document.querySelectorAll('.room').forEach(g=>g.classList.remove('on'));
+pick(0,true);
 // services
 const JOBS=[...new Set(ROOMS.flatMap(r=>r.probs.map(p=>p[2])))];
 $('job').insertAdjacentHTML('beforeend',JOBS.map(j=>`<option>${j}</option>`).join(''));
@@ -380,7 +442,7 @@ $('form').addEventListener('submit',e=>{e.preventDefault();const miss=[];
  if(!$('nm').value.trim())miss.push('add your name');if($('ph').value.replace(/\D/g,'').length<10)miss.push('add a mobile number');
  if(miss.length){$('err').textContent='Nearly there. Please '+miss.join(', ')+'.';$('done').style.display='none';return;}
  $('err').textContent='';$('done').style.display='block';$('done').textContent=`Thanks ${$('nm').value.trim().split(' ')[0]}. This is a demo, so nothing was sent. On the real site, we'd text you to confirm your ${$('job').value.toLowerCase()} on ${new Date(day).toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})}, ${slot.toLowerCase()}.`;});
-$('check').addEventListener('click',()=>{const v=$('pc2').value.trim().toUpperCase();const ok=/^(S\d|S\d\d|S\d\d\d)\s?\d[A-Z]{2}$/.test(v)||/^S(60|61|62|63|65|66)/.test(v.replace(/\s/g,''));
+$('check').addEventListener('click',()=>{const v=$('pc2').value.trim().toUpperCase();const ok=/^S\d{1,2}\s?\d[A-Z]{2}$/.test(v);
  $('areaMsg').textContent=!v?'Type a postcode first.':!pcOK(v)?'That doesn\'t look like a full postcode. Try something like S11 8YZ.':ok?'Yes, we cover '+v+'. Book a visit below.':'We may not cover '+v+'. Call us and we\'ll check.';});
 </script>
 </body>
