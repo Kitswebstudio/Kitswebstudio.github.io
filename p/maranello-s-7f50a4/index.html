@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en-GB">
+<head><meta name="robots" content="noindex,nofollow,noarchive"><meta name="googlebot" content="noindex,nofollow">
+<style id="kws-preview-css">#kws-preview{position:fixed;left:0;right:0;top:0;z-index:2147483647;background:#111827;color:#fff;font:600 14px/1.35 system-ui,-apple-system,Segoe UI,sans-serif;padding:9px 14px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.25)}#kws-preview b{color:#fcd34d}html{scroll-padding-top:60px}body{padding-top:44px!important}#kws-note{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483647;background:#111827;color:#fff;font:600 15px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;display:none;max-width:90vw;text-align:center}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maranello's Italian Restaurant, Ecclesall Road, Sheffield</title>
+<meta name="description" content="Maranello's, Italian restaurant at 438 Ecclesall Road, Sheffield S11 8PX. Choose your table and book online.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Maranello's palette: Marble, Paper, Nero, Rosso (actions), Basil (details), Stone (lines), Brass */
+:root{--marble:#F5F4F0;--paper:#FFFFFF;--nero:#1C1D1F;--rosso:#A8201A;--rosso-d:#861711;--basil:#2E5A44;--basil-l:#E6EEE9;--stone:#E2DFD8;--muted:#5F6267;--brass:#A5823F;--display:"DM Serif Display",Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--marble);color:var(--nero);font:400 17px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+a{color:inherit}button,input,select,textarea{font:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.01em;margin:0;line-height:1.08}
+.strip{background:var(--nero);color:#d9d7d2;font-size:14px;text-align:center;padding:8px 16px}
+.strip b{color:#fff;font-weight:700}
+header.top{position:sticky;top:0;z-index:40;background:rgba(245,244,240,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--stone)}
+.bar{max-width:1320px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;gap:22px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;min-height:44px}
+.logo .mk{width:38px;height:38px;border-radius:50%;background:var(--rosso);color:#fff;display:grid;place-items:center;font:400 22px/1 var(--display);flex:none}
+.logo .wd{font:400 25px/1 var(--display);letter-spacing:-.01em}
+.logo small{display:block;font:600 12.5px/1.2 Manrope,sans-serif;color:var(--muted);margin-top:3px;letter-spacing:.01em}
+nav.main{display:flex;gap:2px;margin-left:auto}
+nav.main a{text-decoration:none;padding:10px 13px;border-radius:9px;color:#45484c;font-weight:600;font-size:15px}
+nav.main a:hover{background:#eae8e2;color:var(--nero)}
+nav.main a[aria-current=page]{color:var(--rosso)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:13px 22px;font-weight:700;cursor:pointer;min-height:48px;text-decoration:none;font-size:16px;line-height:1.2;text-align:center}
+.btn.primary{background:var(--rosso);color:#fff}.btn.primary:hover{background:var(--rosso-d)}
+.btn.ghost{background:#fff;border:1.5px solid var(--nero);color:var(--nero)}.btn.ghost:hover{background:#f0eee9}
+.btn.dark{background:var(--nero);color:#fff}
+.btn.sm{min-height:44px;padding:10px 18px;font-size:15px}
+.menu-btn{display:none;margin-left:auto;background:#fff;border:1.5px solid var(--nero);border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer;min-height:44px}
+:focus-visible{outline:3px solid var(--basil);outline-offset:2px}
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(28,29,31,.4);display:none}
+.sheet.open{display:block}
+.sheet .in{position:absolute;right:0;top:0;bottom:0;width:min(340px,86vw);background:var(--marble);padding:20px 24px;display:flex;flex-direction:column;gap:2px;overflow:auto}
+.sheet a{text-decoration:none;font:400 26px/1.2 var(--display);padding:12px 0;border-bottom:1px solid var(--stone)}
+.sheet .close{align-self:flex-end;background:none;border:0;font-size:16px;font-weight:700;cursor:pointer;padding:10px;min-height:44px}
+.sheet .btn{margin-top:18px;font-family:Manrope,sans-serif;font-size:17px;border:0;padding:13px}
+.page{display:none}.page.on{display:block}
+.ph{display:inline-block;border:1.5px dashed #b8a786;border-radius:7px;padding:0 7px;color:#6e5f43;font-size:.92em;background:#fffaf0;line-height:1.5}
+.eyebrow{font-weight:700;font-size:14px;color:var(--rosso);margin:0 0 10px;letter-spacing:.01em}
+
+/* hero + 3D stage */
+.hero{max-width:1320px;margin:0 auto;padding:20px 28px 8px}
+.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:14px}
+.intro h1{font-size:clamp(40px,4.2vw,56px)}
+.intro p{margin:0 0 4px;color:var(--muted);max-width:430px;font-size:17.5px}
+.stage{position:relative;border-radius:24px;overflow:hidden;background:#ECEBE6;height:clamp(500px,calc(100vh - 222px),760px);width:100%;border:1px solid var(--stone)}
+.scene{position:absolute;inset:0;background:#ECEBE6}
+.scene canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}
+.scene.hovering canvas{cursor:pointer}
+.pins{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.pin{position:absolute;left:0;top:0;transform:translate(-50%,-50%);display:flex;align-items:center;gap:7px;background:#fff;color:var(--nero);font-weight:700;font-size:13.5px;padding:6px 11px 6px 8px;border-radius:999px;box-shadow:0 4px 14px rgba(28,29,31,.18);white-space:nowrap;transition:opacity .4s,background .25s,color .25s}
+.pin i{width:10px;height:10px;border-radius:50%;background:var(--rosso);box-shadow:0 0 0 3px rgba(168,32,26,.18)}
+.pin.on{background:var(--rosso);color:#fff}.pin.on i{background:#fff;box-shadow:none}
+.stage.inside .pin{opacity:0}
+.load{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-weight:600;transition:opacity .6s;text-align:center;padding:20px}
+.panel{position:absolute;right:18px;top:18px;bottom:18px;width:min(360px,34%);background:#fff;border:1px solid var(--stone);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:12px;box-shadow:0 18px 40px -22px rgba(28,29,31,.35);transition:transform .6s cubic-bezier(.65,0,.25,1),opacity .4s;overflow:auto}
+.panel h2{font-size:28px}
+.panel .hint{font-size:16px;color:var(--muted);margin:0}
+.zones{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.zones button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;gap:1px;padding:12px 14px;border-radius:14px;border:1.5px solid var(--stone);min-height:56px}
+.zones button:hover{border-color:#c8c3b8}
+.zones button b{font-weight:700;font-size:16px}
+.zones button span{color:var(--muted);font-size:14px;line-height:1.4}
+.zones button[aria-current=true]{border-color:var(--rosso);background:#fbf4f3}
+.zones button:focus-visible{outline:3px solid var(--basil);outline-offset:2px}
+.panel .go{margin-top:auto}
+.panel .note{font-size:14.5px;color:var(--muted);margin:0}
+.inside-card{position:absolute;right:18px;top:18px;bottom:18px;overflow:auto;width:min(400px,36%);background:#fff;border-radius:20px;padding:20px 24px;box-shadow:0 18px 50px rgba(28,29,31,.22);opacity:0;transform:translateY(24px);pointer-events:none;transition:opacity .45s .6s,transform .55s .6s cubic-bezier(.2,.8,.2,1)}
+.stage.inside .inside-card{opacity:1;transform:none;pointer-events:auto}
+.stage.inside .panel{transform:translateX(130%);opacity:0;pointer-events:none}
+.back{position:absolute;left:18px;top:18px;opacity:0;pointer-events:none;transition:opacity .4s .6s;box-shadow:0 8px 20px rgba(0,0,0,.14);border:0!important}
+.stage.inside .back{opacity:1;pointer-events:auto}
+.inside-card h3{font-size:29px}
+.inside-card .sub{color:var(--muted);margin:4px 0 6px;font-size:16px;line-height:1.45}
+.inside-card .chips{gap:6px}.inside-card .chip{padding:9px 12px}.q span{font-weight:500;color:var(--muted);font-size:13.5px}
+.q{font-weight:700;font-size:15px;margin:12px 0 7px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--stone);background:#fff;border-radius:999px;padding:9px 15px;font-weight:700;cursor:pointer;min-height:44px;min-width:44px;color:var(--nero);font-size:15px}
+.chip:hover{border-color:#bdb7ab}
+.chip[aria-pressed=true]{background:var(--nero);color:#fff;border-color:var(--nero)}
+.chip:disabled{opacity:.4;cursor:not-allowed}
+.laid{margin-top:12px;padding:13px 15px;border-radius:14px;background:var(--basil-l);color:#21412f;font-weight:600;font-size:15px;line-height:1.45}
+.inside-card .btn{width:100%;margin-top:14px}
+.small{font-size:16px;color:var(--muted);margin:8px 0 0}
+.ctrl{position:absolute;left:18px;bottom:16px;font-size:13.5px;color:#3c3f43;background:rgba(255,255,255,.9);padding:7px 12px;border-radius:999px;transition:opacity .4s}
+.stage.inside .ctrl{opacity:0}
+
+/* info row */
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:1320px;margin:18px auto 0;padding:0 28px}
+.facts>div{background:#fff;border:1px solid var(--stone);border-radius:16px;padding:16px 18px;font-weight:700;font-size:16px}
+.facts small{display:block;color:var(--muted);font-weight:500;font-size:15px;margin-top:2px}
+.facts a{text-decoration:none;display:inline-block;padding:10px 0;margin:-10px 0}
+.side a{display:inline-block;padding:10px 0}
+
+section.s{max-width:1320px;margin:0 auto;padding:80px 28px}
+.s h2{font-size:clamp(32px,3.4vw,48px)}
+.s .lead{color:var(--muted);max-width:640px;margin:12px 0 32px;font-size:18px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+.bookwrap{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.card{background:#fff;border:1px solid var(--stone);border-radius:20px;padding:28px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cards .card h3{font-size:26px;margin-bottom:8px}.cards .card p{margin:0 0 16px;color:var(--muted)}
+.band{background:var(--basil);color:#fff}
+.band .s{padding:64px 28px}
+.band h2{color:#fff}.band p{color:#dbe7df}
+.quote{font:400 26px/1.35 var(--display);margin:0}
+.photo{border-radius:18px;background:#E9E6DF;border:1.5px dashed #c9bfa9;display:grid;place-items:center;color:#7b6c50;font-weight:600;text-align:center;padding:20px;aspect-ratio:4/3}
+
+/* menu page */
+.mtabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 26px}
+.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.course h3{font-size:30px;border-bottom:1px solid var(--stone);padding-bottom:10px;margin-bottom:6px}
+.dish{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:14px 0;border-bottom:1px dashed var(--stone)}
+.dish b{font-weight:700}.dish p{grid-column:1/-1;margin:0;color:var(--muted);font-size:16px}
+.tags{grid-column:1/-1;display:flex;gap:6px}
+.tag{font-size:12.5px;font-weight:700;color:var(--basil);background:var(--basil-l);border-radius:999px;padding:2px 9px}
+.dish.hide{display:none}
+.empty{display:none;color:var(--muted);padding:14px 0}
+
+/* forms */
+form.f{background:#fff;border:1px solid var(--stone);border-radius:22px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr);gap:18px;min-width:0}
+.grp,label{min-width:0}
+label{font-weight:700;font-size:15px;display:grid;gap:7px}
+input,select,textarea{border:1.5px solid var(--stone);border-radius:12px;padding:12px 14px;min-height:50px;background:#fff;color:var(--nero);font-size:16px;font-weight:500;width:100%}
+textarea{min-height:90px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--basil);outline-offset:1px;border-color:var(--basil)}
+.grp>b{display:block;font-size:15px;margin-bottom:8px}
+.row2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.days .chip{flex:none;display:flex;flex-direction:column;align-items:center;line-height:1.2;padding:8px 12px;border-radius:14px;min-width:62px}
+.days .chip small{font-weight:600;font-size:12px;opacity:.8}
+.stepper{display:flex;align-items:center;gap:10px}
+.stepper button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--stone);background:#fff;font-size:22px;font-weight:700;cursor:pointer;color:var(--nero)}
+.stepper output{min-width:110px;text-align:center;font-weight:700;font-size:18px}
+.err{color:#a3221b;font-size:15px;font-weight:700;min-height:22px}
+.done{display:none;background:var(--basil-l);color:#1f3d2d;border-radius:14px;padding:18px;font-weight:600}
+.side{background:#fff;border:1px solid var(--stone);border-radius:22px;padding:28px}
+.side h3{font-size:28px;margin-bottom:8px}
+.side p{color:var(--muted);margin:0 0 12px}
+.summary{display:grid;gap:8px;margin:16px 0}
+.summary div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--stone);padding:8px 0}
+.summary span{color:var(--muted)}
+.hours{width:100%;border-collapse:collapse;margin-top:6px}
+.hours td{padding:9px 0;border-bottom:1px solid var(--stone)}
+.hours td:last-child{text-align:right}
+.mapcard{border-radius:18px;background:#E9E7E1;aspect-ratio:16/10;position:relative;overflow:hidden;border:1px solid var(--stone)}
+.mapcard svg{position:absolute;inset:0;width:100%;height:100%}
+
+footer{background:var(--nero);color:#cfccc6;margin-top:30px}
+footer .bar{flex-wrap:wrap;justify-content:space-between;align-items:flex-start;padding:44px 28px;gap:28px;font-size:15px}
+footer h3{color:#fff;font-size:26px;margin-bottom:8px}
+footer a{display:inline-block;padding:10px 0;min-height:44px;text-decoration:none;color:#fff}
+footer .ph{background:#2a2b2e;color:#e7dcc4;border-color:#6e6450}
+.mbar{display:none}
+
+@media (max-width:1000px){
+ nav.main,.hide-m{display:none}.menu-btn{display:block}.bar{padding:10px 16px;gap:12px}
+ .logo .wd{font-size:22px}
+ .hero{padding:20px 16px 6px}.intro{flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:14px}
+ section.s{padding:56px 16px}.band .s{padding:48px 16px}.facts{padding:0 16px;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .stage{aspect-ratio:auto;height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;background:transparent;border:0;border-radius:0;overflow:visible}
+ .scene{position:relative;flex-shrink:0;width:100%;aspect-ratio:1/1;scroll-margin-top:74px;border-radius:20px;overflow:hidden;border:1px solid var(--stone)}
+ .panel{position:relative;inset:auto;width:auto;margin-top:12px;box-shadow:none;overflow:visible}
+ .zones{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:4px}
+ .zones button{flex:none;width:200px}
+ .stage.inside .panel{display:none}
+ .inside-card{position:relative;inset:auto;width:auto;margin-top:12px;display:none;overflow:visible;box-shadow:none;border:1px solid var(--stone);transition:none;opacity:1;transform:none}
+ .stage.inside .inside-card{display:block}
+ .back{top:10px;left:10px;transition:opacity .3s}
+ .ctrl{left:10px;bottom:10px;font-size:12.5px}
+ .pin{font-size:12px;padding:5px 9px 5px 7px}
+ .two,.bookwrap,.cards,.menu-grid,.row2{grid-template-columns:minmax(0,1fr)}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(245,244,240,.97);border-top:1px solid var(--stone)}
+ .mbar a{flex:1}
+ body{padding-bottom:78px}
+ form.f,.side,.card{padding:20px}
+}
+@media (max-width:420px){.logo small{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body><div id="kws-preview" role="note"><b>Concept preview</b> for Maranello&#x27;s, made by Kit's Web Studio. Not their official website. Forms and contact details are switched off.</div><div id="kws-note" role="status"></div><script>(function(){var END=new Date('2026-11-14T23:59:59'),NAME="Maranello's";
+if(Date.now()>END.getTime()){document.documentElement.innerHTML='<head><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Preview ended</title></head><body style="font:16px/1.5 system-ui,sans-serif;max-width:560px;margin:15vh auto;padding:0 20px;color:#111827"><h1 style="font-size:24px">This preview has ended</h1><p>This was a private concept preview made by Kit\'s Web Studio. It is not Maranello&#x27;s\'s official website.</p></body>';return;}
+function note(t){var e=document.getElementById('kws-note');if(!e)return;e.textContent=t;e.style.display='block';clearTimeout(note.t);note.t=setTimeout(function(){e.style.display='none';},3200);}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();note('This is a preview, so nothing was sent. On the finished site, this goes straight to '+NAME+'.');},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href="#preview-contact"]');if(a){e.preventDefault();note('Calling and emailing are switched off in this preview.');}},true);
+})();</script>
+<div class="strip"><b>Demo website made for Maranello's by Kit's Web Studio.</b> Your photos, reviews and logo go in here.</div>
+<header class="top"><div class="bar">
+ <a class="logo" href="#/" aria-label="Maranello's home"><span class="mk">M</span><span><span class="wd">Maranello's</span><small>Italian restaurant, Ecclesall Road</small></span></a>
+ <nav class="main" aria-label="Main"><a href="#/">Home</a><a href="#/menu">Menu</a><a href="#/parties">Parties</a><a href="#/about">About</a><a href="#/find-us">Find us</a></nav>
+ <a class="btn primary sm hide-m" href="#/book">Book a table</a>
+ <button class="menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
+</div></header>
+<div class="sheet" id="sheet" aria-hidden="true"><div class="in" role="dialog" aria-label="Site menu">
+ <button class="close" type="button">Close</button>
+ <a href="#/">Home</a><a href="#/menu">Food and wine menu</a><a href="#/book">Book a table</a><a href="#/parties">Parties and celebrations</a><a href="#/about">About us</a><a href="#/find-us">Find us</a>
+ <a class="btn primary" href="#preview-contact">Call [their phone]</a>
+</div></div>
+
+<main>
+<!-- HOME -->
+<div class="page on" data-page="/">
+ <div class="hero">
+  <div class="intro"><div><p class="eyebrow">Italian restaurant on Ecclesall Road, Sheffield</p><h1>Choose your table.</h1></div>
+   <p>Pick where you'd like to sit, watch your table being laid for your party, then book it in under a minute.</p></div>
+  <div class="stage" id="stage">
+   <div class="scene" id="scene"><div class="load" id="load">Setting the tables…</div><div class="pins" id="pins"></div>
+    <button class="btn ghost sm back" id="back" type="button">Back to the room</button>
+    <div class="ctrl" id="ctrl">Drag to look around. Tap an area to sit down.</div>
+   </div>
+   <aside class="panel" id="panel">
+    <h2>Where would you like to sit?</h2>
+    <p class="hint">Point at an area and it lights up. Tap it, or choose below.</p>
+    <div class="zones" id="zones" role="list"></div>
+    <button class="btn primary go" id="go" type="button">Sit at the window</button>
+    <p class="note">Illustrative layout. We model your real dining room for the live site.</p>
+   </aside>
+   <div class="inside-card" id="inside" aria-live="polite">
+    <h3 id="iname">By the window</h3>
+    <p class="sub" id="iline"></p>
+    <div class="q" id="gq">How many of you?</div>
+    <div class="chips" id="guests"></div>
+    <div class="laid" id="laid"></div>
+    <div class="q">Which day?</div>
+    <div class="chips" id="idays"></div>
+    <div class="q">What time? <span>Example times, set to your hours later</span></div>
+    <div class="chips" id="itimes"></div>
+    <a class="btn primary" id="bookThis" href="#/book">Book this table</a>
+   </div>
+  </div>
+ </div>
+ <div class="facts">
+  <div><a href="#/find-us">438 Ecclesall Road</a><small>Sheffield S11 8PX</small></div>
+  <div><a href="#preview-contact">[their phone]</a><small>Call to book or ask a question</small></div>
+  <div><span class="ph">Opening hours</span><small>Lunch and evening times go here</small></div>
+  <div><span class="ph">Your rating</span><small>Tripadvisor or Google score</small></div>
+ </div>
+
+ <section class="s" id="menu-teaser">
+  <div class="two">
+   <div><p class="eyebrow">The menu</p><h2>The whole menu, on the page.</h2>
+    <p class="lead">No more PDFs to pinch and zoom. Every dish is readable on a phone, with vegetarian, vegan and gluten-free filters, and the wine list kept up to date.</p>
+    <a class="btn ghost" href="#/menu">See the menu</a></div>
+   <div class="photo">[Your photo of a favourite dish]</div>
+  </div>
+ </section>
+
+ <div class="band"><section class="s">
+  <div class="two">
+   <div><p class="eyebrow" style="color:#f1d9b0">Celebrations</p><h2>Birthdays, family meals and work dos.</h2>
+    <p style="font-size:18px;margin:14px 0 24px">Tell us the date and how many are coming. We'll set the long table and call you to talk through the food.</p>
+    <a class="btn primary" href="#/parties">Plan a party</a></div>
+   <div><p class="quote">"<span class="ph" style="font-family:Manrope,sans-serif;font-size:17px">Your best customer review appears here</span>"</p>
+    <p style="margin-top:14px">Reviewer name, with permission</p></div>
+  </div>
+ </section></div>
+
+ <section class="s">
+  <p class="eyebrow">Why book online</p><h2>Booking that works at 11pm.</h2>
+  <p class="lead">Guests can book when they think of it, not just when you can answer the phone.</p>
+  <div class="cards">
+   <div class="card"><h3>Pick the table</h3><p>Window, banquette, main room or the long table. Requests arrive with the seat they wanted.</p><a class="btn ghost sm" href="#/" data-zone="1">Try it above</a></div>
+   <div class="card"><h3>Allergies up front</h3><p>Guests tell you about allergies and occasions when they book, so the kitchen knows before they arrive.</p><a class="btn ghost sm" href="#/book">Book a table</a></div>
+   <div class="card"><h3>One clear number</h3><p>[their phone] everywhere, tap to call on a phone, with your address one tap from directions.</p><a class="btn ghost sm" href="#/find-us">Find us</a></div>
+  </div>
+ </section>
+</div>
+
+<!-- MENU -->
+<div class="page" data-page="/menu">
+ <section class="s">
+  <p class="eyebrow">Food and wine</p><h1 style="font-size:clamp(40px,4.4vw,58px)">Our menu</h1>
+  <p class="lead">Your current menus and wine list go here, dish by dish, so they read well on any phone and can be changed in minutes.</p>
+  <div class="mtabs" id="diet" role="group" aria-label="Filter by diet">
+   <button class="chip" type="button" data-d="all" aria-pressed="true">Everything</button>
+   <button class="chip" type="button" data-d="v" aria-pressed="false">Vegetarian</button>
+   <button class="chip" type="button" data-d="ve" aria-pressed="false">Vegan</button>
+   <button class="chip" type="button" data-d="gf" aria-pressed="false">Gluten-free</button>
+  </div>
+  <div class="menu-grid" id="menuGrid"></div>
+  <div class="card" style="margin-top:26px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+   <div><h3 style="font-size:26px">Allergies or a special diet?</h3><p style="margin:6px 0 0;color:var(--muted)">Tell us when you book and the kitchen will know before you arrive.</p></div>
+   <a class="btn primary" href="#/book">Book a table</a>
+  </div>
+ </section>
+</div>
+
+<!-- BOOK -->
+<div class="page" data-page="/book">
+ <section class="s">
+  <p class="eyebrow">Book a table</p><h1 style="font-size:clamp(40px,4.4vw,58px)">Book your table</h1>
+  <p class="lead">Takes about a minute. We'll confirm by text.</p>
+  <div class="two bookwrap" id="bookWrap">
+   <form class="f" id="bform" novalidate>
+    <div class="grp"><b>How many of you?</b><div class="stepper"><button type="button" id="gMinus" aria-label="One fewer guest">−</button><output id="gOut" aria-live="polite">2 guests</output><button type="button" id="gPlus" aria-label="One more guest">+</button></div></div>
+    <div class="grp"><b>Which day?</b><div class="days" id="bdays"></div></div>
+    <div class="grp"><b>What time?</b><div class="chips" id="btimes"></div><p class="small">Example times until your opening hours are added.</p></div>
+    <label>Where would you like to sit?<select id="barea"><option value="">No preference</option></select></label>
+    <div class="row2"><label>Your name<input id="bname" autocomplete="name"></label><label>Mobile number<input id="bphone" type="tel" autocomplete="tel" inputmode="tel"></label></div>
+    <label>Email (for your confirmation)<input id="bemail" type="email" autocomplete="email"></label>
+    <label>Is it a special occasion?<select id="bocc"><option>No, just dinner</option><option>Birthday</option><option>Anniversary</option><option>Celebration</option><option>Business meal</option></select></label>
+    <label>Allergies or anything we should know?<textarea id="bnotes" placeholder="For example: one guest is coeliac, or we'd like a high chair"></textarea></label>
+    <div class="err" id="berr" role="alert"></div>
+    <button class="btn primary" type="submit" id="bsubmit">Request this table</button>
+    <div class="done" id="bdone" role="status"></div>
+   </form>
+   <div class="side">
+    <h3>Your booking</h3>
+    <p>Check the details, then send your request.</p>
+    <div class="summary" id="bsum"></div>
+    <p>Eight or more? <a href="#/parties">Plan a party</a> and we'll call you about the food.</p>
+    <p>Rather talk? Call <a href="#preview-contact"><b>[their phone]</b></a>.</p>
+   </div>
+  </div>
+ </section>
+</div>
+
+<!-- PARTIES -->
+<div class="page" data-page="/parties">
+ <section class="s">
+  <p class="eyebrow">Parties and celebrations</p><h1 style="font-size:clamp(40px,4.4vw,58px)">Plan a party at Maranello's</h1>
+  <p class="lead">Birthdays, anniversaries, family get-togethers and work meals. Tell us what you have in mind and we'll call you back.</p>
+  <div class="two">
+   <form class="f" id="pform" novalidate>
+    <label>What's the occasion?<select id="pocc"><option value="">Choose one</option><option>Birthday</option><option>Anniversary</option><option>Family meal</option><option>Work meal</option><option>Christening or communion</option><option>Something else</option></select></label>
+    <div class="row2"><label>Date<input id="pdate" type="date"></label><label>Number of guests<input id="pguests" type="number" min="8" max="60" inputmode="numeric" placeholder="8 or more"></label></div>
+    <div class="row2"><label>Your name<input id="pname" autocomplete="name"></label><label>Phone number<input id="pphone" type="tel" autocomplete="tel"></label></div>
+    <label>Anything else? (optional)<textarea id="pmsg" placeholder="Set menu, a cake, dietary needs, timings"></textarea></label>
+    <div class="err" id="perr" role="alert"></div>
+    <button class="btn primary" type="submit">Send party enquiry</button>
+    <div class="done" id="pdone" role="status"></div>
+   </form>
+   <div>
+    <div class="card"><h3 style="font-size:28px;margin-bottom:8px">The long table</h3><p style="color:var(--muted);margin:0 0 16px">See where your party would sit, laid for your group.</p><a class="btn ghost" href="#/" data-zone="3">See the long table in 3D</a></div>
+    <div class="card" style="margin-top:16px"><h3 style="font-size:26px;margin-bottom:10px">Good to know</h3>
+     <p style="margin:0 0 8px">Group menus: <span class="ph">your set menu and price per head</span></p>
+     <p style="margin:0 0 8px">Largest group: <span class="ph">your maximum party size</span></p>
+     <p style="margin:0">Deposit: <span class="ph">your deposit policy, if any</span></p></div>
+   </div>
+  </div>
+ </section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" data-page="/about">
+ <section class="s">
+  <p class="eyebrow">About us</p><h1 style="font-size:clamp(40px,4.4vw,58px)">Italian cooking on Ecclesall Road</h1>
+  <div class="two" style="margin-top:28px">
+   <div>
+    <p class="lead" style="margin-top:0">Maranello's is an Italian restaurant at 438 Ecclesall Road, near Sharrow Vale in Sheffield.</p>
+    <p><span class="ph">Your story: who started Maranello's, when, and what you cook</span></p>
+    <p><span class="ph">Your team: the chef and front of house, in your own words</span></p>
+    <p><span class="ph">What regulars come back for</span></p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px"><a class="btn primary" href="#/book">Book a table</a><a class="btn ghost" href="#/menu">See the menu</a></div>
+   </div>
+   <div class="photo">[Your photo of the dining room]</div>
+  </div>
+ </section>
+</div>
+
+<!-- FIND US -->
+<div class="page" data-page="/find-us">
+ <section class="s">
+  <p class="eyebrow">Find us</p><h1 style="font-size:clamp(40px,4.4vw,58px)">438 Ecclesall Road</h1>
+  <p class="lead">Sheffield S11 8PX, on Ecclesall Road near Sharrow Vale.</p>
+  <div class="two">
+   <div class="side">
+    <h3>Get in touch</h3>
+    <p style="margin:0">Phone: <a href="#preview-contact"><b>[their phone]</b></a></p>
+    <p style="margin:6px 0 0">Email: <a href="#preview-contact"><b>[their email]</b></a></p>
+    <p style="margin:6px 0 16px">Instagram: <a href="https://www.instagram.com/maranellossheffield/" rel="noopener"><b>@maranellossheffield</b></a></p>
+    <h3 style="font-size:24px;margin-top:10px">Opening hours</h3>
+    <table class="hours"><tbody>
+     <tr><td>Monday to Thursday</td><td><span class="ph">times</span></td></tr>
+     <tr><td>Friday and Saturday</td><td><span class="ph">times</span></td></tr>
+     <tr><td>Sunday</td><td><span class="ph">times</span></td></tr>
+    </tbody></table>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Maranello%27s+438+Ecclesall+Road+Sheffield+S11+8PX" rel="noopener">Get directions</a><a class="btn ghost" href="#/book">Book a table</a></div>
+   </div>
+   <div>
+    <div class="mapcard" aria-label="Simple location sketch">
+     <svg viewBox="0 0 640 400" role="img" aria-label="Maranello's on Ecclesall Road">
+      <rect width="640" height="400" fill="#E9E7E1"/>
+      <path d="M-20 300 L660 150" stroke="#fff" stroke-width="34" fill="none"/>
+      <path d="M-20 300 L660 150" stroke="#D9D5CC" stroke-width="2" stroke-dasharray="14 12" fill="none"/>
+      <text x="420" y="168" transform="rotate(-12.5 420 168)" font-family="Manrope,sans-serif" font-weight="700" font-size="17" fill="#5F6267">Ecclesall Road</text>
+      <circle cx="300" cy="200" r="15" fill="#A8201A"/><circle cx="300" cy="200" r="5" fill="#fff"/>
+      <rect x="228" y="214" width="146" height="36" rx="18" fill="#fff"/>
+      <text x="301" y="238" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="15" fill="#1C1D1F">Maranello's</text>
+     </svg>
+    </div>
+    <p class="small">Sketch only. Tap Get directions for a live map. <span class="ph">Parking and bus tips</span></p>
+   </div>
+  </div>
+ </section>
+</div>
+</main>
+
+<footer><div class="bar">
+ <div><h3>Maranello's</h3>438 Ecclesall Road, Sheffield S11 8PX<br><a href="#preview-contact">[their phone]</a><br><a href="#preview-contact">[their email]</a></div>
+ <div><a href="#/menu">Menu</a><br><a href="#/book">Book a table</a><br><a href="#/parties">Parties</a><br><a href="#/find-us">Find us</a></div>
+ <div><a href="https://www.instagram.com/maranellossheffield/" rel="noopener">Instagram</a><br><a href="https://www.facebook.com/Maranellositalianrestaurant/" rel="noopener">Facebook</a><br><span class="ph">Company name and number</span><br><span style="display:inline-block;margin-top:10px">© 2026 Maranello's</span></div>
+</div></footer>
+<div class="mbar"><a class="btn ghost" href="#preview-contact">Call</a><a class="btn primary" href="#/book">Book a table</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ================= content ================= */
+const $=id=>document.getElementById(id),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const PHONE='[their phone]';
+/* tables: illustrative layout of a dining room (x across, z towards the street) */
+const TABLES={
+ w1:{type:'round',x:-3.6,z:3.75},w2:{type:'round',x:-1.0,z:3.75},w3:{type:'round',x:1.6,z:3.75},w4:{type:'round',x:4.2,z:3.75},
+ m1:{type:'square',x:-2.6,z:1.0},m2:{type:'square',x:0.5,z:1.0},m3:{type:'square',x:3.6,z:1.0},
+ b1:{type:'banq',x:-5.85,z:-2.7},b2:{type:'banq',x:-5.85,z:-0.9},b3:{type:'banq',x:-5.85,z:0.9},
+ L:{type:'long',x:-0.6,z:-2.7,len:4.6}
+};
+for(const k in TABLES){const t=TABLES[k];t.seats=[];
+ if(t.type==='round')t.seats=[[t.x-.6,t.z],[t.x+.6,t.z]];
+ if(t.type==='square')t.seats=[[t.x,t.z-.64],[t.x,t.z+.64],[t.x-.64,t.z],[t.x+.64,t.z]];
+ if(t.type==='banq')t.seats=[[t.x-.62,t.z,1],[t.x+.62,t.z]];
+ if(t.type==='long'){const xs=[-.22,.54,-.98,1.3,-1.74,-2.5];xs.forEach(dx=>{t.seats.push([t.x+dx+.18,t.z-.74]);t.seats.push([t.x+dx+.18,t.z+.74]);});t.seats.push([t.x-t.len/2-.5,t.z],[t.x+t.len/2+.5,t.z]);}
+ t.seats=t.seats.map(s=>({x:s[0],z:s[1],bench:!!s[2]}));}
+const ZONES=[
+ {k:'window',n:'By the window',line:'Tables for two, looking out onto Ecclesall Road.',short:'Tables for two',btn:'Sit at the window',guests:[1,2],def:2,seats:[['w2',0],['w2',1]],focus:[-1.0,3.75],
+  view:[[1.7,2.55,2.0],[-1.4,0.5,4.2]],pin:[0.3,1.4,3.75],hit:[0.3,3.75,9.6,1.7]},
+ {k:'main',n:'Main dining room',line:'Tables for up to four in the middle of the room, close to everything.',short:'Tables for up to four',btn:'Sit in the main room',guests:[2,3,4],def:4,seats:[['m2',1],['m2',0],['m2',2],['m2',3]],focus:[0.5,1.0],
+  view:[[2.6,3.0,4.4],[0.3,0.55,0.6]],pin:[0.5,1.4,1.0],hit:[0.5,1.0,8.6,2.2]},
+ {k:'banquette',n:'The banquette',line:'Leather seating along the wall. Cosy for two, and tables join up for six.',short:'Leather seating for 2 to 6',btn:'Sit on the banquette',guests:[2,3,4,5,6],def:2,seats:[['b2',0],['b2',1],['b3',0],['b3',1],['b1',0],['b1',1]],focus:[-5.85,-0.9],
+  view:[[-2.5,2.9,2.6],[-6.1,0.62,-0.9]],pin:[-5.85,1.5,-0.9],hit:[-5.85,-0.9,2.3,5.6]},
+ {k:'long',n:'The long table',line:'Birthdays, family meals and work dos. Laid for 8 to 14.',short:'Parties of 8 to 14',btn:'See the long table',guests:[8,9,10,11,12,13,14],def:10,
+  seats:[['L',0],['L',1],['L',2],['L',3],['L',4],['L',5],['L',6],['L',7],['L',8],['L',9],['L',10],['L',11],['L',12],['L',13]],focus:[-0.6,-2.7],
+  view:[[1.3,4.4,2.1],[-0.7,0.55,-2.9]],pin:[-0.6,1.5,-2.7],hit:[-0.6,-2.7,6.2,2.2]}
+];
+let cur=0,inside=false,guests=ZONES[0].def,pickDay=null,pickTime=null;
+const TIMES=['12:30','13:30','18:00','19:00','20:00','21:00'];
+const dayList=n=>[...Array(n)].map((_,i)=>{const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()+i);return d;});
+const dayLabel=(d,i)=>i===0?'Today':i===1?'Tomorrow':d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric'});
+const longDate=d=>d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+
+/* ================= 3D dining room ================= */
+let api=null;
+function build3D(){
+ if(!window.THREE)throw new Error('no three');
+ const sceneEl=$('scene'),W=()=>sceneEl.clientWidth,H=()=>sceneEl.clientHeight;
+ const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
+ let pr=Math.min(devicePixelRatio||1,2);renderer.setPixelRatio(pr);renderer.setSize(W(),H(),false);
+ renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.shadowMap.autoUpdate=false;
+ renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.08;
+ renderer.physicallyCorrectLights=false;
+ sceneEl.prepend(renderer.domElement);
+ const scene=new THREE.Scene();const lin=c=>new THREE.Color(c).convertSRGBToLinear();
+ scene.background=lin('#ECEBE6');
+ const camera=new THREE.PerspectiveCamera(34,W()/H(),0.1,200);
+
+ // environment for soft reflections on marble, brass and glass
+ const pm=new THREE.PMREMGenerator(renderer);const env=new THREE.Scene();
+ env.add(new THREE.Mesh(new THREE.BoxGeometry(30,14,30),new THREE.MeshBasicMaterial({color:lin('#bdb6aa'),side:THREE.BackSide})));
+ [[0,6.9,0,16,.1,10,'#ffffff'],[0,3,14.9,18,5,.1,'#fff4e2'],[-14.9,4,0,.1,4,10,'#e9eef2']].forEach(a=>{const m=new THREE.Mesh(new THREE.BoxGeometry(a[3],a[4],a[5]),new THREE.MeshBasicMaterial({color:new THREE.Color(a[6]).multiplyScalar(2.2)}));m.position.set(a[0],a[1],a[2]);env.add(m);});
+ scene.environment=pm.fromScene(env,.04).texture;
+
+ // ---- procedural canvas textures (all drawn here, nothing downloaded) ----
+ const rnd=(a,b)=>a+Math.random()*(b-a);
+ function tex(w,h,draw){const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');draw(g,w,h);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.encoding=THREE.sRGBEncoding;t.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());return t;}
+ const terrazzo=tex(1024,1024,(g,w,h)=>{g.fillStyle='#DCD4C6';g.fillRect(0,0,w,h);const cols=['#C2B9AA','#948B7E','#A9473B','#6F7D72','#EDE7DC','#3F3A35','#F6F3EC','#BFA987'];
+  for(let i=0;i<9000;i++){g.fillStyle=cols[(Math.random()*cols.length)|0];g.globalAlpha=rnd(.55,1);const x=rnd(0,w),y=rnd(0,h),r=rnd(2,i<900?13:6);g.beginPath();const n=5+(Math.random()*3|0);for(let k=0;k<n;k++){const a=k/n*6.283+rnd(-.3,.3),rr=r*rnd(.6,1.2);g.lineTo(x+Math.cos(a)*rr,y+Math.sin(a)*rr);}g.closePath();g.fill();}
+  g.globalAlpha=1;g.strokeStyle='rgba(120,112,100,.35)';g.lineWidth=2;g.strokeRect(0,0,w,h);});
+ const plaster=tex(512,512,(g,w,h)=>{g.fillStyle='#EEE8DE';g.fillRect(0,0,w,h);for(let i=0;i<260;i++){g.fillStyle=`rgba(${Math.random()<.5?'255,255,255':'150,130,105'},${rnd(.02,.06)})`;g.beginPath();g.arc(rnd(0,w),rnd(0,h),rnd(10,60),0,7);g.fill();}for(let i=0;i<3000;i++){g.fillStyle=`rgba(0,0,0,${rnd(0,.03)})`;g.fillRect(rnd(0,w),rnd(0,h),1.5,1.5);}});
+ const panel=tex(512,512,(g,w,h)=>{g.fillStyle='#2D4A3B';g.fillRect(0,0,w,h);const m=46;g.fillStyle='#284335';g.fillRect(m,m,w-2*m,h-2*m);g.strokeStyle='#3B5D4B';g.lineWidth=7;g.strokeRect(m-6,m-6,w-2*m+12,h-2*m+12);g.strokeStyle='#1E3328';g.lineWidth=4;g.strokeRect(m+3,m+3,w-2*m-6,h-2*m-6);for(let i=0;i<1500;i++){g.fillStyle=`rgba(255,255,255,${rnd(0,.02)})`;g.fillRect(rnd(0,w),rnd(0,h),2,2);}});
+ const marble=tex(1024,1024,(g,w,h)=>{g.fillStyle='#F1EFEB';g.fillRect(0,0,w,h);for(let i=0;i<500;i++){g.fillStyle=`rgba(180,175,168,${rnd(.02,.05)})`;g.beginPath();g.arc(rnd(0,w),rnd(0,h),rnd(20,80),0,7);g.fill();}
+  for(let v=0;v<14;v++){let x=rnd(-100,w),y=rnd(0,h);g.lineCap='round';const a=rnd(-.5,.5)+.6;for(let s=0;s<60;s++){const nx=x+Math.cos(a+rnd(-.6,.6))*24,ny=y+Math.sin(a+rnd(-.6,.6))*24;g.strokeStyle=`rgba(110,108,105,${rnd(.08,.3)})`;g.lineWidth=rnd(.6,v<4?3:1.6);g.beginPath();g.moveTo(x,y);g.lineTo(nx,ny);g.stroke();x=nx;y=ny;}}});
+ const walnut=tex(512,512,(g,w,h)=>{g.fillStyle='#6A4730';g.fillRect(0,0,w,h);for(let i=0;i<140;i++){const y=rnd(0,h);g.strokeStyle=`rgba(${Math.random()<.5?'40,24,14':'140,98,66'},${rnd(.12,.35)})`;g.lineWidth=rnd(.6,2.4);g.beginPath();g.moveTo(0,y);for(let x=0;x<=w;x+=32)g.lineTo(x,y+Math.sin(x*.01+i)*rnd(1,5));g.stroke();}});
+ const leather=tex(256,256,(g,w,h)=>{g.fillStyle='#22443A';g.fillRect(0,0,w,h);for(let i=0;i<4000;i++){g.fillStyle=`rgba(${Math.random()<.5?'0,0,0':'255,255,255'},${rnd(0,.05)})`;g.fillRect(rnd(0,w),rnd(0,h),2,2);}});
+ const slabs=tex(512,512,(g,w,h)=>{g.fillStyle='#8F8B84';g.fillRect(0,0,w,h);for(let y=0;y<h;y+=256)for(let x=0;x<w;x+=256){g.fillStyle=`hsl(40,${rnd(3,7)}%,${rnd(70,77)}%)`;g.fillRect(x+3,y+3,250,250);for(let i=0;i<500;i++){g.fillStyle=`rgba(0,0,0,${rnd(0,.05)})`;g.fillRect(x+rnd(3,250),y+rnd(3,250),2,2);}}});
+ const asphalt=tex(512,512,(g,w,h)=>{g.fillStyle='#5E6063';g.fillRect(0,0,w,h);for(let i=0;i<14000;i++){const l=rnd(25,55);g.fillStyle=`hsl(210,3%,${l}%)`;g.fillRect(rnd(0,w),rnd(0,h),1.6,1.6);}});
+ const linen=tex(256,256,(g,w,h)=>{g.fillStyle='#F8F7F3';g.fillRect(0,0,w,h);for(let i=0;i<h;i+=3){g.fillStyle='rgba(0,0,0,.018)';g.fillRect(0,i,w,1);g.fillRect(i,0,1,h);}});
+ const scene1=tex(512,400,(g,w,h)=>{g.fillStyle='#E9E1CF';g.fillRect(0,0,w,h);g.fillStyle='#C9B98F';g.fillRect(0,h*.52,w,h);g.fillStyle='#9AA383';g.beginPath();g.moveTo(0,h*.6);for(let x=0;x<=w;x+=16)g.lineTo(x,h*.55-Math.sin(x*.012)*30);g.lineTo(w,h);g.lineTo(0,h);g.fill();g.fillStyle='#7C8A6B';g.beginPath();g.moveTo(0,h*.78);for(let x=0;x<=w;x+=16)g.lineTo(x,h*.72-Math.sin(x*.02+1)*22);g.lineTo(w,h);g.lineTo(0,h);g.fill();
+  g.fillStyle='#46563F';[[90,.66],[120,.64],[380,.6],[410,.63]].forEach(([x,y])=>{g.beginPath();g.ellipse(x,h*y,9,44,0,0,7);g.fill();});g.fillStyle='#D9A35B';g.beginPath();g.arc(400,95,26,0,7);g.fill();});
+ const scene2=tex(512,400,(g,w,h)=>{g.fillStyle='#E4E6E2';g.fillRect(0,0,w,h);g.fillStyle='#AFC3C9';g.fillRect(0,h*.55,w,h);g.fillStyle='#D8C6A6';g.beginPath();g.moveTo(0,h*.62);g.lineTo(150,h*.42);g.lineTo(260,h*.58);g.lineTo(360,h*.46);g.lineTo(w,h*.6);g.lineTo(w,h*.66);g.lineTo(0,h*.66);g.fill();
+  ['#C58F6A','#E2C38C','#B9786A','#EDE3CF','#D3A577'].forEach((c,i)=>{g.fillStyle=c;g.fillRect(60+i*62,h*.46-((i*37)%40),50,90+((i*23)%40));});});
+ const signTex=tex(1024,232,g=>{});
+ function drawSign(){const c=signTex.image,g=c.getContext('2d');g.fillStyle='#A8201A';g.fillRect(0,0,1024,232);g.strokeStyle='#D8B66E';g.lineWidth=5;g.strokeRect(16,16,992,200);
+  g.fillStyle='#F7EEDD';g.textAlign='center';g.textBaseline='middle';g.font='400 132px "DM Serif Display", Georgia, serif';g.fillText("Maranello's",512,112);signTex.needsUpdate=true;}
+ drawSign();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(drawSign);
+ const boardTex=tex(256,384,(g,w,h)=>{g.fillStyle='#22382C';g.fillRect(0,0,w,h);g.strokeStyle='#C9A866';g.lineWidth=4;g.strokeRect(12,12,w-24,h-24);g.fillStyle='#F4EBDA';g.textAlign='center';g.font='400 46px "DM Serif Display",Georgia,serif';g.fillText("Maranello's",w/2,110);g.fillStyle='#C9A866';g.fillRect(70,140,116,3);g.fillStyle='#F4EBDA';g.font='600 26px Manrope,Arial,sans-serif';g.fillText('Italian',w/2,200);g.fillText('restaurant',w/2,236);});
+
+ // ---- materials (hex colours converted from sRGB) ----
+ const M=(o,world)=>{if(o.color)o.color=lin(o.color);if(o.emissive)o.emissive=lin(o.emissive);const m=new THREE.MeshStandardMaterial(Object.assign({roughness:.8,metalness:0},o));if(world)m.userData.world=world;return m;};
+ const mat={
+  floor:M({map:terrazzo,roughness:.34,envMapIntensity:.5},[1.6,1.6]),plaster:M({map:plaster,roughness:.95,envMapIntensity:.3},[3,3]),panel:M({map:panel,roughness:.5,envMapIntensity:.5},[1.1,1.1]),
+  marble:M({map:marble,roughness:.22,envMapIntensity:.9},[1.1,1.1]),walnut:M({map:walnut,roughness:.55,envMapIntensity:.6},[1.2,1.2]),bent:M({color:'#3A281D',roughness:.5,envMapIntensity:.6}),
+  leather:M({map:leather,roughness:.72,envMapIntensity:.25},[.6,.6]),slabs:M({map:slabs,roughness:.95,envMapIntensity:.2},[1.2,1.2]),asphalt:M({map:asphalt,roughness:.95,envMapIntensity:.15},[2,2]),
+  linen:M({map:linen,roughness:.92,envMapIntensity:.3},[.5,.5]),cut:M({color:'#2B2724',roughness:.85,envMapIntensity:.2}),iron:M({color:'#232323',roughness:.45,metalness:.6}),
+  brass:M({color:'#B8914A',roughness:.28,metalness:1}),chrome:M({color:'#D4D6D8',roughness:.15,metalness:1}),white:M({color:'#F7F6F2',roughness:.18,envMapIntensity:.8}),
+  kerb:M({color:'#A9A59D',roughness:.9}),ground:M({color:'#E3E1DB',roughness:1,envMapIntensity:.2}),paint:M({color:'#FFFFFF',roughness:.9}),
+  terracotta:M({color:'#B9714F',roughness:.9}),soil:M({color:'#3C2E25',roughness:1}),bark:M({color:'#6B5A48',roughness:1}),olive:M({color:'#7E8C6A',roughness:.85}),olive2:M({color:'#97A383',roughness:.85}),
+  wax:M({color:'#F3EAD7',roughness:.7}),glassG:M({color:'#1E3A2A',roughness:.12,metalness:.1,envMapIntensity:1.2}),glassA:M({color:'#4A2810',roughness:.12,metalness:.1,envMapIntensity:1.2}),glassC:M({color:'#B9C4BC',roughness:.1,metalness:.1,envMapIntensity:1.2}),
+  label:M({color:'#EFE6D2',roughness:.8}),dark:M({color:'#2B2D2F',roughness:.4,metalness:.3}),post:M({color:'#25352C',roughness:.5,metalness:.4}),
+  sign:new THREE.MeshBasicMaterial({map:signTex,color:new THREE.Color(.9,.9,.9),toneMapped:false}),board:new THREE.MeshStandardMaterial({map:boardTex,roughness:.8}),
+  pic1:new THREE.MeshStandardMaterial({map:scene1,roughness:.85}),pic2:new THREE.MeshStandardMaterial({map:scene2,roughness:.85}),
+  globe:new THREE.MeshStandardMaterial({color:lin('#FFF3DF'),emissive:lin('#FFD9A0'),emissiveIntensity:1.2,roughness:.4}),
+  glass:new THREE.MeshPhysicalMaterial({color:lin('#ffffff'),roughness:.05,metalness:0,transparent:true,opacity:.28,envMapIntensity:1.5,depthWrite:false}),
+  wine:M({color:'#5C1018',roughness:.15}),plate:M({color:'#FBFAF7',roughness:.15,envMapIntensity:.9}),napkin:M({color:'#A8201A',roughness:.9}),
+  flame:new THREE.MeshBasicMaterial({color:new THREE.Color('#FFC46B').multiplyScalar(1.6),toneMapped:false})
+ };
+ mat.glass.userData.cast=false;mat.cut.userData.cast=false;mat.floor.userData.cast=false;mat.slabs.userData.cast=false;mat.asphalt.userData.cast=false;mat.ground.userData.cast=false;mat.paint.userData.cast=false;
+
+ // ---- geometry helpers: everything static is merged by material (few draw calls) ----
+ const buckets=new Map(),E=new THREE.Euler(),Q=new THREE.Quaternion(),V=new THREE.Vector3(),S=new THREE.Vector3(),MX=new THREE.Matrix4();
+ function put(geo,m,x,y,z,rx=0,ry=0,rz=0){E.set(rx,ry,rz);Q.setFromEuler(E);MX.compose(V.set(x,y,z),Q,S.set(1,1,1));const g=geo.index?geo.toNonIndexed():geo.clone();g.applyMatrix4(MX);if(!buckets.has(m))buckets.set(m,[]);buckets.get(m).push(g);}
+ const box=(w,h,d,m,x,y,z,ry=0)=>put(new THREE.BoxGeometry(w,h,d),m,x,y,z,0,ry,0);
+ const cyl=(r,h,m,x,y,z,o={})=>put(new THREE.CylinderGeometry(o.r2??r,r,h,o.seg||20),m,x,y,z,o.rx||0,o.ry||0,o.rz||0);
+ function flush(parent){const out=[];for(const [m,gs] of buckets){let n=0;gs.forEach(g=>n+=g.attributes.position.count);const P=new Float32Array(n*3),N=new Float32Array(n*3),U=new Float32Array(n*2);let o=0;
+  for(const g of gs){const p=g.attributes.position.array,nn=g.attributes.normal.array,uv=g.attributes.uv?g.attributes.uv.array:null,c=g.attributes.position.count;P.set(p,o*3);N.set(nn,o*3);
+   if(m.userData.world){const [su,sv]=m.userData.world;for(let i=0;i<c;i++){const ax=Math.abs(nn[i*3]),ay=Math.abs(nn[i*3+1]),az=Math.abs(nn[i*3+2]);const X=p[i*3],Y=p[i*3+1],Z=p[i*3+2];let u,v;if(ay>=ax&&ay>=az){u=X/su;v=Z/sv;}else if(ax>=az){u=Z/su;v=Y/sv;}else{u=X/su;v=Y/sv;}U[(o+i)*2]=u;U[(o+i)*2+1]=v;}}
+   else if(uv)U.set(uv,o*2);o+=c;}
+  const bg=new THREE.BufferGeometry();bg.setAttribute('position',new THREE.BufferAttribute(P,3));bg.setAttribute('normal',new THREE.BufferAttribute(N,3));bg.setAttribute('uv',new THREE.BufferAttribute(U,2));bg.computeBoundingSphere();
+  const me=new THREE.Mesh(bg,m);me.castShadow=m.userData.cast!==false&&!m.transparent;me.receiveShadow=true;parent.add(me);out.push(me);gs.forEach(g=>g.dispose());}
+  buckets.clear();return out;}
+
+ const room=new THREE.Group();scene.add(room);
+ const HX=7,HZ=5,WH=3.3,T=.24;
+ // street, pavement and ground
+ box(60,.1,60,mat.ground,0,-.2,-10);
+ box(20,.12,3.0,mat.slabs,0,-.06,6.62);box(20,.16,.2,mat.kerb,0,-.07,8.2);box(20,.08,6,mat.asphalt,0,-.15,11.3);
+ for(let x=-9;x<10;x+=3)box(1.6,.012,.12,mat.paint,x,-.105,11.4);
+ // floor slab with a dark section edge, terrazzo on top
+ box(2*HX+2*T,.42,2*HZ+2*T,mat.cut,0,-.23,0);box(2*HX,.04,2*HZ,mat.floor,0,-.0,0);
+ // walls: back and sides full height, street front cut low at the window sill (cutaway)
+ box(2*HX+2*T,WH,T,mat.plaster,0,WH/2,-HZ-T/2);box(T,WH,2*HZ,mat.plaster,-HX-T/2,WH/2,0);box(T,WH,2*HZ,mat.plaster,HX+T/2,WH/2,0);
+ box(2*HX+2*T,.03,T+.01,mat.cut,0,WH+.015,-HZ-T/2);box(T+.01,.03,2*HZ,mat.cut,-HX-T/2,WH+.015,0);box(T+.01,.03,2*HZ,mat.cut,HX+T/2,WH+.015,0);
+ // front: panelled stallriser with a marble sill, entrance gap on the right, window posts cut at sill height
+ const fL=-HX-T,fR=5.35;box(fR-fL,.9,T,mat.panel,(fL+fR)/2,.45,HZ+T/2);box(fR-fL+.06,.05,T+.12,mat.marble,(fL+fR)/2,.925,HZ+T/2);
+ box(HX+T-6.75,.9,T,mat.panel,(6.75+HX+T)/2,.45,HZ+T/2);box(HX+T-6.75+.06,.05,T+.12,mat.marble,(6.75+HX+T)/2,.925,HZ+T/2);
+  box(1.35,.02,.5,mat.marble,6.05,.01,HZ+.1);// threshold
+ // inside wall finish: green panelled wainscot and walnut dado rail
+ box(2*HX,1.1,.04,mat.panel,0,.55,-HZ+.02);box(.04,1.1,2*HZ,mat.panel,-HX+.02,.55,0);box(.04,1.1,2*HZ,mat.panel,HX-.02,.55,0);
+ box(2*HX,.06,.07,mat.walnut,0,1.12,-HZ+.035);box(.07,.06,2*HZ,mat.walnut,-HX+.035,1.12,0);box(.07,.06,2*HZ,mat.walnut,HX-.035,1.12,0);
+ // sign above the long table
+ const sg=new THREE.Mesh(new THREE.PlaneGeometry(3.3,.75),mat.sign);sg.position.set(-.6,2.55,-HZ+.035);room.add(sg);box(3.42,.87,.03,mat.brass,-.6,2.55,-HZ+.015);
+ // kitchen door with porthole
+ box(1.1,2.25,.05,mat.walnut,2.45,1.125,-HZ+.03);box(.95,2.1,.05,mat.dark,2.45,1.05,-HZ+.045);box(.88,2.02,.05,mat.walnut,2.45,1.03,-HZ+.07);
+ cyl(.17,.04,mat.brass,2.45,1.55,-HZ+.1,{rx:Math.PI/2,seg:28});cyl(.13,.05,mat.dark,2.45,1.55,-HZ+.11,{rx:Math.PI/2,seg:28});box(.32,.04,.02,mat.brass,2.45,.95,-HZ+.1);
+ // back bar: shelves of wine, marble counter, brass rail, stools, coffee machine
+ const bx0=3.4,bx1=6.95;box(bx1-bx0,1.75,.04,mat.walnut,(bx0+bx1)/2,2.05,-HZ+.05);
+ [1.35,1.85,2.35,2.85].forEach(y=>box(bx1-bx0,.04,.3,mat.walnut,(bx0+bx1)/2,y,-HZ+.2));
+ const gl=[mat.glassG,mat.glassG,mat.glassA,mat.glassC];
+ [1.37,1.87,2.37].forEach((y,row)=>{for(let x=bx0+.12;x<bx1-.08;x+=.105){if(Math.random()<.08)continue;const gm=gl[(Math.random()*gl.length)|0];cyl(.036,.22,gm,x,y+.13,-HZ+.18,{seg:10});cyl(.012,.09,gm,x,y+.3,-HZ+.18,{r2:.035,seg:10});cyl(.013,.06,gm,x,y+.37,-HZ+.18,{seg:8});if(Math.random()<.5)box(.06,.07,.005,mat.label,x,y+.12,-HZ+.145);}});
+ box(bx1-bx0,1.02,.52,mat.walnut,(bx0+bx1)/2,.51,-3.72);box(bx1-bx0+.1,.05,.66,mat.marble,(bx0+bx1)/2,1.045,-3.7);box(.52,1.02,1.1,mat.walnut,bx0+.26,.51,-4.55);box(.6,.05,1.15,mat.marble,bx0+.27,1.045,-4.55);
+ cyl(.02,bx1-bx0,mat.brass,(bx0+bx1)/2,.2,-3.38,{rz:Math.PI/2,seg:10});
+ [4.0,4.8,5.6,6.4].forEach(x=>{cyl(.2,.07,mat.leather,x,.78,-3.0,{seg:24});cyl(.025,.72,mat.brass,x,.4,-3.0,{seg:10});cyl(.2,.02,mat.iron,x,.01,-3.0,{seg:24});put(new THREE.TorusGeometry(.15,.012,6,24),mat.brass,x,.28,-3.0,Math.PI/2);});
+ box(.5,.42,.38,mat.chrome,6.25,1.28,-3.85);box(.52,.06,.4,mat.dark,6.25,1.52,-3.85);[6.1,6.25,6.4].forEach(x=>{cyl(.03,.05,mat.white,x,1.1,-3.62,{r2:.035,seg:12});});
+ // banquette along the left wall: walnut base, green leather seat and channel-stitched back
+ const bz0=-3.65,bz1=2.0,bzc=(bz0+bz1)/2,bl=bz1-bz0;box(.62,.4,bl,mat.walnut,-HX+.31,.2,bzc);box(.6,.12,bl,mat.leather,-HX+.32,.46,bzc);
+ for(let z=bz0+.2;z<bz1-.1;z+=.4)box(.12,.6,.37,mat.leather,-HX+.1,.86,z);box(.16,.05,bl,mat.walnut,-HX+.09,1.18,bzc);
+ // tables, candles and chairs
+ const flames=[];
+ function chair(x,z,tx,tz){const a=Math.atan2(tx-x,tz-z),c=Math.cos(a),s=Math.sin(a);const L=(lx,lz)=>[x+lx*c+lz*s,z-lx*s+lz*c];
+  cyl(.2,.045,mat.bent,x,.46,z,{seg:20});[[-.14,-.14],[.14,-.14],[-.14,.14],[.14,.14]].forEach(([lx,lz])=>{const p=L(lx,lz);cyl(.016,.46,mat.bent,p[0],.23,p[1],{seg:6});});
+  put(new THREE.TorusGeometry(.14,.01,6,20),mat.bent,x,.18,z,Math.PI/2);
+  [[-.15,-.17],[.15,-.17]].forEach(([lx,lz])=>{const p=L(lx,lz);cyl(.016,.34,mat.bent,p[0],.63,p[1],{seg:6});});
+  const p=L(0,-.17);put(new THREE.TorusGeometry(.15,.017,6,20,Math.PI),mat.bent,p[0],.8,p[1],0,a,0);
+  const q=L(0,-.18);put(new THREE.TorusGeometry(.15,.01,6,20,Math.PI),mat.bent,q[0],.68,q[1],0,a,0);}
+ function candle(x,z,y=.775){cyl(.032,.02,mat.brass,x,y+.01,z,{seg:14});cyl(.022,.1,mat.wax,x,y+.07,z,{seg:12});const f=new THREE.Mesh(new THREE.ConeGeometry(.011,.04,8),mat.flame);f.position.set(x,y+.145,z);room.add(f);flames.push(f);}
+ for(const k in TABLES){const t=TABLES[k];
+  if(t.type==='round'){cyl(.38,.035,mat.marble,t.x,.755,t.z,{seg:40});cyl(.026,.72,mat.iron,t.x,.38,t.z,{seg:10});cyl(.22,.03,mat.iron,t.x,.015,t.z,{seg:28});candle(t.x,t.z);}
+  if(t.type==='square'){box(.82,.035,.82,mat.marble,t.x,.755,t.z);cyl(.03,.72,mat.iron,t.x,.38,t.z,{seg:10});box(.5,.03,.5,mat.iron,t.x,.015,t.z);candle(t.x,t.z);}
+  if(t.type==='banq'){box(.7,.035,.62,mat.marble,t.x,.755,t.z);cyl(.026,.72,mat.iron,t.x,.38,t.z,{seg:10});box(.42,.03,.42,mat.iron,t.x,.015,t.z);candle(t.x,t.z);}
+  if(t.type==='long'){const L=t.len;box(L,.05,.95,mat.walnut,t.x,.735,t.z);[[-1,-1],[1,-1],[-1,1],[1,1]].forEach(([a,b])=>box(.07,.71,.07,mat.walnut,t.x+a*(L/2-.12),.355,t.z+b*.38));
+   box(L+.06,.012,1.0,mat.linen,t.x,.766,t.z);box(L+.06,.24,.012,mat.linen,t.x,.66,t.z+.505);box(L+.06,.24,.012,mat.linen,t.x,.66,t.z-.505);
+   [-1.6,0,1.6].forEach(dx=>candle(t.x+dx,t.z,.772));}
+  t.seats.forEach(s=>{if(!s.bench)chair(s.x,s.z,t.type==='long'&&Math.abs(s.z-t.z)<.1?t.x:(t.type==='long'?s.x:t.x),t.z);});}
+ // host stand by the door
+ box(.5,1.05,.4,mat.walnut,6.2,.525,3.7);box(.56,.04,.46,mat.marble,6.2,1.07,3.7);
+ // wall sconces and framed pictures
+ const sconce=(x,z,ry)=>{const dz=Math.cos(ry)*.16,dx=Math.sin(ry)*.16;box(.12,.2,.03,mat.brass,x,1.95,z,ry);cyl(.012,.16,mat.brass,x+dx*.5,1.95,z+dz*.5,{rx:Math.PI/2,ry:ry,seg:6});
+  const gm=new THREE.Mesh(new THREE.SphereGeometry(.085,20,14),mat.globe);gm.position.set(x+dx,1.99,z+dz);room.add(gm);};
+ sconce(-3.3,-HZ+.02,0);sconce(1.45,-HZ+.02,0);[-1.8,0,1.8].forEach(z=>sconce(-HX+.02,z,Math.PI/2));[-1.4,1.3,3.6].forEach(z=>sconce(HX-.02,z,-Math.PI/2));
+ const pic=(m,x,z,ry,w=.8,h=.6)=>{const g=new THREE.Group();g.position.set(x,2.0,z);g.rotation.y=ry;room.add(g);const fr=new THREE.Mesh(new THREE.BoxGeometry(w+.08,h+.08,.03),mat.walnut);fr.castShadow=true;g.add(fr);const p=new THREE.Mesh(new THREE.PlaneGeometry(w,h),m);p.position.z=.017;g.add(p);};
+ pic(mat.pic1,-HX+.03,-.9,Math.PI/2);pic(mat.pic2,-HX+.03,.9,Math.PI/2);pic(mat.pic2,HX-.03,0,-Math.PI/2,1.1,.8);pic(mat.pic1,HX-.03,2.45,-Math.PI/2);pic(mat.pic1,-4.9,-HZ+.03,0,1.0,.75);
+ // olive trees in terracotta pots (the leaves sway gently)
+ const trees=[];function olive(x,z,s){cyl(.3*s,.55*s,mat.terracotta,x,.275*s,z,{r2:.34*s,seg:24});cyl(.3*s,.02,mat.soil,x,.55*s,z,{seg:24});
+  cyl(.035*s,1.1*s,mat.bark,x,1.05*s,z,{seg:8});cyl(.025*s,.6*s,mat.bark,x+.12*s,1.35*s,z,{rz:-.5,seg:6});
+  const g=new THREE.Group();g.position.set(x,1.6*s,z);scene.add(g);trees.push(g);const lg=[];
+  for(let i=0;i<16;i++){const ge=new THREE.IcosahedronGeometry(rnd(.14,.24)*s,1);ge.translate(rnd(-.42,.42)*s,rnd(-.2,.42)*s,rnd(-.42,.42)*s);ge.scale(1,.75,1);lg.push(ge.index?ge.toNonIndexed():ge);}
+  [mat.olive,mat.olive2].forEach((m,mi)=>{const part=lg.filter((_,i)=>i%2===mi);let n=0;part.forEach(q=>n+=q.attributes.position.count);const P=new Float32Array(n*3),N=new Float32Array(n*3);let o=0;part.forEach(q=>{P.set(q.attributes.position.array,o*3);N.set(q.attributes.normal.array,o*3);o+=q.attributes.position.count;});const bg=new THREE.BufferGeometry();bg.setAttribute('position',new THREE.BufferAttribute(P,3));bg.setAttribute('normal',new THREE.BufferAttribute(N,3));const me=new THREE.Mesh(bg,m);me.castShadow=true;g.add(me);});}
+ olive(-6.35,4.3,1);olive(6.45,2.25,.95);
+ // outside: lamp post and the pavement A-board in the restaurant's colours
+ cyl(.06,4.2,mat.post,-5.6,2.1,7.75,{seg:12});cyl(.11,.4,mat.post,-5.6,.2,7.75,{seg:12});box(.28,.36,.28,mat.post,-5.6,4.35,7.75);box(.22,.28,.22,mat.globe,-5.6,4.34,7.75);
+ const ab=new THREE.Group();ab.position.set(4.3,0,6.35);ab.rotation.y=-.35;room.add(ab);[-1,1].forEach(sd=>{const p=new THREE.Mesh(new THREE.BoxGeometry(.56,.86,.03),mat.walnut);p.position.set(0,.43,sd*.12);p.rotation.x=sd*.14;p.castShadow=true;ab.add(p);const f=new THREE.Mesh(new THREE.PlaneGeometry(.48,.74),mat.board);f.position.set(0,.44,sd*.137);f.rotation.x=sd*.14;if(sd<0)f.rotation.y=Math.PI;ab.add(f);});
+ flush(room);
+
+ // ---- place settings: laid on the chosen table for the chosen number of guests ----
+ const settings=[];const plateG=new THREE.CylinderGeometry(.13,.11,.014,32),rimG=new THREE.TorusGeometry(.115,.006,6,32),bowlG=new THREE.CylinderGeometry(.036,.024,.075,20,1,true),stemG=new THREE.CylinderGeometry(.004,.004,.085,6),footG=new THREE.CylinderGeometry(.03,.03,.004,18),wineG=new THREE.CylinderGeometry(.026,.022,.03,18),napG=new THREE.BoxGeometry(.11,.012,.18),knifeG=new THREE.BoxGeometry(.016,.004,.19);
+ for(let i=0;i<14;i++){const g=new THREE.Group();g.visible=false;g.scale.setScalar(.001);room.add(g);
+  const pl=new THREE.Mesh(plateG,mat.plate);pl.position.y=.007;pl.receiveShadow=true;g.add(pl);const rim=new THREE.Mesh(rimG,mat.plate);rim.rotation.x=Math.PI/2;rim.position.y=.014;g.add(rim);
+  const gs=new THREE.Group();gs.position.set(.13,0,-.15);g.add(gs);const ft=new THREE.Mesh(footG,mat.glass);ft.position.y=.002;gs.add(ft);const st=new THREE.Mesh(stemG,mat.glass);st.position.y=.045;gs.add(st);const bw=new THREE.Mesh(bowlG,mat.glass);bw.position.y=.125;gs.add(bw);const wn=new THREE.Mesh(wineG,mat.wine);wn.position.y=.103;gs.add(wn);
+  const nap=new THREE.Mesh(napG,mat.napkin);nap.position.set(-.2,.006,0);g.add(nap);const fk=new THREE.Mesh(knifeG,mat.chrome);fk.position.set(-.2,.014,0);g.add(fk);const kn=new THREE.Mesh(knifeG,mat.chrome);kn.position.set(.17,.004,0);g.add(kn);
+  g.userData={k:0,on:false,delay:0};settings.push(g);}
+ function platePos(t,s){if(t.type==='long'){if(Math.abs(s.z-t.z)<.1){const sd=Math.sign(s.x-t.x);return[t.x+sd*(t.len/2-.24),t.z];}return[s.x,t.z+Math.sign(s.z-t.z)*.29];}
+  const k=t.type==='round'?.42:t.type==='square'?.44:.36;return[t.x+(s.x-t.x)*k,t.z+(s.z-t.z)*k];}
+ let layT=0;
+ function lay(zi,n){const z=ZONES[zi];layT=performance.now();settings.forEach((g,i)=>{if(i<n&&z.seats[i]){const [tk,si]=z.seats[i],t=TABLES[tk],s=t.seats[si];const p=platePos(t,s);const y=t.type==='long'?.775:.775;
+   const wasOn=g.userData.on&&g.userData.tk===tk&&g.userData.si===si;g.position.set(p[0],y,p[1]);g.rotation.y=Math.atan2(s.x-p[0],s.z-p[1]);g.visible=true;g.userData.on=true;g.userData.tk=tk;g.userData.si=si;if(!wasOn){g.userData.k=0;g.userData.delay=i*.09;g.scale.setScalar(.001);}}
+   else{g.userData.on=false;}});}
+ function clearLay(){settings.forEach(g=>g.userData.on=false);}
+
+ // ---- light: soft daylight through the street window, warm lamps inside ----
+ scene.add(new THREE.HemisphereLight(lin('#F6F2EA'),lin('#B7AFA2'),.3));
+ const sun=new THREE.DirectionalLight(lin('#FFF1DE'),1.95);sun.position.set(7,13,11);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);
+ Object.assign(sun.shadow.camera,{left:-11,right:11,top:10,bottom:-10,near:1,far:40});sun.shadow.bias=-.0005;sun.shadow.normalBias=.025;sun.shadow.radius=4;scene.add(sun);scene.add(sun.target);
+ const fill=new THREE.DirectionalLight(lin('#E4ECF5'),.28);fill.position.set(-9,7,8);scene.add(fill);
+ [[-4.5,2.6,-.5],[1.5,2.6,.2],[5.2,2.6,-2.6]].forEach(p=>{const l=new THREE.PointLight(lin('#FFD7A3'),.38,9,2);l.position.set(...p);scene.add(l);});
+ const focus=new THREE.PointLight(lin('#FFCF8F'),0,4.2,2);focus.position.set(0,1.7,0);scene.add(focus);
+
+ // ---- choosing areas ----
+ function rr(w,h){return tex(256,256,(g,W2,H2)=>{g.clearRect(0,0,W2,H2);g.fillStyle='#fff';const r=40,x=10,y=10,ww=W2-20,hh=H2-20;g.beginPath();g.moveTo(x+r,y);g.arcTo(x+ww,y,x+ww,y+hh,r);g.arcTo(x+ww,y+hh,x,y+hh,r);g.arcTo(x,y+hh,x,y,r);g.arcTo(x,y,x+ww,y,r);g.fill();});}
+ const glowT=rr();glowT.encoding=THREE.LinearEncoding;
+ const hits=[],glows=[];ZONES.forEach((z,i)=>{const [cx,cz,w,d]=z.hit;const h=new THREE.Mesh(new THREE.BoxGeometry(w,1.6,d),new THREE.MeshBasicMaterial({visible:false}));h.position.set(cx,.8,cz);h.userData.i=i;scene.add(h);hits.push(h);
+  const gm=new THREE.Mesh(new THREE.PlaneGeometry(w,d),new THREE.MeshBasicMaterial({color:lin('#FFC98A'),alphaMap:glowT,transparent:true,opacity:0,depthWrite:false}));gm.rotation.x=-Math.PI/2;gm.position.set(cx,.025,cz);gm.renderOrder=2;scene.add(gm);glows.push(gm);});
+
+ // ---- camera rig ----
+ const wide=()=>innerWidth>1000;
+ const HOMEW={pos:new THREE.Vector3(4.6,11.2,14.2),tgt:new THREE.Vector3(-.1,-.3,.5)},HOMEP={pos:new THREE.Vector3(4.6,16.8,15.0),tgt:new THREE.Vector3(.1,-.4,.4)};
+ const home=()=>wide()?HOMEW:HOMEP;
+ let yaw=0,yawT=0;const cam={pos:home().pos.clone(),tgt:home().tgt.clone()};let tw=null;
+ function frame(){const w=W(),h=H();if(!w||!h)return;renderer.setSize(w,h,false);camera.aspect=w/h;if(wide())camera.setViewOffset(w,h,w*.165,0,w,h);else camera.clearViewOffset();camera.updateProjectionMatrix();}
+ function fly(pos,tgt,ms,lift){const p0=cam.pos.clone(),t0=cam.tgt.clone(),y0=yaw,st=performance.now();ms=reduce?1:ms;
+  tw={run(n){let k=Math.min(1,(n-st)/ms);const e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;cam.pos.lerpVectors(p0,pos,e);cam.pos.y+=Math.sin(Math.PI*e)*(lift||0);cam.tgt.lerpVectors(t0,tgt,e);yaw=y0*(1-e);if(k>=1)tw=null;}};yawT=0;}
+ function rotY(v,a){const o=home().tgt,c=Math.cos(a),s=Math.sin(a),x=v.x-o.x,z=v.z-o.z;return new THREE.Vector3(o.x+x*c+z*s,v.y,o.z-x*s+z*c);}
+ let drag=null;renderer.domElement.addEventListener('pointerdown',e=>{if(inside)return;drag={x:e.clientX,y0:yawT,moved:0,type:e.pointerType};});
+ addEventListener('pointermove',e=>{if(drag){const dx=e.clientX-drag.x;drag.moved=Math.max(drag.moved,Math.abs(dx));if(drag.type==='mouse'||drag.moved>8)yawT=Math.max(-.5,Math.min(.5,drag.y0-dx*.004));}});
+ addEventListener('pointerup',()=>setTimeout(()=>drag=null,0));
+ const ray=new THREE.Raycaster(),mv=new THREE.Vector2();let hov=-1;
+ function pickAt(e){const r=renderer.domElement.getBoundingClientRect();mv.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(mv,camera);const h=ray.intersectObjects(hits)[0];return h?h.object.userData.i:-1;}
+ renderer.domElement.addEventListener('pointermove',e=>{if(inside||e.pointerType==='touch')return;const i=pickAt(e);if(i!==hov){hov=i;sceneEl.classList.toggle('hovering',i>=0);if(i>=0)pick(i);}});
+ renderer.domElement.addEventListener('pointerleave',()=>{hov=-1;sceneEl.classList.remove('hovering');});
+ renderer.domElement.addEventListener('click',e=>{if(inside||(drag&&drag.moved>8))return;const i=pickAt(e);if(i>=0)zoomTo(i);});
+ const pinEls=ZONES.map((z,i)=>{const d=document.createElement('div');d.className='pin';d.innerHTML='<i></i>'+['Window','Main room','Banquette','Long table'][i];$('pins').appendChild(d);return d;});
+ const pinPos=ZONES.map(z=>new THREE.Vector3(...z.pin));
+
+ // ---- loop (time based, so it stays smooth on slow machines) ----
+ let last=performance.now(),seen=false,frames=0,visible=true,slow=0;
+ new IntersectionObserver(es=>{visible=es[0].isIntersecting;},{threshold:0}).observe(sceneEl);
+ function loop(n){requestAnimationFrame(loop);if(!visible||document.hidden||!$('stage').offsetParent)return;const dt=Math.min(.1,(n-last)/1000);last=n;const t=n/1000;
+  if(dt>.05)slow++;else slow=Math.max(0,slow-1);if(slow>40&&pr>1){pr=1;renderer.setPixelRatio(1);frame();}
+  if(tw)tw.run(n);else if(!inside&&!drag&&!reduce&&hov<0){yawT+=(Math.sin(t*.12)*.07-yawT)*(1-Math.exp(-dt*.6));}
+  if(!tw)yaw+=(yawT-yaw)*(1-Math.exp(-dt*6));
+  const p=inside?cam.pos:rotY(cam.pos,yaw);camera.position.copy(p);camera.lookAt(cam.tgt);
+  // living details: candle flicker, olive leaves, place settings
+  flames.forEach((f,i)=>{const k=1+Math.sin(t*11+i*1.7)*.12+Math.sin(t*23+i)*.08;f.scale.set(1,k,1);f.position.x+=(Math.sin(t*7+i)*.002-(f.userData.dx||0));f.userData.dx=Math.sin(t*7+i)*.002;});
+  if(!reduce)trees.forEach((g,i)=>{g.rotation.z=Math.sin(t*.7+i)*.018;g.rotation.x=Math.sin(t*.5+i*2)*.012;});
+  settings.forEach(g=>{const u=g.userData;const age=(n-layT)/1000-u.delay;const target=u.on&&age>0?1:0;u.k+=(target-u.k)*(1-Math.exp(-dt*(reduce?60:9)));if(!u.on&&u.k<.02){g.visible=false;}g.scale.setScalar(Math.max(.001,u.k));});
+  const fz=ZONES[cur].focus,fon=(inside||$('stage').classList.contains('focus'));focus.position.x+=(fz[0]-focus.position.x)*(1-Math.exp(-dt*5));focus.position.z+=(fz[1]-focus.position.z)*(1-Math.exp(-dt*5));focus.intensity+=((fon?1.25:0)-focus.intensity)*(1-Math.exp(-dt*4));
+  glows.forEach((g,i)=>{const on=(i===cur&&$('stage').classList.contains('focus')&&!inside)||(i===hov&&!inside);g.material.opacity+=((on?.42:0)-g.material.opacity)*(1-Math.exp(-dt*7));});
+  if(frames<4||frames%240===0)renderer.shadowMap.needsUpdate=true;frames++;
+  renderer.render(scene,camera);
+  const w=W(),h=H();pinEls.forEach((el,i)=>{const v=pinPos[i].clone().project(camera);el.style.left=Math.max(el.offsetWidth/2+6,Math.min(w-el.offsetWidth/2-6,(v.x+1)/2*w))+'px';el.style.top=((1-v.y)/2*h)+'px';el.classList.toggle('on',i===cur&&$('stage').classList.contains('focus'));});
+  if(!seen){seen=true;$('load').style.opacity=0;setTimeout(()=>{const l=$('load');if(l)l.remove();},700);}
+ }
+ frame();addEventListener('resize',()=>{frame();if(!inside&&!tw){const hm=home();cam.pos.copy(hm.pos);cam.tgt.copy(hm.tgt);}});new ResizeObserver(frame).observe(sceneEl);requestAnimationFrame(loop);
+ return{go(i){frame();const v=ZONES[i].view;fly(new THREE.Vector3(...v[0]),new THREE.Vector3(...v[1]),1700,1.2);},home(){const hm=home();fly(hm.pos.clone(),hm.tgt.clone(),1500,.6);setTimeout(frame,0);},lay,clearLay,frame};
+}
+try{api=build3D();}catch(e){const l=$('load');if(l)l.textContent='This browser can\'t show the 3D dining room, but you can still choose where to sit from the list.';}
+
+/* ================= panel + inside card ================= */
+const zonesEl=$('zones'),stage=$('stage');
+zonesEl.innerHTML=ZONES.map((z,i)=>`<button type="button" role="listitem" data-i="${i}" aria-current="false"><b>${z.n}</b><span>${z.short}</span></button>`).join('');
+function pick(i,quiet){cur=(i+ZONES.length)%ZONES.length;if(!quiet)stage.classList.add('focus');$('go').textContent=ZONES[cur].btn;
+ $$('button',zonesEl).forEach((b,j)=>b.setAttribute('aria-current',j===cur));}
+function laidText(){const z=ZONES[cur],n=guests;
+ if(z.k==='window')return`Your table by the window is laid for ${n===1?'one':'two'}.`;
+ if(z.k==='main')return`A table in the main room, laid for ${n}.`;
+ if(z.k==='banquette')return n<=2?'A banquette table, laid for two.':n<=4?`Two banquette tables pushed together, laid for ${n}.`:`Three banquette tables pushed together, laid for ${n}.`;
+ return`The long table, laid for ${n}. We'll call you to talk through the food.`;}
+function renderGuests(){const z=ZONES[cur];$('guests').innerHTML=z.guests.map(n=>`<button class="chip" type="button" data-g="${n}" aria-pressed="${n===guests}">${n}</button>`).join('');$('laid').textContent=laidText();if(api&&inside)api.lay(cur,guests);}
+const cardDays=dayList(4);
+$('idays').innerHTML=cardDays.map((d,i)=>`<button class="chip" type="button" data-d="${i}" aria-pressed="false">${dayLabel(d,i)}</button>`).join('');
+$('itimes').innerHTML=TIMES.map(t=>`<button class="chip" type="button" data-t="${t}" aria-pressed="false">${t}</button>`).join('');
+function zoomTo(i){pick(i);inside=true;stage.classList.add('inside');const z=ZONES[cur];guests=z.def;
+ $('iname').textContent=z.n;$('iline').textContent=z.line;$('gq').textContent=z.k==='long'?'How many are coming?':'How many of you?';
+ $('bookThis').textContent=z.k==='long'?'Plan this party':'Book this table';renderGuests();
+ if(innerWidth<=1000){$('scene').scrollIntoView({behavior:'auto',block:'start'});}
+ if(api){api.go(cur);setTimeout(()=>{if(inside&&ZONES[cur]===z)api.lay(cur,guests);},reduce?0:1100);}
+ if(innerWidth>1000)setTimeout(()=>{const c=$('guests').querySelector('[aria-pressed=true]');if(c&&inside)c.focus({preventScroll:true});},reduce?0:1700);}
+function out(){inside=false;stage.classList.remove('inside');if(api){api.clearLay();api.home();}pick(cur);if(innerWidth>1000)$('go').focus({preventScroll:true});}
+zonesEl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.i;if(i===cur&&stage.classList.contains('focus'))zoomTo(i);else{pick(i);}});
+zonesEl.addEventListener('keydown',e=>{if(['ArrowDown','ArrowUp','ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();pick(cur+((e.key==='ArrowDown'||e.key==='ArrowRight')?1:-1));$$('button',zonesEl)[cur].focus();}});
+$('go').addEventListener('click',()=>zoomTo(cur));
+$('back').addEventListener('click',out);
+addEventListener('keydown',e=>{if(e.key==='Escape'&&inside)out();});
+$('guests').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;guests=+b.dataset.g;renderGuests();});
+$('idays').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;pickDay=+b.dataset.d;$$('.chip',$('idays')).forEach(c=>c.setAttribute('aria-pressed',c===b));});
+$('itimes').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;pickTime=b.dataset.t;$$('.chip',$('itimes')).forEach(c=>c.setAttribute('aria-pressed',c===b));});
+$('bookThis').addEventListener('click',e=>{const z=ZONES[cur];
+ if(z.k==='long'){e.preventDefault();$('pguests').value=guests;if(pickDay!=null){const d=cardDays[pickDay];$('pdate').value=d.toISOString().slice(0,10);}location.hash='#/parties';setTimeout(()=>$('pocc').focus(),60);return;}
+ bk.g=guests;bk.area=z.n;if(pickDay!=null)bk.day=pickDay;if(pickTime)bk.time=pickTime;renderBook();setTimeout(()=>$('bname').focus(),60);});
+pick(0,true);
+
+/* ================= router + mobile menu ================= */
+function route(){const p=location.hash.replace(/^#/,'')||'/';const ok=$$('.page').some(x=>x.dataset.page===p)?p:'/';
+ $$('.page').forEach(x=>x.classList.toggle('on',x.dataset.page===ok));$$('nav.main a').forEach(a=>a.setAttribute('aria-current',a.getAttribute('href')==='#'+ok?'page':'false'));
+ closeSheet();scrollTo(0,0);if(ok==='/'&&api)setTimeout(api.frame,30);
+ document.title=(ok==='/'?"Maranello's Italian Restaurant, Ecclesall Road, Sheffield":({'/menu':'Menu','/book':'Book a table','/parties':'Parties','/about':'About us','/find-us':'Find us'}[ok]+" | Maranello's, Sheffield"));}
+const sheet=$('sheet'),mb=document.querySelector('.menu-btn');
+function closeSheet(){sheet.classList.remove('open');sheet.setAttribute('aria-hidden','true');mb.setAttribute('aria-expanded','false');}
+mb.addEventListener('click',()=>{sheet.classList.add('open');sheet.setAttribute('aria-hidden','false');mb.setAttribute('aria-expanded','true');sheet.querySelector('a').focus();});
+sheet.addEventListener('click',e=>{if(e.target===sheet||e.target.closest('.close'))closeSheet();});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet();});
+addEventListener('hashchange',route);
+document.addEventListener('click',e=>{const a=e.target.closest('[data-zone]');if(!a)return;const i=+a.dataset.zone;setTimeout(()=>{$('stage').scrollIntoView({block:'center'});zoomTo(i);},120);});
+
+/* ================= menu (dish placeholders until their menu is copied in) ================= */
+const COURSES=[['Starters',[['v'],['v','ve','gf'],[],['gf']]],['Pasta and mains',[['v'],[],['gf'],['v','ve'],[]]],['Desserts',[['v'],['v','gf'],['v']]],['Wine',[['ve','gf'],['ve','gf'],['ve','gf']]]];
+const TAGN={v:'Vegetarian',ve:'Vegan',gf:'Gluten-free'};
+$('menuGrid').innerHTML=COURSES.map(([c,ds])=>`<div class="course card"><h3>${c}</h3>${ds.map((tg,i)=>`<div class="dish" data-t="${tg.join(' ')}"><b><span class="ph">${c==='Wine'?'Wine name and region':'Dish name'}</span></b><span class="ph">£ price</span><p>${c==='Wine'?'Glass and bottle prices, with a line on what it goes with.':'A short, tempting description in your own words.'}</p>${tg.length?`<div class="tags">${tg.map(t=>`<span class="tag">${TAGN[t]}</span>`).join('')}</div>`:''}</div>`).join('')}<div class="empty">Nothing marked for this diet in this course yet.</div></div>`).join('');
+$('diet').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const d=b.dataset.d;$$('.chip',$('diet')).forEach(c=>c.setAttribute('aria-pressed',c===b));
+ $$('.course').forEach(c=>{let n=0;$$('.dish',c).forEach(x=>{const on=d==='all'||x.dataset.t.split(' ').includes(d);x.classList.toggle('hide',!on);if(on)n++;});c.querySelector('.empty').style.display=n?'none':'block';});});
+
+/* ================= booking ================= */
+const bk={g:2,day:null,time:null,area:''};const bDays=dayList(14);
+$('bdays').innerHTML=bDays.map((d,i)=>`<button class="chip" type="button" data-d="${i}" aria-pressed="false">${i<2?dayLabel(d,i):d.toLocaleDateString('en-GB',{weekday:'short'})}<small>${d.toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</small></button>`).join('');
+$('btimes').innerHTML=TIMES.map(t=>`<button class="chip" type="button" data-t="${t}" aria-pressed="false">${t}</button>`).join('');
+$('barea').insertAdjacentHTML('beforeend',ZONES.filter(z=>z.k!=='long').map(z=>`<option>${z.n}</option>`).join(''));
+function renderBook(){bk.g=Math.max(1,Math.min(14,bk.g));$('gOut').textContent=bk.g+(bk.g===1?' guest':' guests');
+ $$('.chip',$('bdays')).forEach(c=>c.setAttribute('aria-pressed',+c.dataset.d===bk.day));$$('.chip',$('btimes')).forEach(c=>c.setAttribute('aria-pressed',c.dataset.t===bk.time));
+ if(bk.area&&[...$('barea').options].some(o=>o.value===bk.area))$('barea').value=bk.area;
+ $('bsum').innerHTML=[['Guests',bk.g],['Day',bk.day!=null?longDate(bDays[bk.day]):'Not chosen yet'],['Time',bk.time||'Not chosen yet'],['Seating',$('barea').value||'No preference']].map(([a,b])=>`<div><span>${a}</span><b>${b}</b></div>`).join('')+(bk.g>=8?'<div><span>Eight or more</span><b><a href="#/parties">Plan a party instead</a></b></div>':'');}
+$('gMinus').addEventListener('click',()=>{bk.g--;renderBook();});$('gPlus').addEventListener('click',()=>{bk.g++;renderBook();});
+$('bdays').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;bk.day=+b.dataset.d;renderBook();});
+$('btimes').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;bk.time=b.dataset.t;renderBook();});
+$('barea').addEventListener('change',()=>{bk.area=$('barea').value;renderBook();});
+renderBook();
+const emailOK=v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+$('bform').addEventListener('submit',e=>{e.preventDefault();const miss=[];
+ if(bk.day==null)miss.push('pick a day');if(!bk.time)miss.push('pick a time');if(!$('bname').value.trim())miss.push('add your name');
+ if($('bphone').value.replace(/\D/g,'').length<10)miss.push('add a mobile number so we can confirm');if($('bemail').value.trim()&&!emailOK($('bemail').value))miss.push('check your email address');
+ if(miss.length){$('berr').textContent='Nearly there. Please '+miss.join(', ')+'.';$('bdone').style.display='none';return;}
+ $('berr').textContent='';$('bdone').style.display='block';
+ $('bdone').textContent=`Thanks ${$('bname').value.trim().split(' ')[0]}. This is a demo, so nothing was sent. On the real site, Maranello's would text you to confirm a table for ${bk.g} on ${longDate(bDays[bk.day])} at ${bk.time}${$('barea').value?', '+$('barea').value.toLowerCase():''}.`;});
+$('pform').addEventListener('submit',e=>{e.preventDefault();const miss=[];const g=+$('pguests').value;
+ if(!$('pocc').value)miss.push('choose the occasion');if(!$('pdate').value)miss.push('pick a date');if(!(g>=8))miss.push('enter 8 or more guests (for fewer, book a table)');
+ if(!$('pname').value.trim())miss.push('add your name');if($('pphone').value.replace(/\D/g,'').length<10)miss.push('add a phone number');
+ if(miss.length){$('perr').textContent='Nearly there. Please '+miss.join(', ')+'.';$('pdone').style.display='none';return;}
+ $('perr').textContent='';$('pdone').style.display='block';$('pdone').textContent=`Thanks ${$('pname').value.trim().split(' ')[0]}. This is a demo, so nothing was sent. On the real site, Maranello's would call you back about your ${$('pocc').value.toLowerCase()} for ${g} on ${new Date($('pdate').value+'T12:00').toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})}.`;});
+$('pdate').min=new Date().toISOString().slice(0,10);
+route();
+</script>
+</body>
+</html>
