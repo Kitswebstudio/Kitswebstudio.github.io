@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Get a tiling quote · Your Tiling Co</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Tell Sam about your tiling job in about a minute and send photos, so he can price it quickly.">
+<style>
+:root{--ink:#1c2630;--muted:#5b6672;--paper:#f6f4ef;--card:#fff;--line:#dcd7cd;--brand:#1f5f74;--brand2:#e9f2f4;--accent:#c8873a;--ok:#2f7d4f;--err:#b3261e}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--paper);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:640px;margin:0 auto;padding:18px 16px 120px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.logo{width:44px;height:44px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;letter-spacing:-.03em}
+header b{display:block;font-size:18px}header span{color:var(--muted);font-size:14px}
+h1{font-size:clamp(26px,6vw,34px);line-height:1.1;letter-spacing:-.02em;margin:18px 0 6px}
+.lead{color:var(--muted);margin:0 0 14px}
+.prog{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin:14px 0 18px}.prog i{display:block;height:100%;width:0;background:var(--brand);transition:width .3s}
+.step{display:none}.step.on{display:block;animation:in .25s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.step.on{animation:none}.prog i{transition:none}}
+h2{font-size:22px;line-height:1.2;margin:0 0 4px}.hint{color:var(--muted);font-size:15px;margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.opt{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;font:inherit;color:inherit;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:14px;min-height:64px;cursor:pointer}
+.opt:hover{border-color:var(--brand)}.opt:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.opt[aria-pressed=true]{border-color:var(--brand);background:var(--brand2);box-shadow:inset 0 0 0 1px var(--brand)}
+.opt .ic{font-size:26px;line-height:1}.opt b{font-size:16px;line-height:1.25}.opt small{color:var(--muted);font-size:13px;line-height:1.3}
+.row{display:flex;flex-wrap:wrap;gap:8px}.row .opt{min-height:0;padding:10px 14px;flex-direction:row;align-items:center;border-radius:999px}
+.q{margin:18px 0 8px;font-weight:700}
+label.f{display:grid;gap:6px;font-weight:600;margin-bottom:12px}
+input[type=text],input[type=tel],input[type=email],input[type=number],textarea{font:inherit;width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+textarea{min-height:90px;resize:vertical}
+.drop{display:grid;place-items:center;text-align:center;gap:6px;border:2px dashed var(--brand);border-radius:16px;padding:22px 14px;background:var(--brand2);cursor:pointer}
+.drop b{font-size:18px}.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}
+.thumbs div{position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;background:#ddd}.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs button{position:absolute;top:4px;right:4px;width:30px;height:30px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;font-size:16px;cursor:pointer}
+.bar{position:fixed;left:0;right:0;bottom:0;background:rgba(246,244,239,.96);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+.bar .in{max-width:640px;margin:0 auto;display:flex;gap:10px}
+.btn{font:inherit;font-weight:800;border:0;border-radius:14px;padding:15px 18px;cursor:pointer;background:var(--brand);color:#fff;flex:1}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line);flex:0 0 auto}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn.wa{background:#1f7a4c}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.jobcard h3{margin:0 0 2px;font-size:20px}.jobcard .tag{display:inline-block;background:var(--brand);color:#fff;border-radius:8px;padding:3px 8px;font-size:13px;font-weight:700;margin-bottom:8px}
+.jobcard dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:10px 0 0}.jobcard dt{color:var(--muted)}.jobcard dd{margin:0;font-weight:600}
+.err{color:var(--err);font-size:15px;min-height:1.2em;margin:6px 0 0}
+.small{font-size:13px;color:var(--muted)}
+.done{text-align:center;padding:30px 10px}.done .big{font-size:54px}
+.sr{position:absolute;left:0;top:0;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);opacity:0}
+</style></head>
+<body>
+<div style="background:#c8873a;color:#fff;text-align:center;font:600 14px/1.4 system-ui;padding:8px 12px">Example by Kit's Web Studio: your business name, colours, questions and WhatsApp number go here</div>
+<div class="wrap">
+<header><div class="logo">YT</div><div><b>Your Tiling Co</b><span>Quote request · about 1 minute</span></div></header>
+<h1 id="title">Get a tiling quote</h1>
+<p class="lead" id="lead">Tap through a few quick choices and add a photo or two. It goes straight to Sam on WhatsApp with everything he needs to price your job, so he won't have to ring you back with questions.</p>
+<div class="prog" aria-hidden="true"><i id="prog"></i></div>
+
+<form id="f" method="POST" enctype="multipart/form-data" novalidate>
+
+<!-- 1 JOB -->
+<section class="step on" data-s="job" aria-labelledby="h1j">
+<h2 id="h1j">What do you need tiling?</h2><p class="hint">Pick the closest one.</p>
+<div class="grid" data-pick="job">
+<button type="button" class="opt" data-v="Full bathroom"><span class="ic">🛁</span><b>Full bathroom</b><small>Walls and floor</small></button>
+<button type="button" class="opt" data-v="Bathroom walls"><span class="ic">🧱</span><b>Bathroom walls</b><small>Around bath, basin or toilet</small></button>
+<button type="button" class="opt" data-v="Shower or wet room"><span class="ic">🚿</span><b>Shower / wet room</b><small>Shower walls, tray or wet room</small></button>
+<button type="button" class="opt" data-v="Kitchen splashback"><span class="ic">🍳</span><b>Kitchen splashback</b><small>Behind worktops or hob</small></button>
+<button type="button" class="opt" data-v="Floor"><span class="ic">⬜</span><b>A floor</b><small>Kitchen, hall, utility, room</small></button>
+<button type="button" class="opt" data-v="Outdoor / patio"><span class="ic">🌿</span><b>Outdoor / patio</b><small>Porcelain paving, steps</small></button>
+<button type="button" class="opt" data-v="Repair or regrout"><span class="ic">🔧</span><b>Repair / regrout</b><small>Cracked tiles, mouldy grout</small></button>
+<button type="button" class="opt" data-v="Something else"><span class="ic">✏️</span><b>Something else</b><small>Tell Sam on the next steps</small></button>
+</div>
+</section>
+
+<!-- 2 SIZE -->
+<section class="step" data-s="size" aria-labelledby="h2s">
+<h2 id="h2s">Roughly how big?</h2><p class="hint" id="sizeHint">A rough idea is fine.</p>
+<div class="grid" data-pick="size" id="sizeOpts"></div>
+<p class="q">Know the measurements? <span class="small">(optional, a tape measure guess is fine)</span></p>
+<div id="mFloor"><p class="small" style="margin:0 0 6px;font-weight:700;color:var(--ink)">Floor</p>
+<div class="grid"><label class="f">Length (m)<input type="number" inputmode="decimal" step="0.1" min="0" id="fl" placeholder="e.g. 2.4"></label><label class="f">Width (m)<input type="number" inputmode="decimal" step="0.1" min="0" id="fw" placeholder="e.g. 1.8"></label></div></div>
+<div id="mWall"><p class="small" style="margin:0 0 6px;font-weight:700;color:var(--ink)">Walls</p>
+<div class="grid"><label class="f">Total length of walls to tile (m)<input type="number" inputmode="decimal" step="0.1" min="0" id="wl" placeholder="e.g. 6.5"></label><label class="f">Height to tile up to (m)<input type="number" inputmode="decimal" step="0.1" min="0" id="wh" placeholder="e.g. 2.2"></label></div>
+<p class="small" style="margin-top:-4px">Add up the widths of each wall you want tiled. Floor to ceiling is usually about 2.3 m.</p></div>
+<p class="small" id="area" style="font-weight:700;color:var(--brand)"></p>
+</section>
+
+<!-- 3 DETAILS -->
+<section class="step" data-s="details" aria-labelledby="h3d">
+<h2 id="h3d">A few details</h2><p class="hint">Tap "Not sure" if you don't know.</p>
+<p class="q">Tiles</p>
+<div class="row" data-pick="tiles"><button type="button" class="opt" data-v="I've already got the tiles">I've got them</button><button type="button" class="opt" data-v="I still need to choose tiles">Still choosing</button><button type="button" class="opt" data-v="I'd like Sam to supply tiles">Sam to supply</button><button type="button" class="opt" data-v="Not sure">Not sure</button></div>
+<p class="q">Tile size</p>
+<div class="row" data-pick="tsize"><button type="button" class="opt" data-v="Small / mosaic">Small or mosaic</button><button type="button" class="opt" data-v="Standard (up to 60cm)">Standard</button><button type="button" class="opt" data-v="Large format (60cm+)">Large (60cm+)</button><button type="button" class="opt" data-v="Not sure">Not sure</button></div>
+<p class="q">Old tiles to take off first?</p>
+<div class="row" data-pick="strip"><button type="button" class="opt" data-v="Yes, old tiles to remove">Yes</button><button type="button" class="opt" data-v="No, bare wall or floor">No</button><button type="button" class="opt" data-v="Not sure">Not sure</button></div>
+</section>
+
+<!-- 4 PHOTOS -->
+<section class="step" data-s="photos" aria-labelledby="h4p">
+<h2 id="h4p">Add photos of the area</h2><p class="hint">The quickest way for Sam to price it. A wide shot of the whole area plus any problem spots works best. Up to 5. You'll send them to Sam on WhatsApp at the end.</p>
+<label class="drop" for="pick"><span style="font-size:34px">📷</span><b>Take or choose photos</b><span class="small">From your camera or gallery</span></label>
+<input type="file" id="pick" accept="image/*" multiple class="sr">
+<div class="thumbs" id="thumbs"></div>
+<p class="err" id="photoErr" role="alert"></p>
+</section>
+
+<!-- 5 WHEN + CONTACT -->
+<section class="step" data-s="contact" aria-labelledby="h5c">
+<h2 id="h5c">When, and who you are</h2>
+<p class="q">When would you like it done?</p>
+<div class="row" data-pick="when"><button type="button" class="opt" data-v="As soon as possible">ASAP</button><button type="button" class="opt" data-v="Within a month">Within a month</button><button type="button" class="opt" data-v="In 1 to 3 months">1–3 months</button><button type="button" class="opt" data-v="Just getting prices">Just pricing up</button></div>
+<div style="height:14px"></div>
+<label class="f">Your name<input type="text" id="name" autocomplete="name" required></label>
+<label class="f">Postcode (so Sam knows it's in his area)<input type="text" id="pc" autocomplete="postal-code" required style="text-transform:uppercase"></label>
+<label class="f">Anything else Sam should know? <span class="small">(optional)</span><textarea id="notes" placeholder="e.g. tricky access, tiles bought from Topps, want it before Christmas"></textarea></label>
+<p class="err" id="cErr" role="alert"></p>
+</section>
+
+<!-- 6 REVIEW -->
+<section class="step" data-s="review" aria-labelledby="h6r">
+<h2 id="h6r">Check and send</h2><p class="hint">This is exactly what Sam will see.</p>
+<div class="card jobcard" id="jobcard"></div>
+<p class="small" style="margin-top:12px">Tapping send opens WhatsApp with this message ready to go to Sam. Just press send in WhatsApp. Sam only uses your details to reply about your quote.</p>
+<p class="err" id="sErr" role="alert"></p>
+</section>
+
+<section class="step" data-s="done"><div class="done"><div class="big">💬</div><h2 id="doneH">Nearly there</h2>
+<p class="hint" id="doneP">1. In WhatsApp, press <b>send</b> on the message to Sam.</p>
+<div id="photoStep"><p class="hint">2. Now send Sam your photos:</p>
+<button type="button" class="btn wa" id="shareBtn" style="width:100%">Send my photos to Sam</button>
+<p class="small" id="shareHelp" style="margin-top:10px">Pick WhatsApp, then Your Tiling Co (he'll be at the top of your chats).</p></div>
+<p class="hint" style="margin-top:18px">Sam will look at it and get back to you with a price.</p>
+<button type="button" class="btn ghost" id="reopen" style="margin-top:6px">Didn't open? Try WhatsApp again</button></div></section>
+
+</form>
+</div>
+<div class="bar"><div class="in"><button type="button" class="btn ghost" id="back">Back</button><button type="button" class="btn" id="next1">Next</button></div></div>
+
+<script>
+/* ====== SETTINGS: fill these in for Sam ====== */
+const JON={name:"Your Tiling Co",whatsapp:"",area:"Sheffield"};
+/* whatsapp: Sam's mobile in international format without + or spaces, e.g. 447700900123 */
+/* ============================================= */
+const $=id=>document.getElementById(id),S={},steps=[...document.querySelectorAll('.step')].map(s=>s.dataset.s);let at=0;const photos=[];
+const SIZES={"Full bathroom":[["Small / en-suite","Up to about 4 m² floor"],["Standard bathroom","About 4–6 m² floor"],["Large bathroom","Over 6 m² floor"],["Not sure",""]],
+"Bathroom walls":[["Around the bath only","1 or 2 walls, up to tile height"],["Half-height all round","Up to about 1.2 m"],["Floor to ceiling","Every wall, full height"],["Not sure",""]],
+"Shower or wet room":[["Shower enclosure","2–3 walls of a shower"],["Walk-in shower","Large tray or low-level"],["Full wet room","Whole room tanked and tiled"],["Not sure",""]],
+"Kitchen splashback":[["Behind the hob only","About 1 m wide"],["A few metres","Along one run of worktop"],["Most of the kitchen","Several walls"],["Not sure",""]],
+"Floor":[["Small (up to 5 m²)","Cloakroom, utility, small hall"],["Medium (5–15 m²)","Kitchen, hallway"],["Large (over 15 m²)","Open-plan, big kitchen-diner"],["Not sure",""]],
+"Outdoor / patio":[["Small (up to 10 m²)","Steps or small area"],["Medium (10–30 m²)","Typical patio"],["Large (over 30 m²)","Big patio or path"],["Not sure",""]],
+"Repair or regrout":[["A few tiles","Swap cracked or loose tiles"],["Regrout one area","e.g. around the shower"],["Regrout a whole room",""],["Not sure",""]],
+"Something else":[["Small job",""],["Medium job",""],["Big job",""],["Not sure",""]]};
+const MEAS={"Full bathroom":"fw","Bathroom walls":"w","Shower or wet room":"fw","Kitchen splashback":"w","Floor":"f","Outdoor / patio":"f","Repair or regrout":"","Something else":"fw"};
+function opts(el,list){el.innerHTML=list.map(([v,s])=>`<button type="button" class="opt" data-v="${v}"><b>${v}</b>${s?`<small>${s}</small>`:''}</button>`).join('');}
+document.querySelectorAll('[data-pick]').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;const k=g.dataset.pick;g.querySelectorAll('.opt').forEach(o=>o.setAttribute('aria-pressed',o===b));S[k]=b.dataset.v;
+ if(k==='job'){opts($('sizeOpts'),SIZES[S.job]);delete S.size;const m=MEAS[S.job]||'';$('mFloor').hidden=!m.includes('f');$('mWall').hidden=!m.includes('w');['fl','fw','wl','wh'].forEach(i=>$(i).value='');showArea();}
+ upd();if(k==='job'||k==='size')setTimeout(()=>{if(ok())go(1);},180);}));
+const v=i=>Math.max(0,+$(i).value||0);
+function fA(){return $('mFloor').hidden?0:v('fl')*v('fw');}function wA(){return $('mWall').hidden?0:v('wl')*v('wh');}
+function area(){const p=[];if(fA()>0)p.push(`Floor ${v('fl').toFixed(1)} × ${v('fw').toFixed(1)} m (about ${fA().toFixed(1)} m²)`);if(wA()>0)p.push(`Walls ${v('wl').toFixed(1)} m long × ${v('wh').toFixed(1)} m high (about ${wA().toFixed(1)} m²)`);return p.join('; ');}
+function showArea(){const p=[];if(fA()>0)p.push(`floor about ${fA().toFixed(1)} m²`);if(wA()>0)p.push(`walls about ${wA().toFixed(1)} m²`);$('area').textContent=p.length?'That\'s '+p.join(' and ')+'.':'';upd();}
+['fl','fw','wl','wh'].forEach(i=>$(i).addEventListener('input',showArea));
+/* photos: resize to max 1600px JPEG so 5 photos stay well under email limits */
+$('pick').addEventListener('change',async e=>{$('photoErr').textContent='';for(const f of [...e.target.files]){if(photos.length>=5){$('photoErr').textContent='That\'s the maximum of 5 photos.';break;}if(!/^image\//.test(f.type)){$('photoErr').textContent=f.name+' isn\'t a photo.';continue;}try{photos.push(await shrink(f));}catch(_){$('photoErr').textContent='One photo couldn\'t be read. Try a different one.';}}e.target.value='';thumbs();upd();});
+function shrink(f){return new Promise((ok,no)=>{const u=URL.createObjectURL(f),i=new Image();i.onload=()=>{const k=Math.min(1,1600/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=Math.round(i.width*k);c.height=Math.round(i.height*k);c.getContext('2d').drawImage(i,0,0,c.width,c.height);URL.revokeObjectURL(u);c.toBlob(b=>b?ok({file:new File([b],`photo-${photos.length+1}.jpg`,{type:'image/jpeg'}),url:URL.createObjectURL(b)}):no(),'image/jpeg',.82);};i.onerror=no;i.src=u;});}
+function thumbs(){$('thumbs').innerHTML=photos.map((p,i)=>`<div><img src="${p.url}" alt="Photo ${i+1}"><button type="button" data-rm="${i}" aria-label="Remove photo ${i+1}">✕</button></div>`).join('');}
+$('thumbs').addEventListener('click',e=>{const b=e.target.closest('[data-rm]');if(b){photos.splice(+b.dataset.rm,1);thumbs();upd();}});
+function ok(){const s=steps[at];if(s==='job')return!!S.job;if(s==='size')return!!S.size||!!area();if(s==='details')return true;if(s==='photos')return true;return true;}
+function band(){const big=/Large|whole room|Most of|Floor to ceiling|Full wet room|over|Big/i,small=/Small|few tiles|hob only|Around the bath|Shower enclosure|one area/i;const t=S.size||'';const a=fA()+wA();
+ if(a>20||big.test(t))return'Bigger job';if((a&&a<5)||small.test(t))return'Small job';return t&&t!=='Not sure'?'Medium job':'Size to confirm';}
+function summary(){const L=[];L.push(`${S.job||'Tiling job'} · ${band()}`);
+ const d=[['Job',S.job],['Size',[S.size,area()].filter(Boolean).join(' · ')],['Tiles',S.tiles],['Tile size',S.tsize],['Old tiles',S.strip],['When',S.when],['Photos',photos.length?photos.length+' to follow in this chat':'None'],['Name',$('name').value.trim()],['Postcode',$('pc').value.trim().toUpperCase()],['Notes',$('notes').value.trim()]].filter(r=>r[1]);
+ return{head:L[0],rows:d,text:L[0]+'\n'+d.map(r=>r[0]+': '+r[1]).join('\n')};}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function card(){const s=summary();$('jobcard').innerHTML=`<span class="tag">${esc(band())}</span><h3>${esc(S.job||'Tiling job')}</h3><dl>${s.rows.filter(r=>!['Job'].includes(r[0])).map(r=>`<dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl>${photos.length?`<div class="thumbs">${photos.map(p=>`<div><img src="${p.url}" alt=""></div>`).join('')}</div>`:''}`;
+}
+function contactOk(){const m=[];if(!$('name').value.trim())m.push('your name');if(!/^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i.test($('pc').value.trim()))m.push('a full postcode, like S11 8AB');$('cErr').textContent=m.length?'Please add '+m.join(', ')+'.':'';return!m.length;}
+function upd(){const s=steps[at];$('prog').style.width=Math.round(at/(steps.length-2)*100)+'%';$('back').style.visibility=at&&s!=='done'?'visible':'hidden';
+ const n=$('next1');n.disabled=!ok();n.textContent=s==='review'?'Send to Sam on WhatsApp':s==='photos'&&!photos.length?'Skip photos':'Next';document.querySelector('.bar').style.display=s==='done'?'none':'block';}
+function go(d){const ns=steps[at];if(d>0&&ns==='contact'&&!contactOk())return;at=Math.max(0,Math.min(steps.length-1,at+d));document.querySelectorAll('.step').forEach(x=>x.classList.toggle('on',x.dataset.s===steps[at]));if(steps[at]==='review')card();
+ $('title').style.display=$('lead').style.display=at?'none':'';window.scrollTo({top:0,behavior:'smooth'});upd();const h=document.querySelector('.step.on h2');if(h){h.tabIndex=-1;h.focus({preventScroll:true});}}
+$('back').onclick=()=>go(-1);
+function waUrl(){const s=summary();return'https://wa.me/'+JON.whatsapp+'?text='+encodeURIComponent('Hi Sam, I\'d like a quote please.\n\n'+s.text);}
+$('next1').onclick=()=>{if(steps[at]!=='review'){go(1);return;}
+ if(!JON.whatsapp){const t=summary().text;$('jobcard').insertAdjacentHTML('afterend',`<div class="card" style="margin-top:12px;background:#e7f6ec;border-color:#9fd3b0"><p class="small" style="margin:0 0 6px;font-weight:700;color:#1f7a4c">This is the WhatsApp message the owner receives:</p><pre style="white-space:pre-wrap;font:15px/1.45 system-ui;margin:0">${esc('Hi Sam, I\'d like a quote please.\n\n'+t)}</pre><p class="small" style="margin:8px 0 0">…followed by the customer\'s photos in the same chat.</p></div>`);$('next1').disabled=true;$('next1').textContent='That\'s the demo';return;}
+ window.open(waUrl(),'_blank','noopener');go(1);
+ $('photoStep').hidden=!photos.length;
+ const canShare=photos.length&&navigator.canShare&&navigator.canShare({files:photos.map(p=>p.file)});
+ $('shareBtn').hidden=!canShare;$('shareHelp').innerHTML=canShare?'Pick <b>WhatsApp</b>, then <b>Your Tiling Co</b> (he\'ll be at the top of your chats).':'In the WhatsApp chat with Sam, tap the 📎 or + button and choose your photos.';};
+$('shareBtn').onclick=async()=>{try{await navigator.share({files:photos.map(p=>p.file),text:'Photos for my tiling quote ('+(S.job||'')+')'});$('shareBtn').textContent='Photos shared ✓';}catch(e){if(e&&e.name!=='AbortError')$('shareHelp').textContent='Couldn\'t open sharing. In the WhatsApp chat with Sam, tap 📎 and choose your photos.';}};
+$('reopen').onclick=()=>window.open(waUrl(),'_blank','noopener');
+upd();
+</script>
+</body></html>
